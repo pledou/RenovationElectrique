@@ -18,8 +18,12 @@ On constate des courants de fuite importants sur le neutre de certains circuits.
 ## Contenu du dépôt
 
 - `Readme.md` : documentation et guide de structure (ce fichier).
-- `data/` : fichier(s) de modélisation de l'installation (voir section suivante).
-- `doc/` : plans, schémas unifilaires, photos et exports SVG/PNG.
+- `data/installation.yaml` : modèle d'installation.
+- `doc/Rdc.drawio` : plan du rez-de-chaussée.
+- `doc/Etage.drawio` : plan de l'étage.
+- `doc/checklist_validation.md` : checklist de validation post-remplacement.
+- `data/` : dossier contenant modèles et mesures (à compléter).
+- `doc/` : dossier contenant plans, schémas et photos (à compléter).
 
 ## Structure recommandée du README
 
