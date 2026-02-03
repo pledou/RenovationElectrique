@@ -12,7 +12,7 @@ protections_tete_tableau:
     emplacement: tête de tableau
     remarque: "Interrupteur différentiel 500mA en amont (fournisseur)"
   - id: DIFF_30mA
-    type: differentiel
+    type: differentiel AC
     sensibilite_mA: 30
     nombre_de_poles: 4
     role: Protection circuits domestiques
@@ -24,7 +24,7 @@ circuits:
     nom: Chaudière Gaz
     fonction: Chauffage
     section_mm2: 2.5 # TODO: vérifier
-    disjoncteur_A: 20 # TODO: vérifier
+    disjoncteur_A: 10
     longueur_m: 12 # TODO: vérifier
     notes: ""
     equipements:
@@ -35,7 +35,7 @@ circuits:
     nom: Eclairage 1
     fonction: Eclairage
     section_mm2: 1.5 # TODO: vérifier
-    disjoncteur_A: 10 # TODO: vérifier
+    disjoncteur_A: 10
     longueur_m: 15 # TODO: vérifier
     equipements:
       - nom: Salon Est
@@ -52,7 +52,7 @@ circuits:
     nom: Eclairage 2
     fonction: Eclairage
     section_mm2: 1.5 # TODO: vérifier
-    disjoncteur_A: 10 # TODO: vérifier
+    disjoncteur_A: 10
     longueur_m: 10 # TODO: vérifier
     equipements:
       - nom: Cuisine
@@ -62,10 +62,10 @@ circuits:
     nom: Prises cuisine
     fonction: Prises
     section_mm2: 2.5 # TODO: vérifier
-    disjoncteur_A: 16 # TODO: vérifier
+    disjoncteur_A: 10
     longueur_m: 20 # TODO: vérifier
     equipements:
-      - nom: Cuisine (lave-vaisselle, réfrigérateur, micro-ondes)
+      - nom: Plaque de cuisson (branché également Osmoseur)
   - id: P2
     nom: Prises Buanderie et Garage
     fonction: Prises
@@ -82,38 +82,47 @@ circuits:
     nom: Prises Séjour/Bureau/Four
     fonction: Prises
     section_mm2: 2.5 # TODO: vérifier
-    disjoncteur_A: 16 # TODO: vérifier
+    disjoncteur_A: 20
     longueur_m: 15 # TODO: vérifier
     equipements:
       - nom: Séjour Nord Ouest + Volet Roulant
+        defaut: |
+          "B8.3 e Au moins un conducteur isolé n'est pas placé sur toute sa longueur dans un conduit, une goulotte ou une plinthe ou une huisserie, en matière isolante ou métallique, jusqu'à sa pénétration dans le matériel électrique qu'il alimente"
       - nom: Séjour Sud Ouest + Volet Roulant
+        defaut: |
+          "B8.3 e Au moins un conducteur isolé n'est pas placé sur toute sa longueur dans un conduit, une goulotte ou une plinthe ou une huisserie, en matière isolante ou métallique, jusqu'à sa pénétration dans le matériel électrique qu'il alimente"
+          "prise 2 poles sans obturateur, sans terre"
       - nom: Bureau Nord Est
       - nom: Bureau Sud Est
       - nom: Four
+        defaut: "A vérifier si doit être sur circuit dédié"
   - id: P4
     nom: Prises Cuisine
     fonction: Prises
     section_mm2: 2.5 # TODO: vérifier
-    disjoncteur_A: 16 # TODO: vérifier
+    disjoncteur_A: 20
     longueur_m: 10 # TODO: vérifier
     equipements:
       - nom: Cuisine Ouest + Volet Roulant
+        defaut: |
+          B8.3 e Au moins un conducteur isolé n'est pas placé sur toute sa longueur dans un conduit, une goulotte ou une plinthe ou une huisserie, en matière isolante ou métallique, jusqu'à sa pénétration dans le matériel électrique qu'il alimente
+          B3.3.6 a2 Au moins un socle de prise de courant comporte une broche de terre non reliée à la terre
       - nom: Cuisine Sud Est (réfrigérateur + Multiprise)
       - nom: Cuisine Nord Ouest
   - id: sc_etage
     nom: Alimentation sous-compteur étage + Prise Extérieure
     fonction: Alimentation sous-compteur + Prise Extérieure
     section_mm2: 6 # TODO: vérifier
-    disjoncteur_A: 32 # TODO: vérifier
+    disjoncteur_A: 20
     longueur_m: 25 # TODO: vérifier
     equipements:
       - nom: Alimentation sous-compteur étage
-      - nom: Prise Extérieure pour panneaux solaires
+      - nom: Prise Extérieure pour panneaux solaires (cablé en 2.5mm²)
   - id: sanitaire
     nom: Alimentation Chauffe-eau
     fonction: ECS
     section_mm2: 2.5
-    disjoncteur_A: 202 # TODO: vérifier
+    disjoncteur_A: 20
     longueur_m: 5
     equipements:
       - nom: Chauffe-eau (passage par triac routeur solaire)
@@ -121,7 +130,7 @@ circuits:
         nom: Alimentation VMI
         fonction: VMI
         section_mm2: 1.5
-        disjoncteur_A: 10
+        disjoncteur_A: 16
         longueur_m: 18
         est_sous_compteur: true
         sous_compteur_pour: "étage"
@@ -131,19 +140,22 @@ circuits:
         nom: Prises étage
         fonction: Prises
         section_mm2: 2.5 # TODO: vérifier
-        disjoncteur_A: 16 # TODO: vérifier
+        disjoncteur_A: 16
         longueur_m: 30 # TODO: vérifier
         est_sous_compteur: true
         sous_compteur_pour: "étage"
         equipements:
           - nom: Chambre 1 Sud Ouest
+            defaut: "prise 2 poles sans obturateur, sans terre"
           - nom: Chambre 1 Sud Est
+            defaut: "prise 2 poles sans obturateur, sans terre"
           - nom: Chambre 2 Sud Ouest
+            defaut: "prise 2 poles sans obturateur, sans terre"
       - id: L3
         nom: Eclairage étage
         fonction: Eclairage
         section_mm2: 1.5 # TODO: vérifier
-        disjoncteur_A: 10 # TODO: vérifier
+        disjoncteur_A: 16
         longueur_m: 25 # TODO: vérifier
         est_sous_compteur: true
         sous_compteur_pour: "étage"
@@ -157,17 +169,43 @@ circuits:
         nom: Eclairage salle de bains
         fonction: Eclairage
         section_mm2: 1.5 # TODO: vérifier
-        disjoncteur_A: 10 # TODO: vérifier
+        disjoncteur_A: 16
         longueur_m: 15 # TODO: vérifier
         est_sous_compteur: true
         sous_compteur_pour: "étage"
         equipements:
           - nom: Salle de bains (zigbee)
           - nom: Chambre 4 (zigbee)
+      - id: P6
+        nom: Prises chambre 3
+        fonction: Prises
+        section_mm2: 2.5 # TODO: vérifier
+        disjoncteur_A: 10
+        longueur_m: 10 # TODO: vérifier
+        est_sous_compteur: true
+        sous_compteur_pour: "étage"
+        equipements:
+          - nom: Chambre 3 Nord Est
+          - nom: Chambre 3 Sud Est
+      - id: P7
+        nom: Prise Palier
+        fonction: Prises
+        section_mm2: 2.5 # TODO: vérifier
+        disjoncteur_A: 10
+        longueur_m: 10 # TODO: vérifier
+        est_sous_compteur: true
+        sous_compteur_pour: "étage"
+        equipements:
+          - nom: Palier étage, devant salle de bains
 
 equipements_non_repertories:
   - nom: Plaque de cuisson
   - nom: Applique murale chambre 4
+  - nom: Séjour Nord Est + Volet Roulant
+    defaut: "B8.3 e Au moins un conducteur isolé n'est pas placé sur toute sa longueur dans un conduit, une goulotte ou une plinthe ou une huisserie, en matière isolante ou métallique, jusqu'à sa pénétration dans le matériel électrique qu'il alimente"
+  - nom: Séjour Sud Est
+    defaut: prise 2 poles sans obturateur, sans terre
+  - nom: Nouveau Prise dédiée onduleur solaire couplé AC-AC avec batterie
 plans:
   - doc/Rdc.drawio
   - doc/Etage.drawio
