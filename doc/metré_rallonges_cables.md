@@ -158,36 +158,155 @@ Les prix indiqués sont au détail. L'achat en bobines de 25-50m peut réduire l
 
 **Économie potentielle** : 15-20 €
 
-### Option C : Alternative câbles en gaine
-Utiliser du câble multiconducteur gainé (type RO2V) au lieu de fils séparés :
-- Câble 3G1,5 mm² : ~1,00 €/m
-- Câble 3G2,5 mm² : ~1,80 €/m
-- Câble 3G6 mm² : ~4,50 €/m
+### ✅ Option C : Câbles multiconducteurs (RECOMMANDÉE)
 
-**Coût avec câbles multiconducteurs** : ~140 € (économie de 13 €, mais installation légèrement plus complexe)
+**Solution choisie** : Utiliser du câble multiconducteur gainé (type RO2V) au lieu de fils séparés.
+
+**Avantages** :
+- ✅ Installation plus propre et plus rapide
+- ✅ Meilleure protection mécanique (gaine extérieure)
+- ✅ Pas de risque d'inversion de fils
+- ✅ Passage plus facile dans la goulotte
+- ✅ Aspect professionnel
+
+**Difficulté** : **Faible** 
+- Dénudage simple avec outil adapté
+- Technique de base en électricité
+- Vidéos tutoriels disponibles en ligne
+
+**Type de câbles** :
+- Câble 3G1,5 mm² (Ph+N+T) : ~1,00 €/m
+- Câble 3G2,5 mm² (Ph+N+T) : ~1,80 €/m
+- Câble 3G6 mm² (Ph+N+T) : ~4,50 €/m
+
+**Coût avec câbles multiconducteurs** : ~140 € (économie de 13 € vs fils séparés)
 
 ---
 
-## Recommandation
+## ✅ Solution Retenue : Câbles Multiconducteurs
 
-**Procéder avec** :
-1. Vérifier la longueur réelle des câbles existants (certains peuvent peut-être être réutilisés)
-2. Acheter des bobines complètes pour réduire les coûts
-3. Prévoir budget réaliste de **280-300 €** pour l'Option 3
+### Métré avec câbles RO2V
 
-**Comparaison finale Options 1 vs 3** :
+| Section | Circuits | Longueur/circuit | Total | Prix €/m | Total |
+|---------|----------|------------------|-------|----------|-------|
+| **3G1,5 mm²** | L1, L2 | 3,0 m | 6 m | 1,00 | 6 € |
+| **3G2,5 mm²** | Chaudière, P2, P3, P4, sanitaire | 3,0 m | 15 m | 1,80 | 27 € |
+| **3G6 mm²** | P1, sc_etage | 3,0 m | 6 m | 4,50 | 27 € |
+
+**À commander** :
+- **10 m de 3G1,5 mm²** (marge 40%) : **10 €**
+- **20 m de 3G2,5 mm²** (marge 33%) : **36 €**
+- **10 m de 3G6 mm²** (marge 40%) : **45 €**
+
+**Total câbles : 91 €** (au lieu de 126 €) = **Économie de 35 €**
+
+### Outillage nécessaire
+
+| Outil | Usage | Prix | Note |
+|-------|-------|------|------|
+| **Pince à dénuder automatique** | Dénudage gaine + fils | 15-25 € | Indispensable |
+| **Couteau d'électricien** | Incision gaine extérieure | 8-12 € | Recommandé |
+| **Pince coupante de côté** | Coupe câbles | 10-15 € | Si non possédé |
+| **Total outillage** | | **~35-50 €** | Investissement durable |
+
+> **💡 Astuce** : Ces outils serviront pour tous vos futurs travaux électriques. Investissement rentabilisé dès la première utilisation.
+
+### Technique de dénudage (câble multiconducteur)
+
+**Étape 1 : Dénuder la gaine extérieure**
+1. Inciser la gaine sur 5-8 cm avec couteau d'électricien
+2. Attention à ne pas entailler les conducteurs internes
+3. Retirer la gaine extérieure
+
+**Étape 2 : Dénuder les conducteurs**
+1. Utiliser la pince à dénuder automatique (réglage selon section)
+2. Dénuder 10-12 mm pour raccordement Wago
+3. Respecter les couleurs : Bleu=Neutre, Vert/Jaune=Terre, autre=Phase
+
+**Difficulté** : ⭐⭐☆☆☆ (2/5 - Facile avec bon outil)
+**Temps** : ~2 min par raccordement une fois la technique maîtrisée
+
+### Recommandation produits
+
+**Câbles** (norme NF, marquage CE) :
+- Nexans ou Lafarge (qualité pro)
+- Disponible en GSB (Leroy Merlin, Castorama) ou magasins spécialisés
+
+**Pince à dénuder recommandée** :
+- Knipex 12 40 200 (~25 €) - référence professionnelle
+- Ou équivalent Stanley, Facom (15-20 €)
+
+---
+
+## Budget Final Révisé avec Multiconducteurs
+
+| Poste | Montant |
+|-------|---------|
+| Câbles multiconducteurs RO2V | 91 € |
+| Accessoires raccordement | 67 € |
+| Fixation tableau | 25 € |
+| Goulotte | 69 € |
+| **Outillage (pince + couteau)** | **40 €** |
+| Accessoires divers | 10 € |
+| **TOTAL** | **302 €** |
+
+> **Note** : L'outillage (40 €) est un investissement permanent, pas un consommable. Hors outillage, le coût est de **262 €**.
+
+---
+
+## Procéder avec
+
+**Comparaison finale Options 1 vs 3** (avec câbles multiconducteurs) :
 
 | Critère | Option 1 (au-dessus ECS) | Option 3 (garage) |
 |---------|--------------------------|-------------------|
-| Coût rallonges | ~100 € (2m/circuit) | ~193 € (3m/circuit) |
-| Coût total | ~165 € | ~300 € |
+| Coût câbles | ~75 € (2m/circuit) | ~91 € (3m/circuit) |
+| Coût total (hors outillage) | ~145 € | ~262 € |
+| Coût total (avec outillage) | ~185 € | ~302 € |
 | Ergonomie | Moyenne (haute) | Excellente (idéale) |
 | Conformité Consuel | Bonne | Optimale |
 
-**Décision à prendre** :
-- Si budget serré : **Option 1** reste valide et conforme
-- Si validation Consuel prioritaire : **Option 3** recommandée (+135 €)
+**✅ Décision validée avec multiconducteurs** :
+- **Option 3 (garage)** : ~262 € (hors outillage) ou 302 € (avec outillage)
+- Installation professionnelle et durable
+- Outillage réutilisable pour futurs travaux
+- Câbles multiconducteurs plus faciles à installer
+## Liste de Courses Finale
 
+### Câbles électriques
+- [ ] 10 m de câble RO2V 3G1,5 mm² (~10 €)
+- [ ] 20 m de câble RO2V 3G2,5 mm² (~36 €)
+- [ ] 10 m de câble RO2V 3G6 mm² (~45 €)
+
+### Accessoires
+- [ ] 9 boîtes de dérivation étanche 100×100 mm (~27 €)
+- [ ] 27 bornes Wago 3 entrées 2,5-6 mm² (~27 €)
+- [ ] 1 rouleau adhésif isolant (~5 €)
+- [ ] 1 set étiquettes repérage (~8 €)
+
+### Goulotte
+- [ ] 4 m goulotte 80×40 mm PVC blanc (~40 €)
+- [ ] 4 angles plat 90° (~12 €)
+- [ ] 2 embouts entrée goulotte (~4 €)
+- [ ] 25 fixations + chevilles (~13 €)
+
+### Fixation tableau
+- [ ] 4 chevilles métal M8 (~8 €)
+- [ ] Vis et accessoires fixation (~10 €)
+- [ ] Support tableau (si nécessaire) (~7 €)
+
+### Outillage (si non possédé)
+- [ ] Pince à dénuder automatique (~25 €)
+- [ ] Couteau d'électricien (~10 €)
+- [ ] Pince coupante (si besoin) (~15 €)
+
+**Budget total : 262 € (hors outillage) ou 302 € (avec outillage)**
+
+---
+
+**Auteur** : GitHub Copilot  
+**Date** : 3 février 2026  
+**Version** : 2.0 - Avec câbles multiconducteurs
 ---
 
 **Auteur** : GitHub Copilot  
