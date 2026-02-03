@@ -1,40 +1,176 @@
-# Exemple de modélisation de l'installation électrique
+
 projet: RenovationElectrique
 adresse: "(à compléter)"
 tableau:
   emplacement: "Entrée - placard"
   modules_estimes: 24
+protections_tete_tableau:
+  - id: EDF_500mA
+    type: differentiel
+    sensibilite_mA: 500
+    role: Coupure générale EDF
+    emplacement: tête de tableau
+    remarque: "Interrupteur différentiel 500mA en amont (fournisseur)"
+  - id: DIFF_30mA
+    type: differentiel
+    sensibilite_mA: 30
+    nombre_de_poles: 4
+    role: Protection circuits domestiques
+    emplacement: juste en aval du 500mA
+    remarque: "Un ou plusieurs différentiels 30mA pour séparer les circuits"
+
 circuits:
-  - id: C1
-    nom: Eclairage Salon
+  - id: Chaudiere
+    nom: Chaudière Gaz
+    fonction: Chauffage
+    section_mm2: 2.5 # TODO: vérifier
+    disjoncteur_A: 20 # TODO: vérifier
+    longueur_m: 12 # TODO: vérifier
+    notes: ""
+    equipements:
+      - nom: Chaudière
+      - nom: ESP pilotage chaudière et comptage Chauffe-eau
+      - nom: Routeur solaire
+  - id: L1
+    nom: Eclairage 1
     fonction: Eclairage
-    section_mm2: 1.5
-    disjoncteur_A: 10
-    longueur_m: 8
-    notes: "Courant de fuite sur neutre suspecté"
-  - id: C2
-    nom: Prises Salon
+    section_mm2: 1.5 # TODO: vérifier
+    disjoncteur_A: 10 # TODO: vérifier
+    longueur_m: 15 # TODO: vérifier
+    equipements:
+      - nom: Salon Est
+      - nom: Salon Ouest (zigbee)
+      - nom: Palier étage 2 points (zigbee)
+        defaut: "neutre ou phase sur L3"
+      - nom: Garage
+        defaut: "neutre ou phase sur L2"
+      - nom: Buanderie
+        defaut: "neutre ou phase sur L2"
+      - nom: Palier RdC 2 points zigbee, et 1 sous l'escalier
+        defaut: "neutre ou phase sur L2"
+  - id: L2
+    nom: Eclairage 2
+    fonction: Eclairage
+    section_mm2: 1.5 # TODO: vérifier
+    disjoncteur_A: 10 # TODO: vérifier
+    longueur_m: 10 # TODO: vérifier
+    equipements:
+      - nom: Cuisine
+      - nom: Entrée (détecteur de mouvement) + alimentation caméra
+      - nom: WC RdC
+  - id: P1
+    nom: Prises cuisine
+    fonction: Prises
+    section_mm2: 2.5 # TODO: vérifier
+    disjoncteur_A: 16 # TODO: vérifier
+    longueur_m: 20 # TODO: vérifier
+    equipements:
+      - nom: Cuisine (lave-vaisselle, réfrigérateur, micro-ondes)
+  - id: P2
+    nom: Prises Buanderie et Garage
     fonction: Prises
     section_mm2: 2.5
-    disjoncteur_A: 16
-    longueur_m: 10
-    notes: ""
-  - id: C3
-    nom: Cuisine - Four
-    fonction: Appareil cuisson
-    section_mm2: 6
-    disjoncteur_A: 32
-    longueur_m: 5
-    notes: "Charger à confirmer"
-  - id: C4
-    nom: Chauffe-eau
+    disjoncteur_A: 20
+    longueur_m: 12 # TODO: vérifier
+    equipements:
+      - nom: Buanderie lave-linge
+      - nom: Buanderie sèche-linge
+      - nom: Garage (outils électroportatifs)
+      - nom: Garage porte de garage motorisée
+      - nom: Garage Four micro-ondes
+  - id: P3
+    nom: Prises Séjour/Bureau/Four
+    fonction: Prises
+    section_mm2: 2.5 # TODO: vérifier
+    disjoncteur_A: 16 # TODO: vérifier
+    longueur_m: 15 # TODO: vérifier
+    equipements:
+      - nom: Séjour Nord Ouest + Volet Roulant
+      - nom: Séjour Sud Ouest + Volet Roulant
+      - nom: Bureau Nord Est
+      - nom: Bureau Sud Est
+      - nom: Four
+  - id: P4
+    nom: Prises Cuisine
+    fonction: Prises
+    section_mm2: 2.5 # TODO: vérifier
+    disjoncteur_A: 16 # TODO: vérifier
+    longueur_m: 10 # TODO: vérifier
+    equipements:
+      - nom: Cuisine Ouest + Volet Roulant
+      - nom: Cuisine Sud Est (réfrigérateur + Multiprise)
+      - nom: Cuisine Nord Ouest
+  - id: sc_etage
+    nom: Alimentation sous-compteur étage + Prise Extérieure
+    fonction: Alimentation sous-compteur + Prise Extérieure
+    section_mm2: 6 # TODO: vérifier
+    disjoncteur_A: 32 # TODO: vérifier
+    longueur_m: 25 # TODO: vérifier
+    equipements:
+      - nom: Alimentation sous-compteur étage
+      - nom: Prise Extérieure pour panneaux solaires
+  - id: sanitaire
+    nom: Alimentation Chauffe-eau
     fonction: ECS
     section_mm2: 2.5
-    disjoncteur_A: 20
-    longueur_m: 6
-    notes: "Présence sur neutre à surveiller"
+    disjoncteur_A: 202 # TODO: vérifier
+    longueur_m: 5
+    equipements:
+      - nom: Chauffe-eau (passage par triac routeur solaire)
+      - id: VMI
+        nom: Alimentation VMI
+        fonction: VMI
+        section_mm2: 1.5
+        disjoncteur_A: 10
+        longueur_m: 18
+        est_sous_compteur: true
+        sous_compteur_pour: "étage"
+        equipements:
+          - nom: VMI (ventilation mécanique)
+      - id: P5
+        nom: Prises étage
+        fonction: Prises
+        section_mm2: 2.5 # TODO: vérifier
+        disjoncteur_A: 16 # TODO: vérifier
+        longueur_m: 30 # TODO: vérifier
+        est_sous_compteur: true
+        sous_compteur_pour: "étage"
+        equipements:
+          - nom: Chambre 1 Sud Ouest
+          - nom: Chambre 1 Sud Est
+          - nom: Chambre 2 Sud Ouest
+      - id: L3
+        nom: Eclairage étage
+        fonction: Eclairage
+        section_mm2: 1.5 # TODO: vérifier
+        disjoncteur_A: 10 # TODO: vérifier
+        longueur_m: 25 # TODO: vérifier
+        est_sous_compteur: true
+        sous_compteur_pour: "étage"
+        equipements:
+          - nom: Palier étage (2 points zigbee)
+            defaut: "neutre ou phase sur L1"
+          - nom: Chambre 1
+          - nom: Chambre 2
+          - nom: Chambre 3
+      - id: L4
+        nom: Eclairage salle de bains
+        fonction: Eclairage
+        section_mm2: 1.5 # TODO: vérifier
+        disjoncteur_A: 10 # TODO: vérifier
+        longueur_m: 15 # TODO: vérifier
+        est_sous_compteur: true
+        sous_compteur_pour: "étage"
+        equipements:
+          - nom: Salle de bains (zigbee)
+          - nom: Chambre 4 (zigbee)
+
+equipements_non_repertories:
+  - nom: Plaque de cuisson
+  - nom: Applique murale chambre 4
 plans:
-  - doc/floor_plan.svg
+  - doc/Rdc.drawio
+  - doc/Etage.drawio
 mesures:
   - type: isolement
     date: "(jj-mm-aaaa)"
