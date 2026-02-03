@@ -1,0 +1,46 @@
+# Exemple de modélisation de l'installation électrique
+projet: RenovationElectrique
+adresse: "(à compléter)"
+tableau:
+  emplacement: "Entrée - placard"
+  modules_estimes: 24
+circuits:
+  - id: C1
+    nom: Eclairage Salon
+    fonction: Eclairage
+    section_mm2: 1.5
+    disjoncteur_A: 10
+    longueur_m: 8
+    notes: "Courant de fuite sur neutre suspecté"
+  - id: C2
+    nom: Prises Salon
+    fonction: Prises
+    section_mm2: 2.5
+    disjoncteur_A: 16
+    longueur_m: 10
+    notes: ""
+  - id: C3
+    nom: Cuisine - Four
+    fonction: Appareil cuisson
+    section_mm2: 6
+    disjoncteur_A: 32
+    longueur_m: 5
+    notes: "Charger à confirmer"
+  - id: C4
+    nom: Chauffe-eau
+    fonction: ECS
+    section_mm2: 2.5
+    disjoncteur_A: 20
+    longueur_m: 6
+    notes: "Présence sur neutre à surveiller"
+plans:
+  - doc/floor_plan.svg
+mesures:
+  - type: isolement
+    date: "(jj-mm-aaaa)"
+    valeur_MOhm: "(à remplir)"
+  - type: courant_fuite_neutre
+    date: "(jj-mm-aaaa)"
+    valeur_mA: "(à remplir)"
+notes_generales: |
+  Remplir les champs après inspection sur site. Utiliser ce fichier comme base de travail et versionner les modifications.
