@@ -61,11 +61,11 @@ circuits:
   - id: P1
     nom: Prises cuisine
     fonction: Prises
-    section_mm2: 2.5 # TODO: vérifier
+    section_mm2: 6
     disjoncteur_A: 10
-    longueur_m: 20 # TODO: vérifier
+    longueur_m: 5
     equipements:
-      - nom: Plaque de cuisson (branché également Osmoseur)
+      - nom: Plaque de cuisson
   - id: P2
     nom: Prises Buanderie et Garage
     fonction: Prises
@@ -107,8 +107,8 @@ circuits:
         defaut: |
           B8.3 e Au moins un conducteur isolé n'est pas placé sur toute sa longueur dans un conduit, une goulotte ou une plinthe ou une huisserie, en matière isolante ou métallique, jusqu'à sa pénétration dans le matériel électrique qu'il alimente
           B3.3.6 a2 Au moins un socle de prise de courant comporte une broche de terre non reliée à la terre
-      - nom: Cuisine Sud Est (réfrigérateur + Multiprise)
-      - nom: Cuisine Nord Ouest
+      - nom: Cuisine Sud Est (réfrigérateur + Multiprise) -> 1 prise réfrigérateur + 2 prise sur meuble
+      - nom: Cuisine Nord Ouest bloc 2 prises
   - id: sc_etage
     nom: Alimentation sous-compteur étage + Prise Extérieure
     fonction: Alimentation sous-compteur + Prise Extérieure
@@ -199,7 +199,7 @@ circuits:
           - nom: Palier étage, devant salle de bains
 
 equipements_non_repertories:
-  - nom: Plaque de cuisson
+  - nom: Prise Lave vaisselle
   - nom: Applique murale chambre 4
   - nom: Séjour Nord Est + Volet Roulant
     defaut: "B8.3 e Au moins un conducteur isolé n'est pas placé sur toute sa longueur dans un conduit, une goulotte ou une plinthe ou une huisserie, en matière isolante ou métallique, jusqu'à sa pénétration dans le matériel électrique qu'il alimente"
