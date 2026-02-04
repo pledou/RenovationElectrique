@@ -34,7 +34,7 @@ jobs:
             outdir="$(dirname "$out")"
             mkdir -p "$outdir"
             echo "Exporting $f -> $out"
-            docker run --rm -v "${GITHUB_WORKSPACE}:/work" jgraph/drawio -x -f svg -o "/work/$outdir" -i "/work/$f"
+            docker run --rm -v "${GITHUB_WORKSPACE}:/work" jgraph/drawio drawio -x -f svg -o "/work/$outdir" -i "/work/$f"
           done
 
       - name: Commit and push generated SVGs
