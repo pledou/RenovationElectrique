@@ -42,7 +42,21 @@ TOTAL par circuit : ~300 cm = 3,0 m
 | **sc_etage**  | Alim sous-tableau  | 6 mm²   | 3,0 m             | 3 fils (Ph+N+T) | 9,0 m          |
 | **sanitaire** | Chauffe-eau        | 2,5 mm² | 3,0 m             | 3 fils (Ph+N+T) | 9,0 m          |
 
-> **Note** : Le circuit onduleur solaire (optionnel) sera créé avec un câble neuf complet, pas de rallonge.
+### Câble d'alimentation principale du tableau
+
+| Câble                     | Section | Longueur | Quantité fils   | Total linéaire |
+| ------------------------- | ------- | -------- | --------------- | -------------- |
+| **Arrivée EDF → Tableau** | 10 mm²  | 3,0 m    | 3 fils (Ph+N+T) | 9,0 m          |
+
+### Rallonge sous-tableau étage
+
+| Câble                                        | Section | Longueur | Quantité fils   | Total linéaire |
+| -------------------------------------------- | ------- | -------- | --------------- | -------------- |
+| **Alimentation sous-tableau** (descente mur) | 6 mm²   | 1,0 m    | 3 fils (Ph+N+T) | 3,0 m          |
+
+> **Note sous-tableau** : Rallonge nécessaire pour descendre le tableau du plafond (250 cm) à hauteur réglementaire (175 cm).
+
+> **Note onduleur** : Le circuit onduleur solaire (optionnel) sera créé avec un câble neuf complet, pas de rallonge.
 
 ---
 
@@ -77,13 +91,27 @@ TOTAL par circuit : ~300 cm = 3,0 m
 
 ### Câble 6 mm² (H07V-U ou R)
 
-| Circuit              | Longueur | Total    |
-| -------------------- | -------- | -------- |
-| P1 - Plaque (3 fils) | 3,0 m    | 9,0 m    |
-| sc_etage (3 fils)    | 3,0 m    | 9,0 m    |
-| **TOTAL 6 mm²**      |          | **18 m** |
+| Circuit                                         | Longueur | Total    |
+| ----------------------------------------------- | -------- | -------- |
+| P1 - Plaque (3 fils)                            | 3,0 m    | 9,0 m    |
+| sc_etage - Rallonge tableau RdC (3 fils)        | 3,0 m    | 9,0 m    |
+| sc_etage - Rallonge sous-tableau étage (3 fils) | 1,0 m    | 3,0 m    |
+| **TOTAL 6 mm²**                                 |          | **21 m** |
 
-**À commander** : **20 m de câble 6 mm²** (marge 10%)
+**À commander** : **25 m de câble 6 mm²** (marge ~20%)
+
+---
+
+### Câble 10 mm² (H07V-U ou R)
+
+| Circuit                        | Longueur | Total   |
+| ------------------------------ | -------- | ------- |
+| Arrivée EDF → Tableau (3 fils) | 3,0 m    | 9,0 m   |
+| **TOTAL 10 mm²**               |          | **9 m** |
+
+**À commander** : **10 m de câble 10 mm²** (marge 10%)
+
+> **Note importante** : Section 10 mm² adaptée pour abonnement 9-12 kVA (45-60A). Si abonnement > 12 kVA, prévoir du 16 mm².
 
 ---
 
@@ -95,8 +123,9 @@ TOTAL par circuit : ~300 cm = 3,0 m
 | -------------------- | -------- | ------------- | --------- |
 | Câble 1,5 mm² H07V-U | 20 m     | 0,80 €/m      | 16 €      |
 | Câble 2,5 mm² H07V-U | 50 m     | 1,20 €/m      | 60 €      |
-| Câble 6 mm² H07V-U   | 20 m     | 2,50 €/m      | 50 €      |
-| **TOTAL Câbles**     |          |               | **126 €** |
+| Câble 6 mm² H07V-U   | 25 m     | 2,50 €/m      | 63 €      |
+| Câble 10 mm² H07V-U  | 10 m     | 4,00 €/m      | 40 €      |
+| **TOTAL Câbles**     |          |               | **179 €** |
 
 ### Accessoires de raccordement
 
@@ -528,9 +557,10 @@ TOTAL par circuit : 90-110 cm ≈ 1,0 m
 
 - [ ] **15 mètres** de câble RO2V **3G1,5 mm²** → **15 €**
 - [ ] **25 mètres** de câble RO2V **3G2,5 mm²** → **45 €**
-- [ ] **10 mètres** de câble RO2V **3G6 mm²** → **45 €**
+- [ ] **15 mètres** de câble RO2V **3G6 mm²** (dont 1m rallonge sous-tableau étage) → **63 €**
+- [ ] **10 mètres** de câble RO2V **3G10 mm²** (alimentation principale tableau) → **40 €**
 
-**Sous-total câbles : 105 €**
+**Sous-total câbles : 163 €**
 
 ### ✅ Accessoires de raccordement
 
@@ -578,12 +608,12 @@ TOTAL par circuit : 90-110 cm ≈ 1,0 m
 | Catégorie                    | Montant   |
 | ---------------------------- | --------- |
 | **Tableaux électriques**     | **145 €** |
-| **Câbles électriques**       | **105 €** |
+| **Câbles électriques**       | **163 €** |
 | **Accessoires raccordement** | **103 €** |
 | **Goulotte et fixation**     | **104 €** |
 | **Outillage** (optionnel)    | **50 €**  |
-| **TOTAL SANS OUTILLAGE**     | **457 €** |
-| **TOTAL AVEC OUTILLAGE**     | **507 €** |
+| **TOTAL SANS OUTILLAGE**     | **515 €** |
+| **TOTAL AVEC OUTILLAGE**     | **565 €** |
 
 ---
 
