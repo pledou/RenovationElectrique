@@ -39,8 +39,10 @@ On constate des courants de fuite importants sur le neutre de certains circuits.
 - `data/installation.yaml` : inventaire complet de l'installation (circuits, équipements, protections)
 
 ### Documentation
-- `doc/Rdc.drawio` : plan du rez-de-chaussée
-- `doc/Etage.drawio` : plan de l'étage
+- `doc/plans_etage/Rdc.drawio` : plan du rez-de-chaussée
+- `doc/plans_etage/Rdc_elec.drawio` : plan électrique du rez-de-chaussée
+- `doc/plans_etage/Etage.drawio` : plan de l'étage
+- `doc/plans_etage/Etage_elec.drawio` : plan électrique de l'étage
 - `doc/schema_unifilaire_tableau.drawio` : schéma unifilaire du tableau
 - `doc/proposition_tableau_electrique.md` : **✅ RÉALISÉ** - proposition détaillée du nouveau tableau (architecture 3 rangées, dimensionnement, protections)
 - `doc/plan_implantation_tableau.md` : **✅ RÉALISÉ** - étude comparative des emplacements possibles (garage retenu)
@@ -74,7 +76,7 @@ On constate des courants de fuite importants sur le neutre de certains circuits.
 
 Inventaire complet des 14 circuits (8 au RdC, 6 à l'étage) avec équipements, sections de câbles, calibres de disjoncteurs et défauts identifiés.
 
-**Plans** : [RdC](doc/Rdc.drawio) | [Étage](doc/Etage.drawio)
+**Plans** : [RdC](doc/plans_etage/Rdc.drawio) | [RdC Élec](doc/plans_etage/Rdc_elec.drawio) | [Étage](doc/plans_etage/Etage.drawio) | [Étage Élec](doc/plans_etage/Etage_elec.drawio)
 
 **Photos** : [Tableau buanderie](doc/tableau_buanderie.jpg) | [Tableau buanderie ouvert](doc/tableau_buanderie_ouvert.jpg) | [Tableau étage](doc/tableau_etage.jpg) | [Tableau étage ouvert](doc/tableau_etage_ouvert.jpg)
 
