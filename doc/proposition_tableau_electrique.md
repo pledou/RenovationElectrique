@@ -547,8 +547,8 @@ Les défauts identifiés sur les câblages et prises pourront être traités ult
 
 ## Document Complémentaire à Produire
 
-- [ ] Schéma unifilaire détaillé (à réaliser avec Draw.io)
-- [ ] Plan d'implantation du nouveau tableau
+- [x] Schéma unifilaire détaillé (réalisé : [schema_unifilaire_tableau.drawio](schema_unifilaire_tableau.drawio))
+- [x] Plan d'implantation du nouveau tableau (réalisé : [plan_implantation_tableau.md](plan_implantation_tableau.md) + [plan_organisation_tableau.md](plan_organisation_tableau.md))
 - [ ] Fiche de repérage des circuits existants (couleurs, boîtes de dérivation)
 - [ ] Checklist de validation (voir `doc/checklist_validation.md`)
 

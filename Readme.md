@@ -43,7 +43,9 @@ On constate des courants de fuite importants sur le neutre de certains circuits.
 - `doc/Etage.drawio` : plan de l'étage
 - `doc/schema_unifilaire_tableau.drawio` : schéma unifilaire du tableau
 - `doc/proposition_tableau_electrique.md` : **✅ RÉALISÉ** - proposition détaillée du nouveau tableau (architecture 3 rangées, dimensionnement, protections)
-- `doc/plan_implantation_tableau.md` : **✅ RÉALISÉ** - étude comparative des emplacements possibles pour le nouveau tableau
+- `doc/plan_implantation_tableau.md` : **✅ RÉALISÉ** - étude comparative des emplacements possibles (garage retenu)
+- `doc/plan_organisation_tableau.md` : **✅ RÉALISÉ** - organisation interne du tableau (disposition modules, câblage, étiquetage)
+- `doc/etiquettes_tableau.md` : **✅ RÉALISÉ** - étiquettes A4 imprimables pour repérage des circuits et fils
 - `doc/metré_rallonges_cables.md` : **✅ RÉALISÉ** - calcul des longueurs de câbles nécessaires et devis matériel
 - `doc/checklist_validation.md` : checklist de validation post-remplacement
 
