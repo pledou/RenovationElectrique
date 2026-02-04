@@ -39,11 +39,9 @@ On constate des courants de fuite importants sur le neutre de certains circuits.
 - `data/installation.yaml` : inventaire complet de l'installation (circuits, équipements, protections)
 
 ### Documentation
-- `doc/plans_etage/Rdc.drawio` : plan du rez-de-chaussée
-- `doc/plans_etage/Rdc_elec.drawio` : plan électrique du rez-de-chaussée
-- `doc/plans_etage/Etage.drawio` : plan de l'étage
-- `doc/plans_etage/Etage_elec.drawio` : plan électrique de l'étage
-- `doc/schema_unifilaire_tableau.drawio` : schéma unifilaire du tableau
+ [RdC](doc/plans_etage/Rdc.svg) ([Édition](doc/plans_etage/Rdc.drawio)) : plan du rez-de-chaussée
+ [Étage](doc/plans_etage/Etage.svg) ([Édition](doc/plans_etage/Etage.drawio)) : plan de l'étage
+ [schema_unifilaire_tableau.svg](doc/schema_unifilaire_tableau.svg) ([Édition](doc/schema_unifilaire_tableau.drawio)) : schéma unifilaire du tableau
 - `doc/proposition_tableau_electrique.md` : **✅ RÉALISÉ** - proposition détaillée du nouveau tableau (architecture 3 rangées, dimensionnement, protections)
 - `doc/plan_implantation_tableau.md` : **✅ RÉALISÉ** - étude comparative des emplacements possibles (garage retenu)
 - `doc/plan_organisation_tableau.md` : **✅ RÉALISÉ** - organisation interne du tableau (disposition modules, câblage, étiquetage)
@@ -76,7 +74,7 @@ On constate des courants de fuite importants sur le neutre de certains circuits.
 
 Inventaire complet des 14 circuits (8 au RdC, 6 à l'étage) avec équipements, sections de câbles, calibres de disjoncteurs et défauts identifiés.
 
-**Plans** : [RdC](doc/plans_etage/Rdc.drawio) | [RdC Élec](doc/plans_etage/Rdc_elec.drawio) | [Étage](doc/plans_etage/Etage.drawio) | [Étage Élec](doc/plans_etage/Etage_elec.drawio)
+**Plans** : [RdC](doc/plans_etage/Rdc.svg) ([Édition](doc/plans_etage/Rdc.drawio)) | [RdC Élec](doc/plans_etage/Rdc_elec.svg) ([Édition](doc/plans_etage/Rdc_elec.drawio)) | [Étage](doc/plans_etage/Etage.svg) ([Édition](doc/plans_etage/Etage.drawio)) | [Étage Élec](doc/plans_etage/Etage_elec.svg) ([Édition](doc/plans_etage/Etage_elec.drawio))
 
 **Photos** : [Tableau buanderie](doc/tableau_buanderie.jpg) | [Tableau buanderie ouvert](doc/tableau_buanderie_ouvert.jpg) | [Tableau étage](doc/tableau_etage.jpg) | [Tableau étage ouvert](doc/tableau_etage_ouvert.jpg)
 
@@ -92,7 +90,7 @@ Identification des courants de fuite, sous-dimensionnements, défauts d'isolemen
 
 Tableau 3 rangées × 13 modules (21 utilisés, 18 libres). Architecture avec 3 interrupteurs différentiels (2× Type A, 1× Type AC) et répartition des circuits optimisée pour minimiser les modifications. Le sous-tableau étage est conservé.
 
-**Schéma unifilaire** : [schema_unifilaire_tableau.drawio](doc/schema_unifilaire_tableau.drawio)
+**Schéma unifilaire** : [schema_unifilaire_tableau.svg](doc/schema_unifilaire_tableau.svg) ([Édition](doc/schema_unifilaire_tableau.drawio))
 
 ### Emplacement du nouveau tableau
 
