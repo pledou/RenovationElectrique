@@ -37,12 +37,12 @@
 │  Buanderie   │Salon/Bua/Gar │ Cuis/Ent/WC  │ Séjour/Bur   │
 └──────────────┴──────────────┴──────────────┴──────────────┘
 
-┌──────────────┬──────────────┬──────────────────────────────┐
-│   ONDULEUR   │   MONITORING │    sc_etage (ALIMENTATION)   │
-│   SOL 20A    │  Équip.Mes.  │        20A/6mm²              │
-│ 2.5mm²       │  2 modules   │     Sous-tableau étage       │
-│ Garage       │  AC-coupling │                              │
-└──────────────┴──────────────┴──────────────────────────────┘
+┌──────────────┬──────────────┬─────────────┬──────────────┐
+│   ONDULEUR   │   MONITORING │  sc_etage   │ MICROOND.JAR │
+│   SOL 20A    │  Équip.Mes.  │   20A/6mm²  │   20A/2.5mm² │
+│ 2.5mm²       │  2 modules   │  Sous-tabl. │ Jardin 3000W │
+│ Garage       │  AC-coupling │    étage    │              │
+└──────────────┴──────────────┴─────────────┴──────────────┘
 
 À découper et coller sur la rangée 2 du tableau
 ```
@@ -110,10 +110,10 @@ Rangées 1+2 uniquement
 
 ## TABLEAU SYNTHÉTIQUE (pour porte du tableau)
 
-| **RANGÉE** | **DIFF** | **Module 3** | **Module 4** | **Module 5** |  **Module 6-7**  | **Module 8-10** |
+| **RANGÉE** | **DIFF** | **Module 3** | **Module 4** | **Module 5** |  **Module 6-7**  | **Module 8-11** |
 | :--------: | :------: | :----------: | :----------: | :----------: | :--------------: | :-------------: |
 |   **1**    |  Type A  |    P1 32A    |    P2 20A    |    P4 20A    |      LIBRE       |      LIBRE      |
-|   **2**    | Type AC  |   Chd 20A    |    L1 16A    |    L2 16A    | P3 20A / Ond 20A |  Mes / sc 20A   |
+|   **2**    | Type AC  |   Chd 20A    |    L1 16A    |    L2 16A    | P3 20A / Ond 20A |  Mes / sc / Mic 20A   |
 |   **3**    |  Type A  |   ECS 20A    |    LIBRE     |    LIBRE     |      LIBRE       |      LIBRE      |
 | **Étage**  | Type AC  |   VMI 16A    |    P5 16A    |    L3 16A    | L4 16A / P6 10A  | P7 10A / LIBRE  |
 

@@ -28,8 +28,8 @@ Basé sur [proposition_tableau_electrique.md](proposition_tableau_electrique.md)
 ║ RANGÉE 1 │ Type A │ P1 │ P2 │ P4 │ LIBRE (8 modules)         ║
 ║          │  40A   │32A │20A │20A │                            ║
 ╠═══════════════════════════════════════════════════════════════╣
-║ RANGÉE 2 │ Type AC│Chd │L1 │L2 │P3 │Ond│Mes│sc │LIBRE (3)   ║
-║          │  40A   │20A │16A│16A│20A│20A│(2)│20A│             ║
+║ RANGÉE 2 │ Type AC│Chd │L1 │L2 │P3 │Ond│Mes│sc │Mic│LIBRE(2)║
+║          │  40A   │20A │16A│16A│20A│20A│(2)│20A│20A│         ║
 ╠═══════════════════════════════════════════════════════════════╣
 ║ RANGÉE 3 │ Type A │ ECS │ LIBRE (10 modules)                 ║
 ║          │  40A   │ 20A │                                     ║
@@ -43,6 +43,7 @@ Basé sur [proposition_tableau_electrique.md](proposition_tableau_electrique.md)
 - Ond = Onduleur solaire
 - Mes = Équipement mesure (2 modules)
 - sc = Sous-compteur étage
+- Mic = Microonduleurs jardin
 - ECS = Chauffe-eau
 
 ---
@@ -97,15 +98,15 @@ Basé sur [proposition_tableau_electrique.md](proposition_tableau_electrique.md)
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│ Module │  1-2  │  3  │  4  │  5  │  6  │  7  │ 8-9 │ 10  │11-13│
-├────────┼───────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-│ Type   │ DIFF  │ DJ  │ DJ  │ DJ  │ DJ  │ DJ  │Equip│ DJ  │LIBRE│
-│        │ 40A   │ 20A │ 16A │ 16A │ 20A │ 20A │Mesu │ 20A │     │
-├────────┼───────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-│Circuit │Type AC│Chaud│ L1  │ L2  │ P3  │Ondul│ (2) │sc_et│     │
-│        │ ▓▓▓▓  │+Rou │Ecl1 │Ecl2 │Séj/ │solar│modul│ étag│     │
-│        │       │ ECS │     │     │Four │     │  es │  e  │     │
-└────────┴───────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘
+│ Module │  1-2  │  3  │  4  │  5  │  6  │  7  │ 8-9 │ 10  │ 11  │12-13│
+├────────┼───────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+│ Type   │ DIFF  │ DJ  │ DJ  │ DJ  │ DJ  │ DJ  │Equip│ DJ  │ DJ  │LIBRE│
+│        │ 40A   │ 20A │ 16A │ 16A │ 20A │ 20A │Mesu │ 20A │ 20A │     │
+├────────┼───────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+│Circuit │Type AC│Chaud│ L1  │ L2  │ P3  │Ondul│ (2) │sc_et│Micro│     │
+│        │ ▓▓▓▓  │+Rou │Ecl1 │Ecl2 │Séj/ │solar│modul│ étag│ond. │     │
+│        │       │ ECS │     │     │Four │     │  es │  e  │jard │     │
+└────────┴───────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘
          └──── Peigne d'alimentation horizontale ────────────────┘
 ```
 
@@ -121,10 +122,11 @@ Basé sur [proposition_tableau_electrique.md](proposition_tableau_electrique.md)
 | 7      | Disjoncteur               | 20A              | **Onduleur solaire AC-coupling** | 2.5 mm² | -        | **NOUVEAU CIRCUIT**        |
 | 8-9    | Équipement DIN            | -                | **Monitoring onduleur**          | -       | -        | 2 modules DIN              |
 | 10     | Disjoncteur               | 20A              | **sc_etage - Sous-tableau**      | 6 mm²   | 25m      | Alimentation étage         |
-| 11-13  | -                         | -                | **LIBRE**                        | -       | -        | 3 emplacements disponibles |
+| 11     | Disjoncteur               | 20A              | **Microonduleurs jardin**        | 2.5 mm² | 30m      | **NOUVEAU CIRCUIT**        |
+| 12-13  | -                         | -                | **LIBRE**                        | -       | -        | 2 emplacements disponibles |
 
-**Charge maximale théorique** : 20A + 16A + 16A + 20A + 20A + 20A = 112A  
-**Différentiel** : 40A adapté (diversité d'usage, onduleur en injection)
+**Charge maximale théorique** : 20A + 16A + 16A + 20A + 20A + 20A + 20A = 132A  
+**Différentiel** : 40A adapté (diversité d'usage, onduleurs en injection)
 
 ### Câblage
 
@@ -135,6 +137,7 @@ Basé sur [proposition_tableau_electrique.md](proposition_tableau_electrique.md)
 - **P3** : Violet (étiquette "Séjour/Bureau/Four")
 - **Onduleur** : Rouge/Noir rayé (étiquette "Onduleur Solaire")
 - **sc_etage** : Gris (étiquette "Alimentation Étage")
+- **Microonduleurs** : Bleu/Blanc rayé (étiquette "Microonduleurs Jardin")
 
 ---
 
@@ -322,6 +325,7 @@ ARRIVÉE EDF (haut du tableau)
 | P3        | Séjour/Bureau/Four      | 20A     | 2.5 mm² | Séjour/Bureau          |
 | Onduleur  | Onduleur solaire        | 20A     | 2.5 mm² | Garage (équip.)        |
 | sc_etage  | Alimentation étage      | 20A     | 6 mm²   | Sous-tableau étage     |
+| Microond. | Microonduleurs jardin   | 20A     | 2.5 mm² | Jardin (panneaux)      |
 | ECS       | Chauffe-eau             | 20A     | 2.5 mm² | Buanderie              |
 
 ### Schéma Unifilaire

@@ -300,6 +300,7 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 | 1        | Interrupteur différentiel 40A 30mA Type AC bipolaire | Schneider Rési9 XE ou équivalent               |
 | 1        | Disjoncteur 32A courbe C                             | Pour plaque cuisson                            |
 | 1        | Disjoncteur 20A courbe C                             | Pour onduleur solaire (**nouveau circuit**)    |
+| 1        | Disjoncteur 20A courbe C                             | Pour microonduleurs jardin (**nouveau circuit**) |
 | 1        | Parafoudre Type 2 (optionnel mais recommandé)        | Pour protection générale et production solaire |
 | 3        | Bornier de terre                                     | 13 connexions minimum par rangée               |
 | 3        | Bornier de neutre par rangée                         | 13 connexions par rangée                       |
@@ -410,9 +411,9 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 - Tableau 3 rangées et protections : **380-520 €**
 - 1 différentiel Type A supplémentaire : **40-60 €**
 - Disjoncteur 32A supplémentaire : **15-25 €**
-- 1 disjoncteur 20A (onduleur) : **15-25 €**
+- 2 disjoncteurs 20A (onduleur + microonduleurs) : **30-50 €**
 - Accessoires et petits matériels : **70-100 €**
-- **Sous-total tableau principal : 520-730 €**
+- **Sous-total tableau principal : 535-755 €**
 
 **Sous-tableau étage** :
 
@@ -486,9 +487,9 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 ### Budget matériel uniquement
 
 **Remplacement sous-tableau confirmé (< 13 modules)** :
-- Matériel tableau principal : **520-730 €**
+- Matériel tableau principal : **535-755 €**
 - Matériel sous-tableau (avec nouveau coffret 13 modules) : **145-240 €**
-- **TOTAL MATÉRIEL : 665-970 €**
+- **TOTAL MATÉRIEL : 680-995 €**
 
 ### Budget avec validation professionnelle (recommandé)
 - Visite électricien pour validation finale : **150-250 €**
@@ -496,8 +497,8 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 - **Supplément validation : 300-450 €**
 
 ### **BUDGET TOTAL ESTIMÉ**
-- **Sans validation** : **665-970 €** (matériel uniquement)
-- **Avec validation professionnelle** : **965-1420 €** (matériel + validation + Consuel)
+- **Sans validation** : **680-995 €** (matériel uniquement)
+- **Avec validation professionnelle** : **980-1445 €** (matériel + validation + Consuel)
 
 > **Note** : Ces prix sont indicatifs (février 2026) et peuvent varier selon les régions, prestataires et marques d'équipements de monitoring solaire choisis.
 
@@ -510,7 +511,7 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 ✅ **Sous-tableau mis à niveau** : Ajout différentiel 30mA + peigne de distribution (conformité + fiabilité)  
 ✅ **Sécurité** : 4 différentiels 30mA au total (3 tableau principal + 1 sous-tableau) pour isolation optimale  
 ✅ **Production solaire intégrée** : Gestion intelligente batterie + routeur ECS avec contrôle des flux optimisé  
-✅ **Évolutivité** : **18 emplacements libres** pour extensions futures (8 en Rangée 1, 3 en Rangée 2, 7 en Rangée 3)  
+✅ **Évolutivité** : **17 emplacements libres** pour extensions futures (8 en Rangée 1, 2 en Rangée 2, 7 en Rangée 3)  
 ✅ **Diagnostic facilité** : Séparation claire circuits prioritaires/généraux/ECS + isolation totale étage/RdC  
 ✅ **Optimisation énergétique** : ECS isolé permettant mesure précise consommation hors ECS, priorité consommation > batterie > ECS  
 ✅ **Sélectivité maximale** : Défaut étage ne coupe pas RdC et inversement  
@@ -520,7 +521,7 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 ## Conclusion
 
 Cette proposition permet de **mettre en conformité votre installation avec un minimum de modifications** tout en intégrant votre système de production solaire :
-- **1 circuit à créer** (onduleur solaire AC-coupling uniquement)
+- **2 circuits à créer** (onduleur solaire AC-coupling + microonduleurs jardin)
 - **1 circuit à modifier** (P1 - changement disjoncteur 10A→32A uniquement)
 - **13 circuits conservés à l'identique** (câblage inchangé)
 - **Sous-tableau étage : mise à niveau obligatoire** (ajout différentiel 30mA + peigne de distribution + **déplacement à hauteur réglementaire**)
@@ -539,7 +540,7 @@ Cette proposition permet de **mettre en conformité votre installation avec un m
 - **Pince 2 (mesure hors ECS)** : Placée sur Rangées 1+2 pour mesurer toute la consommation sauf ECS et piloter le routeur ECS
 - **Pince 1 (mesure globale)** : Placée sur arrivée principale pour le pilotage de l'onduleur/batterie
 - **Architecture optimisée** : ECS isolé sur Rangée 3 dédiée, permettant une mesure précise de la consommation hors ECS
-- **Avantage** : Aucun circuit dédié supplémentaire + 18 emplacements libres pour extensions futures
+- **Avantage** : Microonduleurs sur circuit dédié sécurisé + 17 emplacements libres pour extensions futures
 
 Les défauts identifiés sur les câblages et prises pourront être traités ultérieurement, circuit par circuit, sans nécessiter une nouvelle intervention sur le tableau.
 
