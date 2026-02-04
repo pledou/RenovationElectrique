@@ -65,7 +65,7 @@ circuits:
     disjoncteur_A: 10
     longueur_m: 5
     equipements:
-      - nom: Plaque de cuisson
+      - nom: Lave-vaisselle (actuellement) / Future plaque de cuisson électrique
   - id: P2
     nom: Prises Buanderie et Garage
     fonction: Prises
@@ -96,6 +96,8 @@ circuits:
       - nom: Bureau Sud Est
       - nom: Four
         defaut: "A vérifier si doit être sur circuit dédié"
+      - nom: Séjour Sud Est
+        defaut: prise 2 poles sans obturateur, sans terre
   - id: P4
     nom: Prises Cuisine
     fonction: Prises
@@ -109,6 +111,10 @@ circuits:
           B3.3.6 a2 Au moins un socle de prise de courant comporte une broche de terre non reliée à la terre
       - nom: Cuisine Sud Est (réfrigérateur + Multiprise) -> 1 prise réfrigérateur + 2 prise sur meuble
       - nom: Cuisine Nord Ouest bloc 2 prises
+      - nom: Cuisine prise sous evier actuellement plaque gaz
+      - nom: Cuisine prise au dessus du four 
+      - nom: Séjour Nord Est + Volet Roulant
+        defaut: "B8.3 e Au moins un conducteur isolé n'est pas placé sur toute sa longueur dans un conduit, une goulotte ou une plinthe ou une huisserie, en matière isolante ou métallique, jusqu'à sa pénétration dans le matériel électrique qu'il alimente"
   - id: sc_etage
     nom: Alimentation sous-compteur étage + Prise Extérieure
     fonction: Alimentation sous-compteur + Prise Extérieure
@@ -188,7 +194,7 @@ circuits:
           - nom: Chambre 3 Nord Est
           - nom: Chambre 3 Sud Est
       - id: P7
-        nom: Prise Palier
+        nom: Prise Palier et équipements réseau
         fonction: Prises
         section_mm2: 2.5 # TODO: vérifier
         disjoncteur_A: 10
@@ -197,15 +203,8 @@ circuits:
         sous_compteur_pour: "étage"
         equipements:
           - nom: Palier étage, devant salle de bains
+          - nom: Applique murale chambre 4 (éclairage au dessus ancien lavabeau et prise de courant) au sud ouest
 
-equipements_non_repertories:
-  - nom: Prise Lave vaisselle
-  - nom: Applique murale chambre 4
-  - nom: Séjour Nord Est + Volet Roulant
-    defaut: "B8.3 e Au moins un conducteur isolé n'est pas placé sur toute sa longueur dans un conduit, une goulotte ou une plinthe ou une huisserie, en matière isolante ou métallique, jusqu'à sa pénétration dans le matériel électrique qu'il alimente"
-  - nom: Séjour Sud Est
-    defaut: prise 2 poles sans obturateur, sans terre
-  - nom: Nouveau Prise dédiée onduleur solaire couplé AC-AC avec batterie
 plans:
   - doc/Rdc.drawio
   - doc/Etage.drawio

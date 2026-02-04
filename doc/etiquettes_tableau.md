@@ -15,7 +15,8 @@
 │      P1      │      P2      │      P4      │
 │  PLAQUE CUI. │  PRISES BUA. │  PRISES CUI. │
 │   32A/6mm²   │  20A/2.5mm²  │  20A/2.5mm²  │
-│   Cuisine    │ Bua+Garage   │ Cuisine (3)  │
+│   Cuisine    │ Bua+Garage   │ Cuisine (5)  │
+│              │              │ +prise four  │
 └──────────────┴──────────────┴──────────────┘
 
 À découper et coller sur la rangée 1 du tableau
@@ -82,12 +83,14 @@
 │    Étage     │  Chamb 1+2   │ Chamb+Palier │ Salle Bains  │
 └──────────────┴──────────────┴──────────────┴──────────────┘
 
-┌──────────────┬──────────────┐
-│      P6      │      P7      │
-│ PRISES CHBR3 │ PRISE PALIER │
-│ 10A/2.5mm²   │ 10A/2.5mm²   │
-│   Chambre 3  │ Palier étage │
-└──────────────┴──────────────┘
+┌──────────────┬──────────────┬──────────────┐
+│      P6      │      P7      │      P8      │
+│ PRISES CHBR3 │PRISE RÉSEAU+ │PRISES SdB    │
+│ 10A/2.5mm²   │APPLIQUE CH4  │ 10A/2.5mm²   │
+│   Chambre 3  │ 10A/2.5mm²   │  Au-dessus   │
+│              │Palier+Appl.  │      WC      │
+│              │+Box+Serveur  │              │
+└──────────────┴──────────────┴──────────────┘
 
 À découper et coller sur le sous-tableau étage
 ```
@@ -115,7 +118,7 @@ Rangées 1+2 uniquement
 |   **1**    |  Type A  |    P1 32A    |    P2 20A    |    P4 20A    |      LIBRE       |      LIBRE      |
 |   **2**    | Type AC  |   Chd 20A    |    L1 16A    |    L2 16A    | P3 20A / Ond 20A |  Mes / sc / Mic 20A   |
 |   **3**    |  Type A  |   ECS 20A    |    LIBRE     |    LIBRE     |      LIBRE       |      LIBRE      |
-| **Étage**  | Type AC  |   VMI 16A    |    P5 16A    |    L3 16A    | L4 16A / P6 10A  | P7 10A / LIBRE  |
+| **Étage**  | Type AC  |   VMI 16A    |    P5 16A    |    L3 16A    | L4 16A / P6 10A  | P7 10A / P8 10A |
 
 ---
 

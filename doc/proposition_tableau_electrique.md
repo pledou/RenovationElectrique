@@ -11,9 +11,9 @@ Cette proposition vise à **minimiser les modifications sur les circuits existan
 ## Dimensionnement du Tableau
 
 ### Capacité requise
-- **Nombre total de modules estimés : 21 modules** (répartis sur 3 rangées)
+- **Nombre total de modules estimés : 18 modules** (répartis sur 3 rangées)
 - Tableau proposé : **Coffret 3 rangées de 13 modules** (39 modules disponibles)
-- **Emplacements libres : 18 modules** (disponibles pour extensions futures)
+- **Emplacements libres : 21 modules** (disponibles pour extensions futures)
 - **Sous-tableau étage conservé** (circuits VMI, P5, L3, L4, P6, P7 restent en place)
 
 ---
@@ -298,9 +298,10 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 | 1        | Coffret 3 rangées 13 modules avec porte              | Schneider Rési9 ou équivalent                  |
 | 2        | Interrupteur différentiel 40A 30mA Type A bipolaire  | Schneider Rési9 XE ou équivalent               |
 | 1        | Interrupteur différentiel 40A 30mA Type AC bipolaire | Schneider Rési9 XE ou équivalent               |
-| 1        | Disjoncteur 32A courbe C                             | Pour plaque cuisson                            |
+| 1        | Disjoncteur 32A courbe C                             | P1 - Plaque cuisson future (lave-vaisselle actuellement) |
 | 1        | Disjoncteur 20A courbe C                             | Pour onduleur solaire (**nouveau circuit**)    |
 | 1        | Disjoncteur 20A courbe C                             | Pour microonduleurs jardin (**nouveau circuit**) |
+| 1        | Disjoncteur 10A courbe C                             | P8 - Prises salle de bains (**nouveau circuit**) |
 | 1        | Parafoudre Type 2 (optionnel mais recommandé)        | Pour protection générale et production solaire |
 | 3        | Bornier de terre                                     | 13 connexions minimum par rangée               |
 | 3        | Bornier de neutre par rangée                         | 13 connexions par rangée                       |
@@ -411,22 +412,23 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 - Tableau 3 rangées et protections : **380-520 €**
 - 1 différentiel Type A supplémentaire : **40-60 €**
 - Disjoncteur 32A supplémentaire : **15-25 €**
-- 2 disjoncteurs 20A (onduleur + microonduleurs) : **30-50 €**
+- 2 disjoncteurs 20A (onduleur solaire + microonduleurs jardin) : **30-50 €**
 - Accessoires et petits matériels : **70-100 €**
-- **Sous-total tableau principal : 535-755 €**
+- **Sous-total tableau principal : 520-730 €**
 
 **Sous-tableau étage** :
 
 *Remplacement obligatoire (tableau actuel < 13 modules)* :
 - **Coffret 13 modules avec porte : 50-80 €**
 - 1 différentiel 40A 30mA Type AC : **40-60 €**
+- 1 disjoncteur 10A (prises salle de bains) : **10-15 €**
 - Peigne de distribution : **15-25 €**
 - Borniers (neutre + terre) : **10-20 €**
 - Rallonges câbles (si nécessaire) : **20-40 €**
 - Support fixation : **10-15 €**
-- **Sous-total sous-tableau : 145-240 €**
+- **Sous-total sous-tableau : 155-255 €**
 
-**Total matériel : 665-970 €**
+**Total matériel : 675-985 €**
 
 > **💰 Économie réalisée** : La réutilisation de vos 5 disjoncteurs C20 et 2 disjoncteurs C16 existants vous fait économiser environ **70-100 €**. Le routeur ECS utilisant les circuits existants (chaudière + ECS), aucun circuit supplémentaire n'est nécessaire, économisant **~150-200 € supplémentaires**.
 
@@ -487,9 +489,9 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 ### Budget matériel uniquement
 
 **Remplacement sous-tableau confirmé (< 13 modules)** :
-- Matériel tableau principal : **535-755 €**
+- Matériel tableau principal : **530-745 €**
 - Matériel sous-tableau (avec nouveau coffret 13 modules) : **145-240 €**
-- **TOTAL MATÉRIEL : 680-995 €**
+- **TOTAL MATÉRIEL : 675-985 €**
 
 ### Budget avec validation professionnelle (recommandé)
 - Visite électricien pour validation finale : **150-250 €**
@@ -497,8 +499,8 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 - **Supplément validation : 300-450 €**
 
 ### **BUDGET TOTAL ESTIMÉ**
-- **Sans validation** : **680-995 €** (matériel uniquement)
-- **Avec validation professionnelle** : **980-1445 €** (matériel + validation + Consuel)
+- **Sans validation** : **675-985 €** (matériel uniquement)
+- **Avec validation professionnelle** : **975-1435 €** (matériel + validation + Consuel)
 
 > **Note** : Ces prix sont indicatifs (février 2026) et peuvent varier selon les régions, prestataires et marques d'équipements de monitoring solaire choisis.
 
@@ -511,7 +513,7 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 ✅ **Sous-tableau mis à niveau** : Ajout différentiel 30mA + peigne de distribution (conformité + fiabilité)  
 ✅ **Sécurité** : 4 différentiels 30mA au total (3 tableau principal + 1 sous-tableau) pour isolation optimale  
 ✅ **Production solaire intégrée** : Gestion intelligente batterie + routeur ECS avec contrôle des flux optimisé  
-✅ **Évolutivité** : **17 emplacements libres** pour extensions futures (8 en Rangée 1, 2 en Rangée 2, 7 en Rangée 3)  
+✅ **Évolutivité** : **21 emplacements libres** pour extensions futures (8 en Rangée 1, 3 en Rangée 2, 10 en Rangée 3)  
 ✅ **Diagnostic facilité** : Séparation claire circuits prioritaires/généraux/ECS + isolation totale étage/RdC  
 ✅ **Optimisation énergétique** : ECS isolé permettant mesure précise consommation hors ECS, priorité consommation > batterie > ECS  
 ✅ **Sélectivité maximale** : Défaut étage ne coupe pas RdC et inversement  
@@ -521,9 +523,10 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 ## Conclusion
 
 Cette proposition permet de **mettre en conformité votre installation avec un minimum de modifications** tout en intégrant votre système de production solaire :
-- **2 circuits à créer** (onduleur solaire AC-coupling + microonduleurs jardin)
-- **1 circuit à modifier** (P1 - changement disjoncteur 10A→32A uniquement)
-- **13 circuits conservés à l'identique** (câblage inchangé)
+- **3 circuits à créer** (onduleur solaire AC-coupling + microonduleurs jardin + prises salle de bains)
+- **1 circuit à dimensionner** (P1 : 32A pour future plaque de cuisson électrique)
+- **11 circuits conservés à l'identique** (câblage inchangé)
+- **1 circuit conservé avec clarification** (sc_etage : alimentation étage uniquement)
 - **Sous-tableau étage : mise à niveau obligatoire** (ajout différentiel 30mA + peigne de distribution + **déplacement à hauteur réglementaire**)
 - **Routeur solaire ECS** : intégré aux circuits existants (commande sur chaudière, puissance sur ECS)
 - **2 pinces ampèremétriques** pour gestion intelligente des flux énergétiques
