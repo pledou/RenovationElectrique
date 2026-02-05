@@ -26,6 +26,7 @@ jobs:
           format: svg
           output: .
           path: doc
+          action-mode: all
 
       - name: Commit and push generated SVGs
         env:
