@@ -14,7 +14,7 @@ Cette proposition vise à **minimiser les modifications sur les circuits existan
 - **Nombre total de modules estimés : 18 modules** (répartis sur 3 rangées)
 - Tableau proposé : **Coffret 3 rangées de 13 modules** (39 modules disponibles)
 - **Emplacements libres : 21 modules** (disponibles pour extensions futures)
-- **Sous-tableau étage conservé** (circuits VMI, P5, L3, L4, P6, P7 restent en place)
+- **Sous-tableau étage : circuits conservés, coffret remplacé** (remplacement obligatoire car tableau actuel < 13 modules ; circuits VMI, P5, L3, L4, P6, P7 restent en place)
 
 ---
 
@@ -48,7 +48,7 @@ Cette proposition vise à **minimiser les modifications sur les circuits existan
 | 7      | Disjoncteur 20A | **Onduleur solaire batterie (AC-coupling)**     | 2.5 mm² | -        | **NOUVEAU CIRCUIT**                  |
 | 8      | -               | **Équipement mesure onduleur (2 modules)**      | -       | -        | **NOUVEAU - Monitoring AC-coupling** |
 | 9      | -               | *(suite équipement mesure)*                     | -       | -        | -                                    |
-| 10     | Disjoncteur 20A | **Alimentation sous-compteur étage** (sc_etage) | 6 mm²   | 25m      | Aucune                               |
+| 10     | Disjoncteur 20A | **Alimentation sous-compteur étage** (st_etage) | 6 mm²   | 25m      | Aucune                               |
 | 11-13  | -               | **Modules libres**                              | -       | -        | Réserve (3 emplacements)             |
 
 **Total Rangée 2 : 10 modules utilisés / 13 disponibles (3 libres)**
@@ -61,9 +61,9 @@ Cette proposition vise à **minimiser les modifications sur les circuits existan
 
 **Interrupteur différentiel 40A 30mA Type A** - *2 modules*
 
-| Module | Protection      | Circuit                     | Section | Longueur | Modification |
-| ------ | --------------- | --------------------------- | ------- | -------- | ------------ |
-| 3      | Disjoncteur 20A | **Chauffe-eau** (sanitaire) | 2.5 mm² | 5m       | Aucune       |
+| Module | Protection      | Circuit                     | Section | Longueur | Modification             |
+| ------ | --------------- | --------------------------- | ------- | -------- | ------------------------ |
+| 3      | Disjoncteur 20A | **Chauffe-eau** (sanitaire) | 2.5 mm² | 5m       | Aucune                   |
 | 4-13   | -               | **Modules libres**          | -       | -        | Réserve (7 emplacements) |
 
 **Total Rangée 3 : 3 modules utilisés / 13 disponibles (7 libres)**
@@ -230,16 +230,16 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 
 ### ✅ Circuits respectés
 
-| Exigence                            | Conformité | Commentaire                                                      |
-| ----------------------------------- | ---------- | ---------------------------------------------------------------- |
-| **Plaque de cuisson circuit dédié** | ✅          | Circuit P1 dédié 32A Type A                                      |
-| **Four circuit dédié ou mutualisé** | ✅          | Sur P3 (20A) - accepté jusqu'à 3680W                             |
-| **Lave-linge sur Type A**           | ✅          | P2 sur différentiel Type A                                       |
-| **Chauffe-eau circuit dédié**       | ✅          | 20A dédié                                                        |
-| **Prises 16A max 5 par circuit**    | ✅          | P2:5, P3:5, P4:3, P5:3, P6:2, P7:1 - tous conformes              |
-| **Prises cuisine minimum 6**        | ⚠️          | **P4 a 3 prises (+ P1 plaque dédiée) - À vérifier si suffisant** |
-| **Éclairages 16A max 8 points**     | ✅          | L1:8 points, L2:3, L3:5, L4:2 - tous conformes                   |
-| **Sections conformes**              | ✅          | 1.5mm² éclairages, 2.5mm² prises, 6mm² plaque                    |
+| Exigence                            | Conformité | Commentaire                                                                |
+| ----------------------------------- | ---------- | -------------------------------------------------------------------------- |
+| **Plaque de cuisson circuit dédié** | ✅          | Circuit P1 dédié 32A Type A                                                |
+| **Four circuit dédié ou mutualisé** | ✅          | Sur P3 (20A) - accepté jusqu'à 3680W                                       |
+| **Lave-linge sur Type A**           | ✅          | P2 sur différentiel Type A                                                 |
+| **Chauffe-eau circuit dédié**       | ✅          | 20A dédié                                                                  |
+| **Prises 16A max 5 par circuit**    | ✅          | P2:5, P3:5, P4:9, P5:4, P6:2, P7:1 - tous conformes                        |
+| **Prises cuisine minimum 6**        | ✅          | **P4 a 9 prises (+ P1 plaque dédiée) - Conforme**                          |
+| **Éclairages 16A max 8 points**     | ✅          | L1:8 points, L2:3, L3:5, L4:2 - tous conformes                             |
+| **Sections conformes**              | ✅          | 1.5mm² éclairages, 2.5mm² prises, 6mm² plaque                              |
 | **Protection différentielle 30mA**  | ✅          | 3 différentiels 30mA tableau principal + 1 différentiel sous-tableau étage |
 
 ---
@@ -255,7 +255,7 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 - ✅ P2 (Buanderie/Garage)
 - ✅ P3 (Séjour/Bureau/Four)
 - ✅ P4 (Cuisine)
-- ✅ sc_etage (alimentation sous-tableau)
+- ✅ st_etage (alimentation sous-tableau)
 - ✅ sanitaire (Chauffe-eau)
 
 ### Sur le sous-tableau étage (câblage conservé, différentiel ajouté) :
@@ -293,34 +293,34 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 
 ### Tableau et protections
 
-| Quantité | Désignation                                          | Référence exemple                              |
-| -------- | ---------------------------------------------------- | ---------------------------------------------- |
-| 1        | Coffret 3 rangées 13 modules avec porte              | Schneider Rési9 ou équivalent                  |
-| 2        | Interrupteur différentiel 40A 30mA Type A bipolaire  | Schneider Rési9 XE ou équivalent               |
-| 1        | Interrupteur différentiel 40A 30mA Type AC bipolaire | Schneider Rési9 XE ou équivalent               |
+| Quantité | Désignation                                          | Référence exemple                                        |
+| -------- | ---------------------------------------------------- | -------------------------------------------------------- |
+| 1        | Coffret 3 rangées 13 modules avec porte              | Schneider Rési9 ou équivalent                            |
+| 2        | Interrupteur différentiel 40A 30mA Type A bipolaire  | Schneider Rési9 XE ou équivalent                         |
+| 1        | Interrupteur différentiel 40A 30mA Type AC bipolaire | Schneider Rési9 XE ou équivalent                         |
 | 1        | Disjoncteur 32A courbe C                             | P1 - Plaque cuisson future (lave-vaisselle actuellement) |
-| 1        | Disjoncteur 20A courbe C                             | Pour onduleur solaire (**nouveau circuit**)    |
-| 1        | Disjoncteur 20A courbe C                             | Pour microonduleurs jardin (**nouveau circuit**) |
-| 1        | Disjoncteur 10A courbe C                             | P8 - Prises salle de bains (**nouveau circuit**) |
-| 1        | Parafoudre Type 2 (optionnel mais recommandé)        | Pour protection générale et production solaire |
-| 3        | Bornier de terre                                     | 13 connexions minimum par rangée               |
-| 3        | Bornier de neutre par rangée                         | 13 connexions par rangée                       |
-| 3        | Peigne d'alimentation horizontal                     | 13 modules par rangée                          |
-| 1        | Peigne d'alimentation vertical                       | Liaison entre différentiels                    |
+| 1        | Disjoncteur 20A courbe C                             | Pour onduleur solaire (**nouveau circuit**)              |
+| 1        | Disjoncteur 20A courbe C                             | Pour microonduleurs jardin (**nouveau circuit**)         |
+| 1        | Disjoncteur 10A courbe C                             | P8 - Prises salle de bains (**nouveau circuit**)         |
+| 1        | Parafoudre Type 2 (optionnel mais recommandé)        | Pour protection générale et production solaire           |
+| 3        | Bornier de terre                                     | 13 connexions minimum par rangée                         |
+| 3        | Bornier de neutre par rangée                         | 13 connexions par rangée                                 |
+| 3        | Peigne d'alimentation horizontal                     | 13 modules par rangée                                    |
+| 1        | Peigne d'alimentation vertical                       | Liaison entre différentiels                              |
 
 ### Matériel sous-tableau étage
 
 **Remplacement obligatoire (tableau actuel < 13 modules)** :
 
-| Quantité | Désignation                                          | Référence exemple            |
-| -------- | ---------------------------------------------------- | ---------------------------- |
-| 1        | **Coffret 13 modules avec porte** | **Schneider Rési9 ou équivalent** |
-| 1        | Interrupteur différentiel 40A 30mA Type AC bipolaire | Schneider Rési9 XE ou équivalent |
-| 1        | Peigne d'alimentation horizontal | 13 modules |
-| 1        | Bornier de neutre | 13 connexions |
-| 1        | Bornier de terre | 13 connexions |
-| Variable | Rallonges de câbles | Selon circuits (0,70-1,00m par circuit si nécessaire) |
-| 1        | Support de fixation murale | Pour installation en hauteur (1,70-1,80m) |
+| Quantité | Désignation                                          | Référence exemple                                     |
+| -------- | ---------------------------------------------------- | ----------------------------------------------------- |
+| 1        | **Coffret 13 modules avec porte**                    | **Schneider Rési9 ou équivalent**                     |
+| 1        | Interrupteur différentiel 40A 30mA Type AC bipolaire | Schneider Rési9 XE ou équivalent                      |
+| 1        | Peigne d'alimentation horizontal                     | 13 modules                                            |
+| 1        | Bornier de neutre                                    | 13 connexions                                         |
+| 1        | Bornier de terre                                     | 13 connexions                                         |
+| Variable | Rallonges de câbles                                  | Selon circuits (0,70-1,00m par circuit si nécessaire) |
+| 1        | Support de fixation murale                           | Pour installation en hauteur (1,70-1,80m)             |
 
 ### Disjoncteurs existants réutilisés
 
@@ -328,7 +328,7 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 
 | Quantité disponible | Quantité nécessaire | Type                     | Utilisation dans le nouveau tableau      |
 | ------------------- | ------------------- | ------------------------ | ---------------------------------------- |
-| 5                   | 5                   | Disjoncteur 20A courbe C | Chauffe-eau, P2, P4, Chaudière, sc_etage |
+| 5                   | 5                   | Disjoncteur 20A courbe C | Chauffe-eau, P2, P4, Chaudière, st_etage |
 | 4                   | 2                   | Disjoncteur 16A courbe C | L1, L2                                   |
 
 > **📝 Note importante** : Vous avez 4 disjoncteurs C16 mais seulement 2 sont nécessaires sur le tableau principal. Les 2 autres restent en réserve ou peuvent rester sur le sous-tableau étage. Pour le **nouveau circuit onduleur solaire**, vous devrez acheter **1 disjoncteur C20 supplémentaire**. Le routeur ECS utilise les circuits existants (chaudière + ECS), aucun disjoncteur supplémentaire n'est nécessaire.
@@ -526,7 +526,7 @@ Cette proposition permet de **mettre en conformité votre installation avec un m
 - **3 circuits à créer** (onduleur solaire AC-coupling + microonduleurs jardin + prises salle de bains)
 - **1 circuit à dimensionner** (P1 : 32A pour future plaque de cuisson électrique)
 - **11 circuits conservés à l'identique** (câblage inchangé)
-- **1 circuit conservé avec clarification** (sc_etage : alimentation étage uniquement)
+- **1 circuit conservé avec clarification** (st_etage : alimentation étage uniquement)
 - **Sous-tableau étage : mise à niveau obligatoire** (ajout différentiel 30mA + peigne de distribution + **déplacement à hauteur réglementaire**)
 - **Routeur solaire ECS** : intégré aux circuits existants (commande sur chaudière, puissance sur ECS)
 - **2 pinces ampèremétriques** pour gestion intelligente des flux énergétiques

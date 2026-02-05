@@ -49,7 +49,7 @@ TOTAL par circuit : ~300 cm = 3,0 m
 | **P2**        | Buanderie/Garage   | 2,5 mm² | 3,0 m             | 3 fils (Ph+N+T) | 9,0 m          |
 | **P3**        | Séjour/Bureau/Four | 2,5 mm² | 3,0 m             | 3 fils (Ph+N+T) | 9,0 m          |
 | **P4**        | Cuisine            | 2,5 mm² | 3,0 m             | 3 fils (Ph+N+T) | 9,0 m          |
-| **sc_etage**  | Alim sous-tableau  | 6 mm²   | 3,0 m             | 3 fils (Ph+N+T) | 9,0 m          |
+| **st_etage**  | Alim sous-tableau  | 6 mm²   | 3,0 m             | 3 fils (Ph+N+T) | 9,0 m          |
 | **sanitaire** | Chauffe-eau        | 2,5 mm² | 3,0 m             | 3 fils (Ph+N+T) | 9,0 m          |
 
 ### Câble d'alimentation principale du tableau
@@ -104,8 +104,8 @@ TOTAL par circuit : ~300 cm = 3,0 m
 | Circuit                                | Longueur | Total   |
 | -------------------------------------- | -------- | ------- |
 | P1 - Plaque                            | 3,0 m    | 3,0 m   |
-| sc_etage - Rallonge tableau RdC        | 3,0 m    | 3,0 m   |
-| sc_etage - Rallonge sous-tableau étage | 1,0 m    | 1,0 m   |
+| st_etage - Rallonge tableau RdC        | 3,0 m    | 3,0 m   |
+| st_etage - Rallonge sous-tableau étage | 1,0 m    | 1,0 m   |
 | **TOTAL**                              |          | **7 m** |
 
 **À commander** : **10 m** (marge ~40%, voir liste de courses ci-dessous)

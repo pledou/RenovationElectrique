@@ -39,21 +39,27 @@ On constate des courants de fuite importants sur le neutre de certains circuits.
 - `data/installation.yaml` : inventaire complet de l'installation (circuits, équipements, protections)
 
 ### Documentation
- [RdC](doc/plans_etage/Rdc-Page-1.svg) ([Édition](doc/plans_etage/Rdc.drawio)) : plan du rez-de-chaussée
- [Étage](doc/plans_etage/Etage-Page-1.svg) ([Édition](doc/plans_etage/Etage.drawio)) : plan de l'étage
- [schema_unifilaire_tableau-Schéma-Unifilaire.svg](doc/schema_unifilaire_tableau-Schéma-Unifilaire.svg) ([Édition](doc/schema_unifilaire_tableau.drawio)) : schéma unifilaire du tableau
-- `doc/proposition_tableau_electrique.md` : **✅ RÉALISÉ** - proposition détaillée du nouveau tableau (architecture 3 rangées, dimensionnement, protections)
-- `doc/plan_implantation_tableau.md` : **✅ RÉALISÉ** - étude comparative des emplacements possibles (garage retenu)
-- `doc/plan_organisation_tableau.md` : **✅ RÉALISÉ** - organisation interne du tableau (disposition modules, câblage, étiquetage)
-- `doc/etiquettes_tableau.md` : **✅ RÉALISÉ** - étiquettes A4 imprimables pour repérage des circuits et fils
-- `doc/metré_rallonges_cables.md` : **✅ RÉALISÉ** - calcul des longueurs de câbles nécessaires et devis matériel
-- `doc/checklist_validation.md` : checklist de validation post-remplacement
+- Plans généraux:
+	- [RdC — Plan](doc/plans_etage/Rdc-Page-1.svg) ([Édition](doc/plans_etage/Rdc.drawio))
+	- [Étage — Plan](doc/plans_etage/Etage-Page-1.svg) ([Édition](doc/plans_etage/Etage.drawio))
+- Plans électriques:
+	- [RdC — Plan électrique](doc/plans_etage/Rdc_elec-Rdc-Elec.svg) ([Édition](doc/plans_etage/Rdc_elec.drawio))
+	- [Étage — Plan électrique](doc/plans_etage/Etage_elec-Etage-Elec.svg) ([Édition](doc/plans_etage/Etage_elec.drawio))
+- Schéma unifilaire:
+	- [Schéma unifilaire du tableau](doc/schema_unifilaire_tableau-Schéma-Unifilaire.svg) ([Édition](doc/schema_unifilaire_tableau.drawio))
+- Documents principaux:
+	- [doc/proposition_tableau_electrique.md](doc/proposition_tableau_electrique.md) : **✅ RÉALISÉ** - proposition détaillée du nouveau tableau (architecture 3 rangées, dimensionnement, protections)
+	- [doc/plan_implantation_tableau.md](doc/plan_implantation_tableau.md) : **✅ RÉALISÉ** - étude comparative des emplacements possibles (garage retenu)
+	- [doc/plan_organisation_tableau.md](doc/plan_organisation_tableau.md) : **✅ RÉALISÉ** - organisation interne du tableau (disposition modules, câblage, étiquetage)
+	- [doc/etiquettes_tableau.md](doc/etiquettes_tableau.md) : **✅ RÉALISÉ** - étiquettes A4 imprimables pour repérage des circuits et fils
+	- [doc/metré_rallonges_cables.md](doc/metré_rallonges_cables.md) : **✅ RÉALISÉ** - calcul des longueurs de câbles nécessaires et devis matériel
+	- [doc/checklist_validation.md](doc/checklist_validation.md) : checklist de validation post-remplacement
 
 ### Photos
-- `doc/tableau_buanderie.jpg` : photo du tableau actuel buanderie (fermé)
-- `doc/tableau_buanderie_ouvert.jpg` : photo du tableau actuel buanderie (ouvert)
-- `doc/tableau_etage.jpg` : photo du sous-tableau étage (fermé)
-- `doc/tableau_etage_ouvert.jpg` : photo du sous-tableau étage (ouvert)
+- [Tableau buanderie (fermé)](doc/tableau_buanderie.jpg)
+- [Tableau buanderie (ouvert)](doc/tableau_buanderie_ouvert.jpg)
+- [Sous-tableau étage (fermé)](doc/tableau_etage.jpg)
+- [Sous-tableau étage (ouvert)](doc/tableau_etage_ouvert.jpg)
 
 ## Structure recommandée du README
 
@@ -88,7 +94,7 @@ Identification des courants de fuite, sous-dimensionnements, défauts d'isolemen
 
 **✅ RÉALISÉ** - Voir [proposition_tableau_electrique.md](doc/proposition_tableau_electrique.md)
 
-Tableau 3 rangées × 13 modules (21 utilisés, 18 libres). Architecture avec 3 interrupteurs différentiels (2× Type A, 1× Type AC) et répartition des circuits optimisée pour minimiser les modifications. Le sous-tableau étage est conservé.
+Tableau 3 rangées × 13 modules (21 utilisés, 18 libres). Architecture avec 3 interrupteurs différentiels (2× Type A, 1× Type AC) et répartition des circuits optimisée pour minimiser les modifications. Les circuits étage sont conservés, le tableau étage est remplacé par un coffret 13 modules (ajout différentiel 30mA obligatoire NF C 15-100).
 
 **Schéma unifilaire** : [schema_unifilaire_tableau-Schéma-Unifilaire.svg](doc/schema_unifilaire_tableau-Schéma-Unifilaire.svg) ([Édition](doc/schema_unifilaire_tableau.drawio))
 

@@ -109,21 +109,97 @@ circuits:
         defaut: |
           B8.3 e Au moins un conducteur isolé n'est pas placé sur toute sa longueur dans un conduit, une goulotte ou une plinthe ou une huisserie, en matière isolante ou métallique, jusqu'à sa pénétration dans le matériel électrique qu'il alimente
           B3.3.6 a2 Au moins un socle de prise de courant comporte une broche de terre non reliée à la terre
-      - nom: Cuisine Sud Est (réfrigérateur + Multiprise) -> 1 prise réfrigérateur + 2 prise sur meuble
+      - nom: Cuisine Sud Est (réfrigérateur + Multiprise) -> 1 prise réfrigérateur + bloc 2 prise sur meuble
       - nom: Cuisine Nord Ouest bloc 2 prises
       - nom: Cuisine prise sous evier actuellement plaque gaz
       - nom: Cuisine prise au dessus du four 
       - nom: Séjour Nord Est + Volet Roulant
         defaut: "B8.3 e Au moins un conducteur isolé n'est pas placé sur toute sa longueur dans un conduit, une goulotte ou une plinthe ou une huisserie, en matière isolante ou métallique, jusqu'à sa pénétration dans le matériel électrique qu'il alimente"
-  - id: sc_etage
-    nom: Alimentation sous-compteur étage + Prise Extérieure
-    fonction: Alimentation sous-compteur + Prise Extérieure
+
+  - id: st_etage
+    nom: Alimentation sous-tableau étage + Prise Extérieure
+    fonction: Alimentation sous-tableau + Prise Extérieure
     section_mm2: 6 # TODO: vérifier
     disjoncteur_A: 20
     longueur_m: 25 # TODO: vérifier
     equipements:
-      - nom: Alimentation sous-compteur étage
       - nom: Prise Extérieure pour panneaux solaires (cablé en 2.5mm²)
+      - nom: Alimentation sous-tableau étage
+        circuits:
+          - id: VMI
+            nom: Alimentation VMI
+            fonction: VMI
+            section_mm2: 1.5
+            disjoncteur_A: 16
+            longueur_m: 18
+            est_sous_compteur: true
+            sous_compteur_pour: "étage"
+            equipements:
+              - nom: VMI (ventilation mécanique)
+          - id: P5
+            nom: Prises étage
+            fonction: Prises
+            section_mm2: 2.5 # TODO: vérifier
+            disjoncteur_A: 16
+            longueur_m: 30 # TODO: vérifier
+            est_sous_compteur: true
+            sous_compteur_pour: "étage"
+            equipements:
+              - nom: Chambre 1 Sud Ouest
+                defaut: "prise 2 poles sans obturateur, sans terre"
+              - nom: Chambre 1 Sud Est
+                defaut: "prise 2 poles sans obturateur, sans terre"
+              - nom: Chambre 1 Nord Ouest
+                defaut: "prise 2 poles sans obturateur, sans terre"
+              - nom: Chambre 2 Sud Ouest
+                defaut: "prise 2 poles sans obturateur, sans terre"
+          - id: L3
+            nom: Eclairage étage
+            fonction: Eclairage
+            section_mm2: 1.5 # TODO: vérifier
+            disjoncteur_A: 16
+            longueur_m: 25 # TODO: vérifier
+            est_sous_compteur: true
+            sous_compteur_pour: "étage"
+            equipements:
+              - nom: Palier étage (2 points zigbee)
+                defaut: "neutre ou phase sur L1"
+              - nom: Chambre 1
+              - nom: Chambre 2
+              - nom: Chambre 3
+          - id: L4
+            nom: Eclairage salle de bains
+            fonction: Eclairage
+            section_mm2: 1.5 # TODO: vérifier
+            disjoncteur_A: 16
+            longueur_m: 15 # TODO: vérifier
+            est_sous_compteur: true
+            sous_compteur_pour: "étage"
+            equipements:
+              - nom: Salle de bains (zigbee)
+              - nom: Chambre 4 (zigbee)
+          - id: P6
+            nom: Prises chambre 3
+            fonction: Prises
+            section_mm2: 2.5 # TODO: vérifier
+            disjoncteur_A: 10
+            longueur_m: 10 # TODO: vérifier
+            est_sous_compteur: true
+            sous_compteur_pour: "étage"
+            equipements:
+              - nom: Chambre 3 Nord Est
+              - nom: Chambre 3 Sud Est
+          - id: P7
+            nom: Prise Palier et équipements réseau
+            fonction: Prises
+            section_mm2: 2.5 # TODO: vérifier
+            disjoncteur_A: 10
+            longueur_m: 10 # TODO: vérifier
+            est_sous_compteur: true
+            sous_compteur_pour: "étage"
+            equipements:
+              - nom: Palier étage, devant salle de bains
+              - nom: Applique murale chambre 4 (éclairage au dessus ancien lavabeau et prise de courant) au sud ouest
   - id: sanitaire
     nom: Alimentation Chauffe-eau
     fonction: ECS
@@ -132,78 +208,6 @@ circuits:
     longueur_m: 5
     equipements:
       - nom: Chauffe-eau (passage par triac routeur solaire)
-      - id: VMI
-        nom: Alimentation VMI
-        fonction: VMI
-        section_mm2: 1.5
-        disjoncteur_A: 16
-        longueur_m: 18
-        est_sous_compteur: true
-        sous_compteur_pour: "étage"
-        equipements:
-          - nom: VMI (ventilation mécanique)
-      - id: P5
-        nom: Prises étage
-        fonction: Prises
-        section_mm2: 2.5 # TODO: vérifier
-        disjoncteur_A: 16
-        longueur_m: 30 # TODO: vérifier
-        est_sous_compteur: true
-        sous_compteur_pour: "étage"
-        equipements:
-          - nom: Chambre 1 Sud Ouest
-            defaut: "prise 2 poles sans obturateur, sans terre"
-          - nom: Chambre 1 Sud Est
-            defaut: "prise 2 poles sans obturateur, sans terre"
-          - nom: Chambre 2 Sud Ouest
-            defaut: "prise 2 poles sans obturateur, sans terre"
-      - id: L3
-        nom: Eclairage étage
-        fonction: Eclairage
-        section_mm2: 1.5 # TODO: vérifier
-        disjoncteur_A: 16
-        longueur_m: 25 # TODO: vérifier
-        est_sous_compteur: true
-        sous_compteur_pour: "étage"
-        equipements:
-          - nom: Palier étage (2 points zigbee)
-            defaut: "neutre ou phase sur L1"
-          - nom: Chambre 1
-          - nom: Chambre 2
-          - nom: Chambre 3
-      - id: L4
-        nom: Eclairage salle de bains
-        fonction: Eclairage
-        section_mm2: 1.5 # TODO: vérifier
-        disjoncteur_A: 16
-        longueur_m: 15 # TODO: vérifier
-        est_sous_compteur: true
-        sous_compteur_pour: "étage"
-        equipements:
-          - nom: Salle de bains (zigbee)
-          - nom: Chambre 4 (zigbee)
-      - id: P6
-        nom: Prises chambre 3
-        fonction: Prises
-        section_mm2: 2.5 # TODO: vérifier
-        disjoncteur_A: 10
-        longueur_m: 10 # TODO: vérifier
-        est_sous_compteur: true
-        sous_compteur_pour: "étage"
-        equipements:
-          - nom: Chambre 3 Nord Est
-          - nom: Chambre 3 Sud Est
-      - id: P7
-        nom: Prise Palier et équipements réseau
-        fonction: Prises
-        section_mm2: 2.5 # TODO: vérifier
-        disjoncteur_A: 10
-        longueur_m: 10 # TODO: vérifier
-        est_sous_compteur: true
-        sous_compteur_pour: "étage"
-        equipements:
-          - nom: Palier étage, devant salle de bains
-          - nom: Applique murale chambre 4 (éclairage au dessus ancien lavabeau et prise de courant) au sud ouest
 
 plans:
   - doc/Rdc.drawio

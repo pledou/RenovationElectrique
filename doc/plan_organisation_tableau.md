@@ -72,7 +72,7 @@ Basé sur [proposition_tableau_electrique.md](proposition_tableau_electrique.md)
 | 1-2    | Interrupteur différentiel | 40A 30mA Type A | -                         | -       | -        | Obligatoire pour plaque et lave-linge |
 | 3      | Disjoncteur               | 32A             | **P1 - Plaque cuisson**   | 6 mm²   | 5m       | **Changer 10A→32A**                   |
 | 4      | Disjoncteur               | 20A             | **P2 - Buanderie/Garage** | 2.5 mm² | 12m      | Lave-linge, sèche-linge               |
-| 5      | Disjoncteur               | 20A             | **P4 - Prises cuisine**   | 2.5 mm² | 10m      | 3 prises                              |
+| 5      | Disjoncteur               | 20A             | **P4 - Prises cuisine**   | 2.5 mm² | 10m      | 9 prises                              |
 | 6-13   | -                         | -               | **LIBRE**                 | -       | -        | 8 emplacements disponibles            |
 
 **Charge maximale théorique** : 32A + 20A + 20A = 72A  
@@ -121,7 +121,7 @@ Basé sur [proposition_tableau_electrique.md](proposition_tableau_electrique.md)
 | 6      | Disjoncteur               | 20A              | **P3 - Séjour/Bureau/Four**      | 2.5 mm² | 15m      | 5 prises + four            |
 | 7      | Disjoncteur               | 20A              | **Onduleur solaire AC-coupling** | 2.5 mm² | -        | **NOUVEAU CIRCUIT**        |
 | 8-9    | Équipement DIN            | -                | **Monitoring onduleur**          | -       | -        | 2 modules DIN              |
-| 10     | Disjoncteur               | 20A              | **sc_etage - Sous-tableau**      | 6 mm²   | 25m      | Alimentation étage         |
+| 10     | Disjoncteur               | 20A              | **st_etage - Sous-tableau**      | 6 mm²   | 25m      | Alimentation étage         |
 | 11     | Disjoncteur               | 20A              | **Microonduleurs jardin**        | 2.5 mm² | 30m      | **NOUVEAU CIRCUIT**        |
 | 12-13  | -                         | -                | **LIBRE**                        | -       | -        | 2 emplacements disponibles |
 
@@ -136,7 +136,7 @@ Basé sur [proposition_tableau_electrique.md](proposition_tableau_electrique.md)
 - **L2** : Vert (étiquette "Éclairage 2 - Cuisine/Entrée")
 - **P3** : Violet (étiquette "Séjour/Bureau/Four")
 - **Onduleur** : Rouge/Noir rayé (étiquette "Onduleur Solaire")
-- **sc_etage** : Gris (étiquette "Alimentation Étage")
+- **st_etage** : Gris (étiquette "Alimentation Étage")
 - **Microonduleurs** : Bleu/Blanc rayé (étiquette "Microonduleurs Jardin")
 
 ---
@@ -324,7 +324,7 @@ ARRIVÉE EDF (haut du tableau)
 | L2        | Éclairage 2             | 16A     | 1.5 mm² | Cuisine/Entrée/WC      |
 | P3        | Séjour/Bureau/Four      | 20A     | 2.5 mm² | Séjour/Bureau          |
 | Onduleur  | Onduleur solaire        | 20A     | 2.5 mm² | Garage (équip.)        |
-| sc_etage  | Alimentation étage      | 20A     | 6 mm²   | Sous-tableau étage     |
+| st_etage  | Alimentation étage      | 20A     | 6 mm²   | Sous-tableau étage     |
 | Microond. | Microonduleurs jardin   | 20A     | 2.5 mm² | Jardin (panneaux)      |
 | ECS       | Chauffe-eau             | 20A     | 2.5 mm² | Buanderie              |
 

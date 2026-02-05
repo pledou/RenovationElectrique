@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="etage-elec" name="Etage-Elec">
-        <mxGraphModel dx="1334" dy="2101" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="630" dy="1951" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <object label="Plan" id="plan_layer">
@@ -184,7 +184,10 @@
                     <mxGeometry x="1120" y="290" width="18" height="18" as="geometry"/>
                 </mxCell>
                 <mxCell id="P5_C1_SE" value="P5" style="shape=ellipse;fillColor=#FFFF66;strokeColor=#000000;html=1;fontSize=9;" parent="1" vertex="1">
-                    <mxGeometry x="1090" y="541" width="18" height="18" as="geometry"/>
+                    <mxGeometry x="760" y="532" width="18" height="18" as="geometry"/>
+                </mxCell>
+                <mxCell id="P5_C1_NO" value="P5" style="shape=ellipse;fillColor=#FFFF66;strokeColor=#000000;html=1;fontSize=9;" parent="1" vertex="1">
+                    <mxGeometry x="1150" y="541" width="18" height="18" as="geometry"/>
                 </mxCell>
                 <mxCell id="P5_C2_SO" value="P5" style="shape=ellipse;fillColor=#FFFF66;strokeColor=#000000;html=1;fontSize=9;" parent="1" vertex="1">
                     <mxGeometry x="1130" y="230" width="18" height="18" as="geometry"/>
@@ -231,13 +234,13 @@
                 <mxCell id="note_P6" value="P6: Ch3 (×2)" style="text;html=1;align=left;verticalAlign=top;fontSize=9;fontColor=#666666;" parent="1" vertex="1">
                     <mxGeometry x="650" y="125" width="100" height="18" as="geometry"/>
                 </mxCell>
-                <mxCell id="181" value="P5" style="shape=ellipse;fillColor=#FFFF66;strokeColor=#000000;html=1;fontSize=9;" vertex="1" parent="1">
+                <mxCell id="181" value="P5" style="shape=ellipse;fillColor=#FFFF66;strokeColor=#000000;html=1;fontSize=9;" parent="1" vertex="1">
                     <mxGeometry x="1130" y="38" width="18" height="18" as="geometry"/>
                 </mxCell>
-                <mxCell id="182" value="P3" style="shape=ellipse;fillColor=#FFFF66;strokeColor=#000000;html=1;fontSize=9;" vertex="1" parent="1">
+                <mxCell id="182" value="P3" style="shape=ellipse;fillColor=#FFFF66;strokeColor=#000000;html=1;fontSize=9;" parent="1" vertex="1">
                     <mxGeometry x="60" y="420" width="18" height="18" as="geometry"/>
                 </mxCell>
-                <mxCell id="183" value="P3" style="shape=ellipse;fillColor=#FFFF66;strokeColor=#000000;html=1;fontSize=9;" vertex="1" parent="1">
+                <mxCell id="183" value="P3" style="shape=ellipse;fillColor=#FFFF66;strokeColor=#000000;html=1;fontSize=9;" parent="1" vertex="1">
                     <mxGeometry x="60" y="50" width="18" height="18" as="geometry"/>
                 </mxCell>
             </root>

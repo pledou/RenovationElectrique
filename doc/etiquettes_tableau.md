@@ -39,7 +39,7 @@
 └──────────────┴──────────────┴──────────────┴──────────────┘
 
 ┌──────────────┬──────────────┬─────────────┬──────────────┐
-│   ONDULEUR   │   MONITORING │  sc_etage   │ MICROOND.JAR │
+│   ONDULEUR   │   MONITORING │  st_etage   │ MICROOND.JAR │
 │   SOL 20A    │  Équip.Mes.  │   20A/6mm²  │   20A/2.5mm² │
 │ 2.5mm²       │  2 modules   │  Sous-tabl. │ Jardin 3000W │
 │ Garage       │  AC-coupling │    étage    │              │
