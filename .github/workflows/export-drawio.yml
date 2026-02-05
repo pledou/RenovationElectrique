@@ -18,32 +18,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Export Draw.io diagrams to SVG
+        uses: rlespinasse/drawio-export-action@v2
         with:
-          node-version: 20
-
-      - name: Convert Draw.io to SVG (next to source files)
-        run: |
-          set -euo pipefail
-          echo "Converting .drawio files to .svg (next to source files)..."
-          shopt -s globstar || true
-          found=0
-          for file in $(find . -type f -name "*.drawio"); do
-            found=1
-            out="${file%.drawio}.svg"
-            echo "Converting $file -> $out"
-            npx -y @redfire/drawio-export --format svg --output "${file%.drawio}.svg" "$file"
-          done
-          if [ "$found" -eq 0 ]; then
-            echo "No .drawio files found."
-          fi
-
-      - name: Show npm debug logs on failure
-        if: failure()
-        run: |
-          echo "=== NPM Debug Logs ==="
-          find ~/.npm/_logs -name "*-debug-*.log" -type f -exec echo "--- {} ---" \; -exec cat {} \;
+          format: svg
+          output: .
+          path: doc
 
       - name: Commit and push generated SVGs
         env:
