@@ -18,31 +18,41 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Export .drawio files to .svg
-        env:
-          GITHUB_WORKSPACE: ${{ github.workspace }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install drawio-export
+        run: npm install -g drawio-export
+
+      - name: Convert Draw.io to SVG (next to source files)
         run: |
           set -euo pipefail
-          echo "Searching for .drawio files in repo..."
-          files=$(git ls-files '**/*.drawio' || true)
-          if [ -z "${files}" ]; then
-            echo "No .drawio files found, nothing to export."
-            exit 0
-          fi
-          for f in $files; do
-            out="${f%.*}.svg"
-            outdir="$(dirname "$out")"
-            mkdir -p "$outdir"
-            echo "Exporting $f -> $out"
-            docker run --rm -v "${GITHUB_WORKSPACE}:/work" jgraph/drawio drawio -x -f svg -o "/work/$outdir" -i "/work/$f"
+          echo "Converting .drawio files to .svg (next to source files)..."
+          shopt -s globstar || true
+          found=0
+          for file in $(find . -type f -name "*.drawio"); do
+            found=1
+            out="${file%.drawio}.svg"
+            echo "Converting $file -> $out"
+            drawio-export --format svg --output "${file%.drawio}.svg" "$file"
           done
+          if [ "$found" -eq 0 ]; then
+            echo "No .drawio files found."
+          fi
 
       - name: Commit and push generated SVGs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
-          git add -A
-          git commit -m "chore(drawio): export SVG previews" || echo "no svg changes to commit"
-          git push || echo "push failed"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add "**/*.svg" || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore(drawio): auto-convert .drawio to .svg"
+            git push
+          fi
+
