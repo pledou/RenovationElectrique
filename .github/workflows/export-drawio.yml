@@ -23,9 +23,6 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install drawio-export
-        run: npm install -g @redfire/drawio-export
-
       - name: Convert Draw.io to SVG (next to source files)
         run: |
           set -euo pipefail
@@ -36,11 +33,17 @@ jobs:
             found=1
             out="${file%.drawio}.svg"
             echo "Converting $file -> $out"
-            npx @redfire/drawio-export --format svg --output "${file%.drawio}.svg" "$file"
+            npx -y @redfire/drawio-export --format svg --output "${file%.drawio}.svg" "$file"
           done
           if [ "$found" -eq 0 ]; then
             echo "No .drawio files found."
           fi
+
+      - name: Show npm debug logs on failure
+        if: failure()
+        run: |
+          echo "=== NPM Debug Logs ==="
+          find ~/.npm/_logs -name "*-debug-*.log" -type f -exec echo "--- {} ---" \; -exec cat {} \;
 
       - name: Commit and push generated SVGs
         env:
