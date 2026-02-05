@@ -24,7 +24,7 @@ jobs:
           node-version: 20
 
       - name: Install drawio-export
-        run: npm install -g drawio-export
+        run: npm install -g @redfire/drawio-export
 
       - name: Convert Draw.io to SVG (next to source files)
         run: |
