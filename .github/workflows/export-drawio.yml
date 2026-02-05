@@ -36,7 +36,7 @@ jobs:
             found=1
             out="${file%.drawio}.svg"
             echo "Converting $file -> $out"
-            drawio-export --format svg --output "${file%.drawio}.svg" "$file"
+            npx @redfire/drawio-export --format svg --output "${file%.drawio}.svg" "$file"
           done
           if [ "$found" -eq 0 ]; then
             echo "No .drawio files found."
