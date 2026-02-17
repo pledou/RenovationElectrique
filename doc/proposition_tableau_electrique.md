@@ -1,41 +1,55 @@
 # Proposition de Tableau Électrique Conforme NF C 15-100
 
 ## Date de proposition
-3 février 2026
+17 février 2026
 
 ## Principe général
 Cette proposition vise à **minimiser les modifications sur les circuits existants** tout en assurant la conformité aux normes NF C 15-100 et en résolvant les problèmes de courants de fuite identifiés.
+
+## Rôle du document
+Ce document est le **référentiel technique maître** du projet.
+
+- Il fixe les choix d'architecture, les calibres/sections, la logique énergétique, les coûts et le phasage.
+- Les documents opératoires sont :
+   - [plan_implantation_tableau.md](plan_implantation_tableau.md) (implantation physique terrain)
+   - [plan_organisation_tableau.md](plan_organisation_tableau.md) (organisation interne et procédure chantier)
+
+> En cas d'écart entre documents, la présente proposition fait foi.
 
 ---
 
 ## Dimensionnement du Tableau
 
 ### Capacité requise
-- **Nombre total de modules estimés : 18 modules** (répartis sur 3 rangées)
+- **Nombre total de modules estimés : 24 modules** (répartis sur 3 rangées)
 - Tableau proposé : **Coffret 3 rangées de 13 modules** (39 modules disponibles)
-- **Emplacements libres : 21 modules** (disponibles pour extensions futures)
-- **Sous-tableau étage : circuits conservés, coffret remplacé** (remplacement obligatoire car tableau actuel < 13 modules ; circuits VMI, P5, L3, L4, P6, P7 restent en place)
+- **Emplacements libres : 15 modules** (disponibles pour extensions futures)
+- **Sous-tableau étage supprimé** : circuits VMI, P5, L3, L4, P6, P7 intégrés au tableau principal
 
 ---
 
 ## Architecture du Tableau Proposé
 
-### RANGÉE 1 - Circuits Rez-de-Chaussée Prioritaires (30mA Type A)
+### RANGÉE 1 - Circuits Prioritaires + Production (30mA Type A)
 
 **Interrupteur différentiel 40A 30mA Type A** (obligatoire pour plaque de cuisson et lave-linge) - *2 modules*
 
-| Module | Protection      | Circuit                          | Section | Longueur | Modification                    |
-| ------ | --------------- | -------------------------------- | ------- | -------- | ------------------------------- |
-| 3      | Disjoncteur 32A | **Plaque de cuisson** (P1)       | 6 mm²   | 5m       | **Changer disjoncteur 10A→32A** |
-| 4      | Disjoncteur 20A | **Prises Buanderie/Garage** (P2) | 2.5 mm² | 12m      | Aucune                          |
-| 5      | Disjoncteur 20A | **Prises cuisine** (P4)          | 2.5 mm² | 10m      | Aucune                          |
-| 6-13   | -               | **Modules libres**               | -       | -        | Réserve (8 emplacements)        |
+| Module | Protection      | Circuit                            | Section | Longueur | Modification                    |
+| ------ | --------------- | ---------------------------------- | ------- | -------- | ------------------------------- |
+| 3      | Disjoncteur 32A | **Plaque de cuisson** (P1)         | 6 mm²   | 5m       | **Changer disjoncteur 10A→32A** |
+| 4      | Disjoncteur 20A | **Prises Buanderie/Garage** (P2)   | 2.5 mm² | 12m      | Aucune                          |
+| 5      | Disjoncteur 20A | **Prises Séjour/Bureau/Four** (P3) | 2.5 mm² | 15m      | Circuit déplacé en rangée prioritaire |
+| 6      | Disjoncteur 20A | **Prises cuisine** (P4)            | 2.5 mm² | 10m      | Aucune                          |
+| 7      | Disjoncteur 20A | **Onduleur solaire batterie (AC-coupling)** | 2.5 mm² | - | **NOUVEAU CIRCUIT** |
+| 8      | Disjoncteur 20A | **Microonduleurs jardin**          | 2.5 mm² | 30m      | **NOUVEAU CIRCUIT**             |
+| 9      | Disjoncteur 2A  | **VMI étage** (VMI)                | 1.5 mm² | 10m      | **Circuit ventilation dédié**   |
+| 10-13  | -               | **Modules libres**                 | -       | -        | Réserve (4 emplacements)        |
 
-**Total Rangée 1 : 5 modules utilisés / 13 disponibles (8 libres)**
+**Total Rangée 1 : 9 modules utilisés / 13 disponibles (4 libres)**
 
 ---
 
-### RANGÉE 2 - Circuits Rez-de-Chaussée Généraux (30mA Type AC)
+### RANGÉE 2 - Éclairages + Circuits Généraux (30mA Type AC)
 
 **Interrupteur différentiel 40A 30mA Type AC** - *2 modules*
 
@@ -44,14 +58,16 @@ Cette proposition vise à **minimiser les modifications sur les circuits existan
 | 3      | Disjoncteur 20A | **Chaudière gaz + domotique + routeur ECS**     | 2.5 mm² | 12m      | Aucune                               |
 | 4      | Disjoncteur 16A | **Éclairage 1** (L1)                            | 1.5 mm² | 15m      | Aucune                               |
 | 5      | Disjoncteur 16A | **Éclairage 2** (L2)                            | 1.5 mm² | 10m      | Aucune                               |
-| 6      | Disjoncteur 20A | **Prises Séjour/Bureau/Four** (P3)              | 2.5 mm² | 15m      | Aucune                               |
-| 7      | Disjoncteur 20A | **Onduleur solaire batterie (AC-coupling)**     | 2.5 mm² | -        | **NOUVEAU CIRCUIT**                  |
+| 6      | Disjoncteur 16A | **L3 - Éclairage étage**                        | 1.5 mm² | 10m      | **Circuit intégré au tableau principal** |
+| 7      | Disjoncteur 16A | **L4 - Éclairage salle de bains**               | 1.5 mm² | 10m      | **Circuit intégré au tableau principal** |
 | 8      | -               | **Équipement mesure onduleur (2 modules)**      | -       | -        | **NOUVEAU - Monitoring AC-coupling** |
 | 9      | -               | *(suite équipement mesure)*                     | -       | -        | -                                    |
-| 10     | Disjoncteur 20A | **Alimentation sous-compteur étage** (st_etage) | 6 mm²   | 25m      | Aucune                               |
-| 11-13  | -               | **Modules libres**                              | -       | -        | Réserve (3 emplacements)             |
+| 10     | Disjoncteur 16A | **P5 - Prises étage**                           | 2.5 mm² | 10m      | **Circuit intégré au tableau principal** |
+| 11     | Disjoncteur 10A | **P6 - Prises chambre 3**                       | 2.5 mm² | 10m      | **Circuit intégré au tableau principal** |
+| 12     | Disjoncteur 10A | **P7 - Prise palier**                           | 2.5 mm² | 10m      | **Circuit intégré au tableau principal** |
+| 13     | -               | **Module libre**                                | -       | -        | Réserve (1 emplacement)              |
 
-**Total Rangée 2 : 10 modules utilisés / 13 disponibles (3 libres)**
+**Total Rangée 2 : 12 modules utilisés / 13 disponibles (1 libre)**
 
 > **Note routeur solaire ECS** : Le routeur solaire est commandé par le circuit de la chaudière (Module 3) et pilote la puissance sur le circuit ECS existant (Rangée 3, Module 3). Aucun circuit dédié supplémentaire n'est nécessaire.
 
@@ -64,9 +80,9 @@ Cette proposition vise à **minimiser les modifications sur les circuits existan
 | Module | Protection      | Circuit                     | Section | Longueur | Modification             |
 | ------ | --------------- | --------------------------- | ------- | -------- | ------------------------ |
 | 3      | Disjoncteur 20A | **Chauffe-eau** (sanitaire) | 2.5 mm² | 5m       | Aucune                   |
-| 4-13   | -               | **Modules libres**          | -       | -        | Réserve (7 emplacements) |
+| 4-13   | -               | **Modules libres**          | -       | -        | Réserve (10 emplacements) |
 
-**Total Rangée 3 : 3 modules utilisés / 13 disponibles (7 libres)**
+**Total Rangée 3 : 3 modules utilisés / 13 disponibles (10 libres)**
 
 > **Note isolation ECS** : L'ECS est isolé sur une rangée dédiée pour permettre une mesure précise de la consommation hors ECS via la Pince 2 (placée sur les Rangées 1+2).
 
@@ -104,53 +120,18 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 
 ---
 
-### SOUS-TABLEAU ÉTAGE - Mise à niveau requise
+### INTÉGRATION DIRECTE DES CIRCUITS ÉTAGE
 
-**Alimentation** : Câble 6mm² depuis le tableau principal (disjoncteur 20A - Rangée 2 Module 10)
+**Principe retenu** : suppression du sous-tableau étage et raccordement direct de VMI, P5, L3, L4, P6, P7 au tableau principal.
 
-**⚠️ MODIFICATIONS IMPORTANTES** : 
-1. Ajout d'un interrupteur différentiel 30mA obligatoire
-2. **Déplacement du tableau à hauteur réglementaire** (actuellement au plafond à 250cm)
-3. **⚠️ REMPLACEMENT DU TABLEAU OBLIGATOIRE**
+**Données terrain validées** :
+- Longueur de liaison utile étage → tableau principal : **10 m**.
+- Passage en combles avec **seul agrandissement local d'un trou dans le parpaing** si nécessaire.
 
-**Analyse capacité actuelle** :
-- **Tableau actuel : < 13 modules** (capacité insuffisante confirmée)
-- Différentiel 30mA à ajouter : **2 modules**
-- Circuits existants : 6 disjoncteurs = **6 modules**
-- **Total nécessaire : 8 modules minimum**
-- **→ Remplacement obligatoire par coffret 13 modules** (laissera 5 modules libres après installation)
-- **Hauteur d'installation : 1,70-1,80m** (limite haute réglementaire pour sécurité enfants)
-
-**Protection différentielle à ajouter** :
-- **Interrupteur différentiel 40A 30mA Type AC** - *2 modules*
-
-**Circuits maintenus sur le sous-tableau étage** :
-- ✅ **VMI** (ventilation) - Disjoncteur 16A - 1.5 mm² - 18m
-- ✅ **P5** (Prises étage) - Disjoncteur 16A - 2.5 mm² - 30m
-- ✅ **L3** (Éclairage étage) - Disjoncteur 16A - 1.5 mm² - 25m
-- ✅ **L4** (Éclairage salle de bains) - Disjoncteur 16A - 1.5 mm² - 15m
-- ✅ **P6** (Prises chambre 3) - Disjoncteur 10A - 2.5 mm² - 10m
-- ✅ **P7** (Prise palier) - Disjoncteur 10A - 2.5 mm² - 10m
-
-**Travaux à réaliser sur le sous-tableau** :
-1. **✅ Capacité vérifiée : < 13 modules → Remplacement obligatoire**
-2. **Remplacement par coffret 13 modules** avec porte (2 modules différentiel + 6 disjoncteurs + 5 modules libres)
-3. **Installation différentiel 30mA Type AC** (obligatoire selon NF C 15-100)
-4. **Installation peigne de distribution et borniers** (remplacement des dés à visser)
-5. **Installation du tableau en hauteur** (de 250cm au plafond → **1,70-1,80m du sol** pour limiter accès enfants)
-6. **Rallonge des câbles si nécessaire** (ajout 0,70-1,00m par circuit selon nouvelle position)
-7. **Raccordement de tous les circuits en aval du différentiel**
-
-> **📋 Justification norme** : La NF C 15-100 impose qu'un tableau divisionnaire (sous-tableau) soit équipé de son propre dispositif différentiel 30mA pour assurer la protection des personnes. L'alimentation depuis le tableau principal par un disjoncteur 20A assure la protection contre les surintensités, mais ne remplace pas le différentiel local.
-
-> **📏 Hauteur réglementaire** : La NF C 15-100 impose que l'appareillage soit installé entre **0,90m et 1,80m du sol**. Un tableau au plafond (250cm) est non-conforme. **Hauteur retenue : 1,70-1,80m** (limite haute réglementaire) pour limiter l'accès par les enfants tout en permettant l'intervention des adultes.
-
-> **🔧 Avantages de cette mise à niveau** :
-> - **Conformité normative** : Respect intégral NF C 15-100 (différentiel + hauteur réglementaire)
-> - **Sélectivité améliorée** : En cas de défaut à l'étage, seul le différentiel étage déclenche (pas celui du RdC)
-> - **Sécurité renforcée** : Protection différentielle locale + isolation des courants de fuite étage/RdC
-> - **Sécurité enfants** : Tableau en hauteur (1,70-1,80m) limitant l'accès par les enfants, conforme NF C 15-100 (0,90-1,80m)
-> - **Fiabilité** : Peigne de distribution plus fiable que les dés à visser (moins de risque de faux contact)
+**Conséquences techniques** :
+1. Suppression du circuit `st_etage` en tant qu'alimentation de tableau divisionnaire.
+2. Ajout de 6 départs directs au tableau principal (calibres inchangés selon circuits étage).
+3. Architecture simplifiée avec un tableau unique et maintenance centralisée.
 
 ---
 
@@ -176,14 +157,12 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
    - **Pince ampèremétrique (Pince 2)** : Mesure consommation hors ECS (Rangées 1+2)
    - **Justification** : Routage du surplus solaire vers l'ECS après charge batterie, sans circuit supplémentaire
 
-4. **Sous-tableau étage - MISE À NIVEAU OBLIGATOIRE**
-   - **Préalable** : ✅ Capacité vérifiée : < 13 modules → Remplacement obligatoire
-   - **Action 1** : Remplacement du tableau par coffret 13 modules (capacité insuffisante confirmée)
-   - **Action 2** : Installation d'un interrupteur différentiel 40A 30mA Type AC (2 modules)
-   - **Action 3** : Déplacement du tableau du plafond (250cm) vers installation en hauteur (1,70-1,80m du sol pour sécurité enfants)
-   - **Action 4** : Installation peigne de distribution et borniers (remplacement des dés à visser)
-   - **Rallonge câbles** : Selon nouvelle position (ajout de 0,70-1,00m par circuit si nécessaire)
-   - **Justification** : Conformité NF C 15-100 (différentiel obligatoire + hauteur 0,90-1,80m + capacité suffisante) + amélioration sélectivité, sécurité enfants et isolation des courants de fuite étage/RdC
+4. **Circuits étage - INTÉGRATION AU TABLEAU PRINCIPAL**
+   - **Action 1** : Supprimer le sous-tableau étage et son alimentation dédiée
+   - **Action 2** : Raccorder VMI, P5, L3, L4, P6, P7 directement au tableau principal
+   - **Action 3** : Tirer les rallonges directes sur base de **10 m** par circuit
+   - **Action 4** : Ajuster le passage en combles (trou parpaing) et protéger mécaniquement le cheminement
+   - **Justification** : Simplification d'architecture, centralisation des protections et maintenance facilitée
 
 ---
 
@@ -196,33 +175,28 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 - Lave-linge (variateurs électroniques)
 - Chauffe-eau (équipé de triac ou routeur solaire)
 
-**Type AC (Rangée 2 et sous-tableau étage)** - Suffisant pour :
+**Type AC (Rangée 2)** - Suffisant pour :
 - Éclairages
 - Prises standards
 - Circuits bureautiques et domotique
-- Ventilation (VMI)
 
 ### Répartition des Circuits
 
 **Équilibrage de charge** :
-- Rangée 1 : ~32A + 20A + 20A = **72A max théorique** (différentiel 40A adapté)
-- Rangée 2 : ~20A + 16A + 16A + 20A + 20A + 20A = **112A max théorique** (différentiel 40A adapté avec diversité)
+- Rangée 1 : ~32A + 20A + 20A + 20A + 20A + 20A + 2A = **134A max théorique** (différentiel 40A adapté avec diversité)
+- Rangée 2 : ~20A + 16A + 16A + 16A + 16A + 16A + 10A + 10A = **120A max théorique** (différentiel 40A adapté avec diversité)
 - Rangée 3 : ~20A = **20A max théorique** (différentiel 40A, large marge)
-- Sous-tableau étage : ~16A + 16A + 16A + 16A + 10A + 10A = **84A max théorique** (alimenté par disjoncteur 20A)
 
-> **Note** : En pratique, tous les circuits ne sont jamais à leur maximum simultanément. La diversité d'usage justifie les différentiels 40A. L'onduleur solaire fonctionne en injection/régulation (consommation nette faible), et le routeur ECS est intégré aux circuits existants (chaudière + ECS Rangée 3). L'isolation de l'ECS sur la Rangée 3 facilite la mesure de consommation hors ECS pour optimiser le routage solaire. Le sous-tableau étage est protégé par un disjoncteur 20A en tête ET équipé d'un différentiel 30mA local, assurant une double protection et une sélectivité optimale.
+> **Note** : En pratique, tous les circuits ne sont jamais à leur maximum simultanément. La diversité d'usage justifie les différentiels 40A. L'onduleur solaire fonctionne en injection/régulation (consommation nette faible), et le routeur ECS est intégré aux circuits existants (chaudière + ECS Rangée 3).
 
 ### Sélectivité
 
 - **Différentiel EDF 500mA** en tête (maintenu)
 - **Différentiels 30mA tableau principal** en aval (3 différentiels : 2x Type A + 1x Type AC)
-- **Différentiel 30mA sous-tableau étage** en aval du disjoncteur 20A
 - **Sélectivité verticale assurée** : 500mA / 30mA = facteur 16,7 (recommandation : >3)
-- **Sélectivité horizontale** : Chaque différentiel protège une zone distincte (Rangées 1, 2, 3 et sous-tableau)
+- **Sélectivité horizontale** : Chaque différentiel protège une zone distincte (Rangées 1, 2, 3)
 
 > **Note production solaire** : L'onduleur AC-coupling injecte l'énergie en aval des différentiels 30mA, garantissant la protection différentielle même lors de la production. Les pinces ampèremétriques permettent la régulation intelligente des flux sans compromettre la sélectivité.
-
-> **Note sous-tableau** : Le différentiel 30mA du sous-tableau étage assure une sélectivité totale : en cas de défaut à l'étage, seul ce différentiel déclenche, préservant l'alimentation du RdC. Inversement, un défaut au RdC ne coupe pas l'étage.
 
 ---
 
@@ -240,7 +214,7 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 | **Prises cuisine minimum 6**        | ✅          | **P4 a 9 prises (+ P1 plaque dédiée) - Conforme**                          |
 | **Éclairages 16A max 8 points**     | ✅          | L1:8 points, L2:3, L3:5, L4:2 - tous conformes                             |
 | **Sections conformes**              | ✅          | 1.5mm² éclairages, 2.5mm² prises, 6mm² plaque                              |
-| **Protection différentielle 30mA**  | ✅          | 3 différentiels 30mA tableau principal + 1 différentiel sous-tableau étage |
+| **Protection différentielle 30mA**  | ✅          | 3 différentiels 30mA sur tableau principal |
 
 ---
 
@@ -255,16 +229,8 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 - ✅ P2 (Buanderie/Garage)
 - ✅ P3 (Séjour/Bureau/Four)
 - ✅ P4 (Cuisine)
-- ✅ st_etage (alimentation sous-tableau)
+- ✅ VMI, P5, L3, L4, P6, P7 (circuits étage intégrés)
 - ✅ sanitaire (Chauffe-eau)
-
-### Sur le sous-tableau étage (câblage conservé, différentiel ajouté) :
-- ✅ VMI (ventilation) - **Câblage inchangé**
-- ✅ P5 (Prises étage) - **Câblage inchangé**
-- ✅ L3, L4 (Éclairages étage) - **Câblage inchangé**
-- ✅ P6, P7 (Prises chambres) - **Câblage inchangé**
-- ⚠️ **Ajout différentiel 30mA** (obligatoire NF C 15-100)
-- ⚠️ **Remplacement dés à visser par peigne** (amélioration fiabilité)
 
 ---
 
@@ -272,7 +238,7 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 
 ### Courants de fuite sur le neutre
 **Solution adoptée** :
-- Répartition sur **4 différentiels 30mA distincts** (3 au tableau principal + 1 au sous-tableau étage)
+- Répartition sur **3 différentiels 30mA distincts** (tableau principal)
 - En cas de défaut, seule une partie de l'installation est coupée
 - Facilite le diagnostic (isolation par rangée au RdC, isolation totale étage)
 - **Sélectivité géographique** : Un défaut à l'étage ne coupe pas le RdC et inversement
@@ -308,19 +274,13 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 | 3        | Peigne d'alimentation horizontal                     | 13 modules par rangée                                    |
 | 1        | Peigne d'alimentation vertical                       | Liaison entre différentiels                              |
 
-### Matériel sous-tableau étage
+### Matériel complémentaire pour circuits étage intégrés
 
-**Remplacement obligatoire (tableau actuel < 13 modules)** :
-
-| Quantité | Désignation                                          | Référence exemple                                     |
-| -------- | ---------------------------------------------------- | ----------------------------------------------------- |
-| 1        | **Coffret 13 modules avec porte**                    | **Schneider Rési9 ou équivalent**                     |
-| 1        | Interrupteur différentiel 40A 30mA Type AC bipolaire | Schneider Rési9 XE ou équivalent                      |
-| 1        | Peigne d'alimentation horizontal                     | 13 modules                                            |
-| 1        | Bornier de neutre                                    | 13 connexions                                         |
-| 1        | Bornier de terre                                     | 13 connexions                                         |
-| Variable | Rallonges de câbles                                  | Selon circuits (0,70-1,00m par circuit si nécessaire) |
-| 1        | Support de fixation murale                           | Pour installation en hauteur (1,70-1,80m)             |
+| Quantité | Désignation                                         | Référence exemple                  |
+| -------- | --------------------------------------------------- | ---------------------------------- |
+| Variable | Rallonges de câbles étage → tableau principal (10m) | RO2V 3G1,5 / 3G2,5 selon circuit   |
+| Variable | Boîtes de dérivation / Wago                         | Selon cheminement final            |
+| 1 lot    | Accessoires passage combles                          | Protection et finition du passage  |
 
 ### Disjoncteurs existants réutilisés
 
@@ -328,10 +288,10 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 
 | Quantité disponible | Quantité nécessaire | Type                     | Utilisation dans le nouveau tableau      |
 | ------------------- | ------------------- | ------------------------ | ---------------------------------------- |
-| 5                   | 5                   | Disjoncteur 20A courbe C | Chauffe-eau, P2, P4, Chaudière, st_etage |
+| 5                   | 5                   | Disjoncteur 20A courbe C | Chauffe-eau, P2, P4, Chaudière, Microond. |
 | 4                   | 2                   | Disjoncteur 16A courbe C | L1, L2                                   |
 
-> **📝 Note importante** : Vous avez 4 disjoncteurs C16 mais seulement 2 sont nécessaires sur le tableau principal. Les 2 autres restent en réserve ou peuvent rester sur le sous-tableau étage. Pour le **nouveau circuit onduleur solaire**, vous devrez acheter **1 disjoncteur C20 supplémentaire**. Le routeur ECS utilise les circuits existants (chaudière + ECS), aucun disjoncteur supplémentaire n'est nécessaire.
+> **📝 Note importante** : Les circuits étage étant désormais intégrés au tableau principal, vérifier la disponibilité des calibres 16A et 10A nécessaires avant bascule. Pour le **nouveau circuit onduleur solaire**, vous devrez acheter **1 disjoncteur C20 supplémentaire**. Le routeur ECS utilise les circuits existants (chaudière + ECS), aucun disjoncteur supplémentaire n'est nécessaire.
 
 ### Accessoires
 
@@ -345,37 +305,33 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 
 ## Procédure de Remplacement Recommandée
 
-### Phase 1 : Préparation (J-1)
+### Étape 1 — Préparation (J-1)
 1. Installation du nouveau tableau à côté de l'ancien
 2. Câblage du nouveau tableau (peignes, différentiels)
 3. **Démontage et récupération des disjoncteurs C20 et C16 de l'ancien tableau**
 4. Installation des disjoncteurs récupérés dans le nouveau tableau
 5. Préparation des câbles de raccordement
 
-### Phase 2 : Bascule Progressive (Jour J)
+### Étape 2 — Bascule Progressive (Jour J)
 1. **Coupure minimale** : Basculer circuit par circuit
 2. Circuits prioritaires en dernier (chaudière, réfrigérateur)
 3. Test de chaque circuit avant passage au suivant
 4. **Durée estimée** : 3-4 heures (pas de nouveau câblage)
 
-### Phase 3 : Validation
+### Étape 3 — Validation
 1. Test des différentiels (bouton TEST)
 2. Mesure de l'isolement par circuit
 3. Vérification des courants de fuite
 4. Documentation et remise du schéma unifilaire
 
-### Phase 4 : Remplacement sous-tableau étage (peut être fait avant ou après)
+### Étape 4 — Intégration directe des circuits étage
 
-**Tableau actuel < 13 modules → Remplacement obligatoire** :
-1. **Dépose du tableau existant** du plafond (récupération des disjoncteurs)
-2. **Installation support de fixation** en hauteur (1,70-1,80m du sol pour limiter accès enfants)
-3. **Installation nouveau coffret 13 modules** à la bonne hauteur
-4. **Rallonge des câbles** si nécessaire (ajout 0,70-1,00m par circuit)
-5. **Installation différentiel 30mA + peigne + borniers** dans le nouveau coffret
-6. **Remontage des disjoncteurs récupérés** (6 disjoncteurs pour VMI, P5, L3, L4, P6, P7)
-7. **Raccordement de tous les circuits** en aval du différentiel
-8. **Test fonctionnel** : vérification protection différentielle et sélectivité
-9. **Durée estimée** : **9-14 heures** (étage uniquement)
+1. **Dépose du sous-tableau existant** (récupération des appareils réutilisables)
+2. **Tirage des liaisons directes** des 6 circuits étage vers le tableau principal (base 10 m)
+3. **Ajustement du passage combles** (agrandissement local du trou parpaing si nécessaire)
+4. **Raccordement final au tableau principal** sur les départs dédiés
+5. **Test fonctionnel** : isolement, continuité terre, déclenchement différentiels
+6. **Durée estimée** : **8-12 heures**
 
 ---
 
@@ -416,19 +372,13 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 - Accessoires et petits matériels : **70-100 €**
 - **Sous-total tableau principal : 520-730 €**
 
-**Sous-tableau étage** :
+**Intégration circuits étage** :
 
-*Remplacement obligatoire (tableau actuel < 13 modules)* :
-- **Coffret 13 modules avec porte : 50-80 €**
-- 1 différentiel 40A 30mA Type AC : **40-60 €**
-- 1 disjoncteur 10A (prises salle de bains) : **10-15 €**
-- Peigne de distribution : **15-25 €**
-- Borniers (neutre + terre) : **10-20 €**
-- Rallonges câbles (si nécessaire) : **20-40 €**
-- Support fixation : **10-15 €**
-- **Sous-total sous-tableau : 155-255 €**
+- Rallonges directes (10 m × 6 circuits selon sections) : **120-220 €**
+- Raccords/boîtes/protection passage combles : **40-90 €**
+- **Sous-total intégration étage : 160-310 €**
 
-**Total matériel : 675-985 €**
+**Total matériel : 680-1040 €**
 
 > **💰 Économie réalisée** : La réutilisation de vos 5 disjoncteurs C20 et 2 disjoncteurs C16 existants vous fait économiser environ **70-100 €**. Le routeur ECS utilisant les circuits existants (chaudière + ECS), aucun circuit supplémentaire n'est nécessaire, économisant **~150-200 € supplémentaires**.
 
@@ -440,44 +390,41 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 
 ### Tableau principal
 
-**Phase 1 : Préparation** :
+**Étape 1 : Préparation** :
 - Installation coffret et câblage interne (peignes, différentiels) : **3-4 heures**
 - Démontage et récupération disjoncteurs ancien tableau : **1 heure**
 - Préparation câbles de raccordement : **1-2 heures**
-- **Total Phase 1 : 5-7 heures**
+- **Total Étape 1 : 5-7 heures**
 
-**Phase 2 : Bascule et raccordement** :
+**Étape 2 : Bascule et raccordement** :
 - Bascule progressive circuit par circuit : **3-4 heures**
 - Création circuit onduleur solaire : **1-2 heures**
 - Installation équipement mesure AC-coupling : **1 heure**
-- **Total Phase 2 : 5-7 heures**
+- **Total Étape 2 : 5-7 heures**
 
-**Phase 3 : Tests et validation** :
+**Étape 3 : Tests et validation** :
 - Tests différentiels et isolement : **1-2 heures**
 - Documentation et étiquetage : **1 heure**
-- **Total Phase 3 : 2-3 heures**
+- **Total Étape 3 : 2-3 heures**
 
 **Total tableau principal : 12-17 heures** (sur 2-3 jours avec pauses)
 
-### Sous-tableau étage
+### Circuits étage intégrés
 
-**Remplacement obligatoire (tableau actuel < 13 modules)** :
-- Dépose ancien tableau : **1 heure**
-- Installation nouveau coffret en hauteur : **1-2 heures**
-- Rallonge câbles si nécessaire : **1-2 heures** (descente moindre depuis plafond)
-- Installation différentiel, peigne et borniers : **2-3 heures**
-- Raccordement tous circuits : **2-3 heures**
-- Tests et validation : **1-2 heures**
-- **Total sous-tableau : 8-13 heures**
+- Dépose sous-tableau existant : **1 heure**
+- Tirage des 6 liaisons directes vers tableau principal : **4-6 heures**
+- Ajustement passage combles + protection mécanique : **1-2 heures**
+- Raccordement final + tests : **2-3 heures**
+- **Total intégration étage : 8-12 heures**
 
 ### **TEMPS TOTAL PROJET**
 - Tableau principal : **12-17 heures**
-- Sous-tableau étage : **8-13 heures**
+- Intégration circuits étage : **8-12 heures**
 - **TOTAL : 20-30 heures**
 
 > **⏱️ Planning recommandé** : 
 > - Tableau principal : **2 jours** (week-end)
-> - Sous-tableau étage : **1 jour** (week-end suivant)
+> - Intégration circuits étage : **1 jour** (week-end suivant)
 > - Marge de sécurité : **+20-30%** pour imprévus
 
 > **💡 Conseil** : Prévoir un électricien pour validation finale et Consuel (obligatoire pour conformité)
@@ -488,10 +435,10 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 
 ### Budget matériel uniquement
 
-**Remplacement sous-tableau confirmé (< 13 modules)** :
+**Suppression sous-tableau confirmée** :
 - Matériel tableau principal : **530-745 €**
-- Matériel sous-tableau (avec nouveau coffret 13 modules) : **145-240 €**
-- **TOTAL MATÉRIEL : 675-985 €**
+- Intégration directe circuits étage : **150-295 €**
+- **TOTAL MATÉRIEL : 680-1040 €**
 
 ### Budget avec validation professionnelle (recommandé)
 - Visite électricien pour validation finale : **150-250 €**
@@ -508,13 +455,13 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 
 ## Avantages de cette Proposition
 
-✅ **Conformité** : Respect intégral de la NF C 15-100 (incluant différentiel obligatoire sur sous-tableau)  
+✅ **Conformité** : Respect de la NF C 15-100 avec protections regroupées au tableau principal  
 ✅ **Minimise les travaux** : 13 circuits sur 15 conservés sans modification de câblage  
-✅ **Sous-tableau mis à niveau** : Ajout différentiel 30mA + peigne de distribution (conformité + fiabilité)  
-✅ **Sécurité** : 4 différentiels 30mA au total (3 tableau principal + 1 sous-tableau) pour isolation optimale  
+✅ **Architecture simplifiée** : suppression du sous-tableau étage  
+✅ **Sécurité** : 3 différentiels 30mA au tableau principal avec sélectivité verticale maintenue  
 ✅ **Production solaire intégrée** : Gestion intelligente batterie + routeur ECS avec contrôle des flux optimisé  
-✅ **Évolutivité** : **21 emplacements libres** pour extensions futures (8 en Rangée 1, 3 en Rangée 2, 10 en Rangée 3)  
-✅ **Diagnostic facilité** : Séparation claire circuits prioritaires/généraux/ECS + isolation totale étage/RdC  
+✅ **Évolutivité** : **15 emplacements libres** pour extensions futures (4 en Rangée 1, 1 en Rangée 2, 10 en Rangée 3)  
+✅ **Diagnostic facilité** : Centralisation de l'ensemble des départs au même tableau  
 ✅ **Optimisation énergétique** : ECS isolé permettant mesure précise consommation hors ECS, priorité consommation > batterie > ECS  
 ✅ **Sélectivité maximale** : Défaut étage ne coupe pas RdC et inversement  
 
@@ -526,8 +473,8 @@ Cette proposition permet de **mettre en conformité votre installation avec un m
 - **3 circuits à créer** (onduleur solaire AC-coupling + microonduleurs jardin + prises salle de bains)
 - **1 circuit à dimensionner** (P1 : 32A pour future plaque de cuisson électrique)
 - **11 circuits conservés à l'identique** (câblage inchangé)
-- **1 circuit conservé avec clarification** (st_etage : alimentation étage uniquement)
-- **Sous-tableau étage : mise à niveau obligatoire** (ajout différentiel 30mA + peigne de distribution + **déplacement à hauteur réglementaire**)
+- **6 circuits étage intégrés au tableau principal** (VMI, P5, L3, L4, P6, P7)
+- **Sous-tableau étage supprimé** (plus de coffret divisionnaire à maintenir)
 - **Routeur solaire ECS** : intégré aux circuits existants (commande sur chaudière, puissance sur ECS)
 - **2 pinces ampèremétriques** pour gestion intelligente des flux énergétiques
 - **2 modules DIN** pour équipement de mesure AC-coupling
@@ -543,7 +490,7 @@ Cette proposition permet de **mettre en conformité votre installation avec un m
 - **Pince 2 (mesure hors ECS)** : Placée sur Rangées 1+2 pour mesurer toute la consommation sauf ECS et piloter le routeur ECS
 - **Pince 1 (mesure globale)** : Placée sur arrivée principale pour le pilotage de l'onduleur/batterie
 - **Architecture optimisée** : ECS isolé sur Rangée 3 dédiée, permettant une mesure précise de la consommation hors ECS
-- **Avantage** : Microonduleurs sur circuit dédié sécurisé + 17 emplacements libres pour extensions futures
+- **Avantage** : Microonduleurs sur circuit dédié sécurisé + 15 emplacements libres pour extensions futures
 
 Les défauts identifiés sur les câblages et prises pourront être traités ultérieurement, circuit par circuit, sans nécessiter une nouvelle intervention sur le tableau.
 
@@ -554,10 +501,16 @@ Les défauts identifiés sur les câblages et prises pourront être traités ult
 - [x] Schéma unifilaire détaillé (réalisé : [schema_unifilaire_tableau.drawio](schema_unifilaire_tableau.drawio))
 - [x] Plan d'implantation du nouveau tableau (réalisé : [plan_implantation_tableau.md](plan_implantation_tableau.md) + [plan_organisation_tableau.md](plan_organisation_tableau.md))
 - [ ] Fiche de repérage des circuits existants (couleurs, boîtes de dérivation)
-- [ ] Checklist de validation (voir `doc/checklist_validation.md`)
+- [ ] Checklist de validation (voir [checklist_validation.md](checklist_validation.md))
+
+## Documents opératoires liés
+
+- [plan_implantation_tableau.md](plan_implantation_tableau.md)
+- [plan_organisation_tableau.md](plan_organisation_tableau.md)
+- [checklist_validation.md](checklist_validation.md)
 
 ---
 
 **Auteur** : GitHub Copilot  
-**Date** : 3 février 2026  
-**Version** : 1.0
+**Date** : 17 février 2026  
+**Version** : 2.0

@@ -1,346 +1,88 @@
-<mxfile host="65bd71144e">
-    <diagram name="Schéma Unifilaire" id="schema-unifilaire">
-        <mxGraphModel dx="630" dy="851" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
-            <root>
-                <mxCell id="0"/>
-                <mxCell id="1" parent="0"/>
-                <mxCell id="titre" value="SCHÉMA UNIFILAIRE - TABLEAU ÉLECTRIQUE&#xa;Conforme NF C 15-100" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" parent="1" vertex="1">
-                    <mxGeometry x="320" y="20" width="530" height="40" as="geometry"/>
-                </mxCell>
-                <mxCell id="edf_title" value="ARRIVÉE EDF" style="text;html=1;strokeColor=#666666;fillColor=#f5f5f5;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#333333;" parent="1" vertex="1">
-                    <mxGeometry x="480" y="80" width="210" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="edf_500ma" value="Disjoncteur EDF&#xa;500mA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontStyle=1" parent="1" vertex="1">
-                    <mxGeometry x="515" y="120" width="140" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="pince1" value="🔌 PINCE 1&#xa;Mesure flux global&#xa;(Routeur ECS)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;fontStyle=2" parent="1" vertex="1">
-                    <mxGeometry x="730" y="120" width="110" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="line1" value="" style="endArrow=classic;html=1;strokeWidth=3;strokeColor=#000000;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="585" y="170" as="sourcePoint"/>
-                        <mxPoint x="585" y="220" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="line_split" value="" style="endArrow=none;html=1;strokeWidth=3;strokeColor=#000000;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="200" y="220" as="sourcePoint"/>
-                        <mxPoint x="970" y="220" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="rangee1_title" value="RANGÉE 1 - Circuits RdC Prioritaires" style="text;html=1;strokeColor=#b85450;fillColor=#f8cecc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" parent="1" vertex="1">
-                    <mxGeometry x="40" y="250" width="280" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="diff_r1" value="Différentiel&#xa;40A 30mA&#xa;Type A" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontStyle=1" parent="1" vertex="1">
-                    <mxGeometry x="110" y="290" width="140" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="line_r1" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#b85450;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="180" y="220" as="sourcePoint"/>
-                        <mxPoint x="180" y="290" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="p1" value="P1 - Lave-vaisselle&#xa;Disj. 10A&#xa;6mm² - 5m" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=10" parent="1" vertex="1">
-                    <mxGeometry x="40" y="380" width="120" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="p2" value="P2 - Buanderie/Garage&#xa;Disj. 20A&#xa;2.5mm² - 12m" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=10" parent="1" vertex="1">
-                    <mxGeometry x="170" y="380" width="120" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="p4" value="P4 - Prises cuisine&lt;br&gt;(8 prises + prise four)&lt;br&gt;Disj. 20A&lt;br&gt;2.5mm² - 10m" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=10" parent="1" vertex="1">
-                    <mxGeometry x="300" y="380" width="120" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="r1_libres" value="8 modules&#xa;LIBRES" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;fontStyle=2;fontColor=#333333;" parent="1" vertex="1">
-                    <mxGeometry x="430" y="380" width="80" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="conn_r1" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#b85450;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="180" y="350" as="sourcePoint"/>
-                        <mxPoint x="180" y="380" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="conn_r1_horiz" value="" style="endArrow=none;html=1;strokeWidth=1;strokeColor=#b85450;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="100" y="370" as="sourcePoint"/>
-                        <mxPoint x="360" y="370" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="conn_p1" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#b85450;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="100" y="370" as="sourcePoint"/>
-                        <mxPoint x="100" y="380" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="conn_p4" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#b85450;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="360" y="370" as="sourcePoint"/>
-                        <mxPoint x="360" y="380" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="rangee2_title" value="RANGÉE 2 - Circuits RdC Généraux" style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" parent="1" vertex="1">
-                    <mxGeometry x="40" y="480" width="280" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="diff_r2" value="Différentiel&#xa;40A 30mA&#xa;Type AC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=1" parent="1" vertex="1">
-                    <mxGeometry x="110" y="520" width="140" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="line_r2" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#82b366;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="585" y="220" as="sourcePoint"/>
-                        <mxPoint x="585" y="520" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="pince2" value="🔌 PINCE 2&#xa;Mesure Rangées 1+2&#xa;(hors ECS)&#xa;Onduleur" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;fontStyle=2" parent="1" vertex="1">
-                    <mxGeometry x="730" y="290" width="110" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="chaudiere" value="Chaudière + domo&#xa;+ routeur ECS&#xa;Disj. 20A&#xa;2.5mm² - 12m" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=9" parent="1" vertex="1">
-                    <mxGeometry x="40" y="610" width="100" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="l1" value="L1 - Éclairage 1&#xa;Disj. 16A&#xa;1.5mm² - 15m" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=9" parent="1" vertex="1">
-                    <mxGeometry x="150" y="610" width="90" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="l2" value="L2 - Éclairage 2&#xa;Disj. 16A&#xa;1.5mm² - 10m" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=9" parent="1" vertex="1">
-                    <mxGeometry x="250" y="610" width="90" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="p3" value="P3 - Séjour&#xa;Bureau/Four&#xa;Disj. 20A&#xa;2.5mm² - 15m" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=9" parent="1" vertex="1">
-                    <mxGeometry x="350" y="610" width="90" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="onduleur" value="Onduleur solaire&#xa;AC-coupling&#xa;Disj. 20A&#xa;2.5mm²&#xa;NOUVEAU" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;fontStyle=1" parent="1" vertex="1">
-                    <mxGeometry x="450" y="610" width="90" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="monitoring" value="Équipement&#xa;mesure&#xa;AC-coupling&#xa;2 modules DIN" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9" parent="1" vertex="1">
-                    <mxGeometry x="550" y="610" width="90" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="st_etage" value="Alim. sous-tableau&#xa;étage&#xa;Disj. 20A&#xa;6mm² - 25m" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=9;fontStyle=1" parent="1" vertex="1">
-                    <mxGeometry x="650" y="610" width="90" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="microond" value="Microonduleurs&#xa;jardin&#xa;Disj. 20A&#xa;2.5mm² - 30m&#xa;NOUVEAU" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;fontStyle=1" parent="1" vertex="1">
-                    <mxGeometry x="750" y="610" width="90" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="r2_libres" value="2 modules&#xa;LIBRES" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;fontStyle=2;fontColor=#333333;" parent="1" vertex="1">
-                    <mxGeometry x="850" y="610" width="60" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="conn_r2" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#82b366;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="180" y="580" as="sourcePoint"/>
-                        <mxPoint x="180" y="600" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="conn_r2_horiz" value="" style="endArrow=none;html=1;strokeWidth=1;strokeColor=#82b366;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="90" y="600" as="sourcePoint"/>
-                        <mxPoint x="795" y="600" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="conn_circuits_r2_1" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#82b366;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="90" y="600" as="sourcePoint"/>
-                        <mxPoint x="90" y="610" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="conn_circuits_r2_2" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#82b366;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="195" y="600" as="sourcePoint"/>
-                        <mxPoint x="195" y="610" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="conn_circuits_r2_3" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#82b366;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="295" y="600" as="sourcePoint"/>
-                        <mxPoint x="295" y="610" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="conn_circuits_r2_4" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#82b366;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="395" y="600" as="sourcePoint"/>
-                        <mxPoint x="395" y="610" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="conn_circuits_r2_5" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#82b366;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="495" y="600" as="sourcePoint"/>
-                        <mxPoint x="495" y="610" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="conn_circuits_r2_6" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#82b366;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="595" y="600" as="sourcePoint"/>
-                        <mxPoint x="595" y="610" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="conn_circuits_r2_7" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#82b366;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="695" y="600" as="sourcePoint"/>
-                        <mxPoint x="695" y="610" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="conn_circuits_r2_8" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#82b366;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="795" y="600" as="sourcePoint"/>
-                        <mxPoint x="795" y="610" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="rangee3_title" value="RANGÉE 3 - ECS et Extensions" style="text;html=1;strokeColor=#d79b00;fillColor=#ffe6cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" parent="1" vertex="1">
-                    <mxGeometry x="40" y="720" width="280" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="diff_r3" value="Différentiel&#xa;40A 30mA&#xa;Type A" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;fontStyle=1" parent="1" vertex="1">
-                    <mxGeometry x="110" y="760" width="140" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="line_r3" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#d79b00;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="970" y="220" as="sourcePoint"/>
-                        <mxPoint x="970" y="760" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="ecs" value="Chauffe-eau (ECS)&#xa;Disj. 20A&#xa;2.5mm² - 5m&#xa;+ Routeur solaire" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=10;fontStyle=1" parent="1" vertex="1">
-                    <mxGeometry x="40" y="850" width="130" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="r3_libres" value="7 modules LIBRES" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;fontStyle=2;fontColor=#333333;" parent="1" vertex="1">
-                    <mxGeometry x="180" y="850" width="140" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="conn_r3" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#d79b00;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="180" y="820" as="sourcePoint"/>
-                        <mxPoint x="180" y="840" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="conn_r3_horiz" value="" style="endArrow=none;html=1;strokeWidth=1;strokeColor=#d79b00;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="105" y="840" as="sourcePoint"/>
-                        <mxPoint x="180" y="840" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="conn_ecs" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#d79b00;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="105" y="840" as="sourcePoint"/>
-                        <mxPoint x="105" y="850" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="soustableau_title" value="SOUS-TABLEAU ÉTAGE" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" parent="1" vertex="1">
-                    <mxGeometry x="560" y="720" width="280" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="line_soustab" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#6c8ebf;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="695" y="680" as="sourcePoint"/>
-                        <mxPoint x="695" y="760" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="diff_st" value="Différentiel&#xa;40A 30mA&#xa;Type AC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontStyle=1" parent="1" vertex="1">
-                    <mxGeometry x="625" y="760" width="140" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="vmi" value="VMI&#xa;Disj. 16A&#xa;1.5mm² - 18m" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9" parent="1" vertex="1">
-                    <mxGeometry x="560" y="850" width="80" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="p5" value="P5 - Étage&#xa;Disj. 16A&#xa;2.5mm² - 30m" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9" parent="1" vertex="1">
-                    <mxGeometry x="650" y="850" width="80" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="l3" value="L3 - Étage&#xa;Disj. 16A&#xa;1.5mm² - 25m" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9" parent="1" vertex="1">
-                    <mxGeometry x="740" y="850" width="80" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="l4" value="L4 - SdB&#xa;Disj. 16A&#xa;1.5mm² - 15m" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9" parent="1" vertex="1">
-                    <mxGeometry x="560" y="920" width="80" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="p6" value="P6 - Ch.3&#xa;Disj. 10A&#xa;2.5mm² - 10m" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9" parent="1" vertex="1">
-                    <mxGeometry x="650" y="920" width="80" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="p7" value="P7 - Palier&#xa;+ Applique Ch4&#xa;+ Box internet&#xa;Disj. 10A&#xa;2.5mm² - 10m" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=9" parent="1" vertex="1">
-                    <mxGeometry x="740" y="920" width="80" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="p8" value="P8 - SdB&#xa;Disj. 10A&#xa;2.5mm² - 3m" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;fontStyle=1" parent="1" vertex="1">
-                    <mxGeometry x="830" y="920" width="80" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="st_libres" value="4 modules&#xa;LIBRES" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;fontStyle=2;fontColor=#333333;" parent="1" vertex="1">
-                    <mxGeometry x="920" y="850" width="70" height="130" as="geometry"/>
-                </mxCell>
-                <mxCell id="conn_st" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#6c8ebf;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="695" y="820" as="sourcePoint"/>
-                        <mxPoint x="695" y="840" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="conn_st_horiz" value="" style="endArrow=none;html=1;strokeWidth=1;strokeColor=#6c8ebf;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="600" y="840" as="sourcePoint"/>
-                        <mxPoint x="780" y="840" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="conn_st_vmi" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#6c8ebf;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="600" y="840" as="sourcePoint"/>
-                        <mxPoint x="600" y="850" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="conn_st_p5" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#6c8ebf;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="690" y="840" as="sourcePoint"/>
-                        <mxPoint x="690" y="850" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="conn_st_l4" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#6c8ebf;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="690" y="840" as="sourcePoint"/>
-                        <mxPoint x="690" y="850" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="conn_st_p6" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#6c8ebf;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="740" y="840" as="sourcePoint"/>
-                        <mxPoint x="740" y="850" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="conn_st_p7" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor:#6c8ebf;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="780" y="840" as="sourcePoint"/>
-                        <mxPoint x="780" y="920" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="conn_st_p8" value="" style="endArrow=classic;html=1;strokeWidth=1;strokeColor=#d6b656;" parent="1" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="870" y="840" as="sourcePoint"/>
-                        <mxPoint x="870" y="920" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="legende_title" value="LÉGENDE" style="text;html=1;strokeColor=#666666;fillColor=#f5f5f5;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1;fontColor=#333333;" parent="1" vertex="1">
-                    <mxGeometry x="40" y="1020" width="860" height="25" as="geometry"/>
-                </mxCell>
-                <mxCell id="leg_typea" value="Type A" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9" parent="1" vertex="1">
-                    <mxGeometry x="50" y="1055" width="70" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="leg_typea_txt" value="Différentiel Type A (plaque, lave-linge, ECS)" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9" parent="1" vertex="1">
-                    <mxGeometry x="130" y="1055" width="230" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="leg_typeac" value="Type AC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9" parent="1" vertex="1">
-                    <mxGeometry x="380" y="1055" width="70" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="leg_typeac_txt" value="Différentiel Type AC (éclairages, prises standards)" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9" parent="1" vertex="1">
-                    <mxGeometry x="460" y="1055" width="250" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="leg_nouveau" value="NOUVEAU" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;fontStyle=1" parent="1" vertex="1">
-                    <mxGeometry x="50" y="1095" width="70" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="leg_nouveau_txt" value="Circuits à créer (onduleur + microonduleurs jardin + SdB)" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9" parent="1" vertex="1">
-                    <mxGeometry x="130" y="1095" width="250" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="leg_modif" value="MODIF" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;fontSize=9;strokeWidth=2" parent="1" vertex="1">
-                    <mxGeometry x="380" y="1095" width="70" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="leg_modif_txt" value="Aucune modification - configuration actuelle conservée" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9" parent="1" vertex="1">
-                    <mxGeometry x="460" y="1095" width="270" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="leg_mesure" value="Mesure" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9" parent="1" vertex="1">
-                    <mxGeometry x="50" y="1135" width="70" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="leg_mesure_txt" value="Pinces ampèremétriques et équipement monitoring" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9" parent="1" vertex="1">
-                    <mxGeometry x="130" y="1135" width="270" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="notes_title" value="NOTES IMPORTANTES" style="text;html=1;strokeColor=#d79b00;fillColor=#ffe6cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1" parent="1" vertex="1">
-                    <mxGeometry x="40" y="1190" width="860" height="25" as="geometry"/>
-                </mxCell>
-                <mxCell id="note1" value="• PINCE 1 (arrivée EDF) : Mesure flux global pour routeur solaire ECS (surplus après batterie → ECS)&#xa;• PINCE 2 (Rangées 1+2) : Mesure consommation hors ECS pour pilotage onduleur/batterie&#xa;• ECS isolé sur Rangée 3 : Permet mesure précise consommation hors ECS&#xa;• Priorités énergétiques : 1) Consommation instantanée  2) Charge batterie  3) Routage ECS&#xa;• Hauteur sous-tableau étage : 1,70-1,80m (conformité NF C 15-100 + sécurité enfants)&#xa;• Sélectivité : Défaut étage ne coupe pas RdC et inversement (4 différentiels 30mA distincts)&#xa;• Circuits solaires dédiés : Onduleur AC-coupling batterie + Microonduleurs jardin (3000W)&#xa;• P7 : Palier + Applique murale chambre 4 (existant) + Prise box internet/serveur ondulé (nouveau)&#xa;• P8 salle de bain : Circuit dédié conforme NF C 15-100, protection différentielle 30mA, câble court (3m)&#xa;• Modules libres : 16 au total (8 en R1 + 2 en R2 + 7 en R3 + 4 étage) pour extensions futures" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=9;fillColor=#fffff0;strokeColor=#d79b00;" parent="1" vertex="1">
-                    <mxGeometry x="50" y="1225" width="840" height="115" as="geometry"/>
-                </mxCell>
-                <mxCell id="footer" value="Document créé par GitHub Copilot - 3 février 2026 - Version 1.0&#xa;Conforme NF C 15-100 - Projet RenovationElectrique" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;fontStyle=2;fontColor=#666666;" parent="1" vertex="1">
-                    <mxGeometry x="320" y="1360" width="530" height="30" as="geometry"/>
-                </mxCell>
-            </root>
-        </mxGraphModel>
-    </diagram>
+<mxfile host="app.diagrams.net" modified="2026-02-17T12:00:00.000Z" agent="GitHub Copilot" version="24.7.17" type="device">
+  <diagram id="schema-unifilaire" name="Schéma Unifilaire">
+    <mxGraphModel dx="1280" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="title" value="SCHÉMA UNIFILAIRE TABLEAU PRINCIPAL&#xa;Configuration conforme NF C 15-100 (plan_organisation_tableau)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="357" y="20" width="940" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="source" value="Arrivée ENEDIS&#xa;Disjoncteur de branchement 500 mA" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="1">
+          <mxGeometry x="710" y="100" width="240" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="pince1" value="Pince 1&#xa;Mesure flux global&#xa;(après DB, avant répartition)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;fillColor=#e1d5e7;strokeColor=#9673a6" vertex="1" parent="1">
+          <mxGeometry x="990" y="100" width="230" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="bus" value="" style="endArrow=none;html=1;strokeWidth=3;strokeColor=#000000" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="250" as="sourcePoint"/>
+            <mxPoint x="1290" y="250" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="line_source_bus" value="" style="endArrow=classic;html=1;strokeWidth=3;strokeColor=#000000" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="830" y="180" as="sourcePoint"/>
+            <mxPoint x="830" y="250" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="r1_title" value="RANGÉE 1 - ID 40A 30mA TYPE A" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fillColor=#f8cecc;strokeColor=#b85450" vertex="1" parent="1">
+          <mxGeometry x="40" y="300" width="520" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="r1" value="Modules 1-2 : Interrupteur différentiel Type A&#xa;M3 : DJ 32A  P1 Plaque cuisson (6 mm²)&#xa;M4 : DJ 20A  P2 Prises buanderie/garage (2,5 mm²)&#xa;M5 : DJ 20A  P3 Prises séjour/bureau/four (2,5 mm²)&#xa;M6 : DJ 20A  P4 Prises cuisine (2,5 mm²)&#xa;M7 : DJ 20A  Onduleur solaire AC-coupling (2,5 mm²)&#xa;M8 : DJ 20A  Microonduleurs jardin (2,5 mm²)&#xa;M9 : DJ 2A   VMI étage (1,5 mm²)&#xa;M10-M13 : Réserve (4 modules)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;strokeColor=#b85450;fillColor=#fff5f5;align=left;spacingLeft=8" vertex="1" parent="1">
+          <mxGeometry x="40" y="330" width="520" height="240" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="r2_title" value="RANGÉE 2 - ID 40A 30mA TYPE AC" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="590" y="300" width="520" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="r2" value="Modules 1-2 : Interrupteur différentiel Type AC&#xa;M3 : DJ 20A  Chaudière + domotique + routeur ECS (2,5 mm²)&#xa;M4 : DJ 16A  L1 Éclairage 1 (1,5 mm²)&#xa;M5 : DJ 16A  L2 Éclairage 2 (1,5 mm²)&#xa;M6 : DJ 16A  L3 Éclairage étage (1,5 mm²)&#xa;M7 : DJ 16A  L4 Éclairage salle de bains (1,5 mm²)&#xa;M8-M9 : Équipement mesure onduleur (2 modules DIN)&#xa;M10 : DJ 16A  P5 Prises étage (2,5 mm²)&#xa;M11 : DJ 10A  P6 Prises chambre 3 (2,5 mm²)&#xa;M12 : DJ 10A  P7 Prise palier (2,5 mm²)&#xa;M13 : Réserve (1 module)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;strokeColor=#82b366;fillColor=#f3fff2;align=left;spacingLeft=8" vertex="1" parent="1">
+          <mxGeometry x="590" y="330" width="520" height="240" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="r3_title" value="RANGÉE 3 - ID 40A 30mA TYPE A" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="1">
+          <mxGeometry x="1140" y="300" width="470" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="r3" value="Modules 1-2 : Interrupteur différentiel Type A&#xa;M3 : DJ 20A  ECS Chauffe-eau (2,5 mm²)&#xa;M4-M13 : Réserve (10 modules)&#xa;&#xa;Objectif : ECS isolé pour mesure hors ECS sur rangées 1+2" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;strokeColor=#d79b00;fillColor=#fff9ef;align=left;spacingLeft=8" vertex="1" parent="1">
+          <mxGeometry x="1140" y="330" width="470" height="240" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="line_bus_r1" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#b85450" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="250" as="sourcePoint"/>
+            <mxPoint x="300" y="300" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="line_bus_r2" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#82b366" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="850" y="250" as="sourcePoint"/>
+            <mxPoint x="850" y="300" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="line_bus_r3" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#d79b00" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1375" y="250" as="sourcePoint"/>
+            <mxPoint x="1375" y="300" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="pince2" value="Pince 2&#xa;Mesure consommation hors ECS&#xa;(rangées 1 + 2)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;fillColor=#e1d5e7;strokeColor=#9673a6" vertex="1" parent="1">
+          <mxGeometry x="770" y="590" width="220" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="note" value="NOTE ARCHITECTURE : sous-tableau étage supprimé.&#xa;Circuits VMI, P5, L3, L4, P6, P7 intégrés au tableau principal." style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="40" y="590" width="720" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="legend" value="Légende : DJ = disjoncteur divisionnaire ; ID = interrupteur différentiel ; sections selon NF C 15-100" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10" vertex="1" parent="1">
+          <mxGeometry x="40" y="690" width="950" height="20" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
 </mxfile>

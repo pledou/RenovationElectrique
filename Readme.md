@@ -2,14 +2,14 @@
 
 ## État d'avancement du projet
 
-**Dernière mise à jour** : 4 février 2026
+**Dernière mise à jour** : 17 février 2026
 
 | Phase | État | Détails |
 |-------|------|---------|
 | 📋 Inventaire installation | ✅ Complété | `data/installation.yaml` - 14 circuits identifiés |
 | 📐 Plans et schémas | ✅ Complétés | Plans RdC/Étage + schéma unifilaire |
 | 🔍 Analyse défauts | ✅ Complétée | Fuites, sous-dimensionnements, problèmes terre |
-| 📊 Dimensionnement tableau | ✅ Complété | Tableau 3×13 modules, 21 utilisés, 18 libres |
+| 📊 Dimensionnement tableau | ✅ Complété | Tableau 3×13 modules, 24 utilisés, 15 libres |
 | 📍 Emplacement tableau | ✅ Décidé | Garage, hauteur 110-150 cm |
 | 📏 Métré câbles | ✅ Complété | ~40m de câbles nécessaires, devis établi |
 | 🛠️ Achat matériel | ⏳ À réaliser | Liste complète disponible |
@@ -48,12 +48,25 @@ On constate des courants de fuite importants sur le neutre de certains circuits.
 - Schéma unifilaire:
 	- [Schéma unifilaire du tableau](doc/schema_unifilaire_tableau-Schéma-Unifilaire.svg) ([Édition](doc/schema_unifilaire_tableau.drawio))
 - Documents principaux:
-	- [doc/proposition_tableau_electrique.md](doc/proposition_tableau_electrique.md) : **✅ RÉALISÉ** - proposition détaillée du nouveau tableau (architecture 3 rangées, dimensionnement, protections)
-	- [doc/plan_implantation_tableau.md](doc/plan_implantation_tableau.md) : **✅ RÉALISÉ** - étude comparative des emplacements possibles (garage retenu)
-	- [doc/plan_organisation_tableau.md](doc/plan_organisation_tableau.md) : **✅ RÉALISÉ** - organisation interne du tableau (disposition modules, câblage, étiquetage)
+	- [doc/proposition_tableau_electrique.md](doc/proposition_tableau_electrique.md) : **✅ RÉALISÉ** - **référentiel technique maître** (architecture, conformité, dimensionnement, coûts)
+	- [doc/plan_implantation_tableau.md](doc/plan_implantation_tableau.md) : **✅ RÉALISÉ** - **mode opératoire d'implantation** (positionnement physique, cheminement, checklist)
+	- [doc/plan_organisation_tableau.md](doc/plan_organisation_tableau.md) : **✅ RÉALISÉ** - **mode opératoire d'organisation interne** (répartition, procédure, contrôles)
 	- [doc/etiquettes_tableau.md](doc/etiquettes_tableau.md) : **✅ RÉALISÉ** - étiquettes A4 imprimables pour repérage des circuits et fils
 	- [doc/metré_rallonges_cables.md](doc/metré_rallonges_cables.md) : **✅ RÉALISÉ** - calcul des longueurs de câbles nécessaires et devis matériel
 	- [doc/checklist_validation.md](doc/checklist_validation.md) : checklist de validation post-remplacement
+
+## Gouvernance documentaire
+
+### Règles de référence
+
+1. **Source maître unique** : [doc/proposition_tableau_electrique.md](doc/proposition_tableau_electrique.md)
+   - Toute décision technique (NF C 15-100, calibres, sections, logique énergétique, coûts) est maintenue ici.
+2. **Documents opératoires** :
+   - [doc/plan_implantation_tableau.md](doc/plan_implantation_tableau.md) pour l'implantation physique terrain.
+   - [doc/plan_organisation_tableau.md](doc/plan_organisation_tableau.md) pour l'exécution chantier et l'organisation interne.
+3. **Règle d'arbitrage** : en cas d'écart entre documents, la proposition technique fait foi.
+4. **Anti-duplication** : ne pas recopier de tableaux de dimensionnement/coûts dans les modes opératoires ; utiliser un renvoi vers la proposition.
+5. **Mise à jour coordonnée** : toute modification d'architecture dans la proposition doit entraîner une vérification des deux plans opératoires et de [doc/checklist_validation.md](doc/checklist_validation.md).
 
 ### Photos
 - [Tableau buanderie (fermé)](doc/tableau_buanderie.jpg)
@@ -94,7 +107,7 @@ Identification des courants de fuite, sous-dimensionnements, défauts d'isolemen
 
 **✅ RÉALISÉ** - Voir [proposition_tableau_electrique.md](doc/proposition_tableau_electrique.md)
 
-Tableau 3 rangées × 13 modules (21 utilisés, 18 libres). Architecture avec 3 interrupteurs différentiels (2× Type A, 1× Type AC) et répartition des circuits optimisée pour minimiser les modifications. Les circuits étage sont conservés, le tableau étage est remplacé par un coffret 13 modules (ajout différentiel 30mA obligatoire NF C 15-100).
+Tableau 3 rangées × 13 modules (24 utilisés, 15 libres). Architecture avec 3 interrupteurs différentiels (2× Type A, 1× Type AC) et répartition des circuits optimisée pour minimiser les modifications. Les circuits étage sont conservés et intégrés directement au tableau principal (suppression du sous-tableau étage).
 
 **Schéma unifilaire** : [schema_unifilaire_tableau-Schéma-Unifilaire.svg](doc/schema_unifilaire_tableau-Schéma-Unifilaire.svg) ([Édition](doc/schema_unifilaire_tableau.drawio))
 
@@ -108,12 +121,12 @@ Solution retenue : **garage**, hauteur 110-150 cm (conforme NF C 15-100, évite 
 
 **✅ RÉALISÉ** - Voir [metré_rallonges_cables.md](doc/metré_rallonges_cables.md)
 
-Liste complète du matériel nécessaire (~40m de câbles multiconducteurs, protections différentielles, disjoncteurs) avec métrés détaillés et devis.
+Liste complète du matériel nécessaire avec scénario tableau principal unique et métrés détaillés (liaisons étage directes de 10 m).
 
 ### Démarche
 
 1. **Préparation** : Matériel, plan de coupure minimisée, consignation
-2. **Installation rallonges** : 9 circuits à rallonger (3m par circuit)
+2. **Installation rallonges** : circuits RdC + 6 circuits étage en liaison directe (10m)
 3. **Coupure progressive** : Bascule des circuits non critiques
 4. **Raccordement** : Connexion et étiquetage
 5. **Tests et validation** : Isolement, mise sous tension progressive, validation fonctionnelle

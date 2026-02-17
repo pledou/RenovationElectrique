@@ -1,30 +1,34 @@
 # Repérage Tableau Électrique - A4 Compact
 
-**Date** : 4 février 2026 | **Format** : À imprimer A4 - Découper par rangée et coller sur le tableau
+**Date** : 17 février 2026 | **Format** : À imprimer A4 - Découper par rangée et coller sur le tableau
 
 ---
 
-## PAGE 1 : RANGÉE 1 (Type A - Prioritaire)
+## PAGE 1 : RANGÉE 1 (Type A - Prioritaire + Production)
 
 ```
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃  RANGÉE 1 - DIFFÉRENTIEL TYPE A 40A/30mA             ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+┌──────────────┬──────────────┬──────────────┬──────────────┐
+│      P1      │      P2      │      P3      │      P4      │
+│  PLAQUE CUI. │  PRISES BUA. │  PRISES SEJ  │  PRISES CUI. │
+│   32A/6mm²   │  20A/2.5mm²  │  20A/2.5mm²  │  20A/2.5mm²  │
+│   Cuisine    │ Bua+Garage   │ Sej/Bur/Four │ Cuisine      │
+└──────────────┴──────────────┴──────────────┴──────────────┘
 
 ┌──────────────┬──────────────┬──────────────┐
-│      P1      │      P2      │      P4      │
-│  PLAQUE CUI. │  PRISES BUA. │  PRISES CUI. │
-│   32A/6mm²   │  20A/2.5mm²  │  20A/2.5mm²  │
-│   Cuisine    │ Bua+Garage   │ Cuisine (5)  │
-│              │              │ +prise four  │
+│   ONDULEUR   │ MICROOND.JAR │     VMI      │
+│   SOL 20A    │   20A/2.5mm²  │   2A/1.5mm²  │
+│  AC-coupling │ Jardin 3000W │ Ventilation  │
+│   Garage     │              │   Étage      │
 └──────────────┴──────────────┴──────────────┘
-
-À découper et coller sur la rangée 1 du tableau
 ```
 
 ---
 
-## PAGE 2 : RANGÉE 2 (Type AC - Général)
+## PAGE 2 : RANGÉE 2 (Type AC - Éclairages + Général)
 
 ```
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -32,30 +36,35 @@
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 ┌──────────────┬──────────────┬──────────────┬──────────────┐
-│  CHAUDIÈRE   │      L1      │      L2      │      P3      │
-│  Chd+Rout    │   ÉCLAIR 1   │   ÉCLAIR 2   │ SÉJOUR/BURA. │
-│  20A/2.5mm²  │  16A/1.5mm²  │  16A/1.5mm²  │  20A/2.5mm²  │
-│  Buanderie   │Salon/Bua/Gar │ Cuis/Ent/WC  │ Séjour/Bur   │
+│  CHAUDIÈRE   │      L1      │      L2      │      L3      │
+│  Chd+Rout    │   ÉCLAIR 1   │   ÉCLAIR 2   │  ÉCL ÉTAGE   │
+│  20A/2.5mm²  │  16A/1.5mm²  │  16A/1.5mm²  │  16A/1.5mm²  │
+│  Buanderie   │Salon/Bua/Gar │ Cuis/Ent/WC  │   Étage      │
 └──────────────┴──────────────┴──────────────┴──────────────┘
 
-┌──────────────┬──────────────┬─────────────┬──────────────┐
-│   ONDULEUR   │   MONITORING │  st_etage   │ MICROOND.JAR │
-│   SOL 20A    │  Équip.Mes.  │   20A/6mm²  │   20A/2.5mm² │
-│ 2.5mm²       │  2 modules   │  Sous-tabl. │ Jardin 3000W │
-│ Garage       │  AC-coupling │    étage    │              │
-└──────────────┴──────────────┴─────────────┴──────────────┘
+┌──────────────┬──────────────┬──────────────┬──────────────┐
+│      L4      │  MONITORING  │      P5      │      P6      │
+│  ÉCL SdB     │  Équip.Mes.  │  PRISES ÉTAG.│  PRIS. CHB3  │
+│  16A/1.5mm²  │  2 modules   │  16A/2.5mm²  │  10A/2.5mm²  │
+│   Étage      │  Onduleur    │   Étage      │   Chambre 3  │
+└──────────────┴──────────────┴──────────────┴──────────────┘
 
-À découper et coller sur la rangée 2 du tableau
+┌──────────────┐
+│      P7      │
+│ PRISE PALIER │
+│  10A/2.5mm²  │
+│   Palier     │
+└──────────────┘
 ```
 
 ---
 
-## PAGE 3 : RANGÉE 3 (Type A - ECS)
+## PAGE 3 : RANGÉE 3 (Type A - ECS Isolé)
 
 ```
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃  RANGÉE 3 - DIFFÉRENTIEL TYPE A 40A/30mA      ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃  RANGÉE 3 - DIFFÉRENTIEL TYPE A 40A/30mA                  ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 ┌──────────────┐
 │     ECS      │
@@ -64,35 +73,7 @@
 │   Buanderie  │
 └──────────────┘
 
-À découper et coller sur la rangée 3 du tableau
-```
-
----
-
-## PAGE 4 : SOUS-TABLEAU ÉTAGE
-
-```
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃  SOUS-TABLEAU ÉTAGE - DIFFÉRENTIEL TYPE AC 40A/30mA        ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-
-┌──────────────┬──────────────┬──────────────┬──────────────┐
-│     VMI      │      P5      │      L3      │      L4      │
-│ VENTILATION  │ PRISES ÉTAGE │ ÉCLAIR ÉTAGE │ ÉCLAIR SDB   │
-│ 16A/1.5mm²   │ 16A/2.5mm²   │ 16A/1.5mm²   │ 16A/1.5mm²   │
-│    Étage     │  Chamb 1+2   │ Chamb+Palier │ Salle Bains  │
-└──────────────┴──────────────┴──────────────┴──────────────┘
-
-┌──────────────┬──────────────┬──────────────┐
-│      P6      │      P7      │      P8      │
-│ PRISES CHBR3 │PRISE RÉSEAU+ │PRISES SdB    │
-│ 10A/2.5mm²   │APPLIQUE CH4  │ 10A/2.5mm²   │
-│   Chambre 3  │ 10A/2.5mm²   │  Au-dessus   │
-│              │Palier+Appl.  │      WC      │
-│              │+Box+Serveur  │              │
-└──────────────┴──────────────┴──────────────┘
-
-À découper et coller sur le sous-tableau étage
+(10 modules libres pour extensions)
 ```
 
 ---
@@ -113,42 +94,23 @@ Rangées 1+2 uniquement
 
 ## TABLEAU SYNTHÉTIQUE (pour porte du tableau)
 
-| **RANGÉE** | **DIFF** | **Module 3** | **Module 4** | **Module 5** |  **Module 6-7**  | **Module 8-11** |
-| :--------: | :------: | :----------: | :----------: | :----------: | :--------------: | :-------------: |
-|   **1**    |  Type A  |    P1 32A    |    P2 20A    |    P4 20A    |      LIBRE       |      LIBRE      |
-|   **2**    | Type AC  |   Chd 20A    |    L1 16A    |    L2 16A    | P3 20A / Ond 20A |  Mes / sc / Mic 20A   |
-|   **3**    |  Type A  |   ECS 20A    |    LIBRE     |    LIBRE     |      LIBRE       |      LIBRE      |
-| **Étage**  | Type AC  |   VMI 16A    |    P5 16A    |    L3 16A    | L4 16A / P6 10A  | P7 10A / P8 10A |
+| **RANGÉE** | **DIFF** | **Modules principaux** |
+| :--------: | :------: | :-------------------- |
+|   **1**    |  Type A  | P1 / P2 / P3 / P4 / Ond / Mic / VMI |
+|   **2**    | Type AC  | Chd / L1 / L2 / L3 / L4 / Mes / P5 / P6 / P7 |
+|   **3**    |  Type A  | ECS (isolé) |
 
 ---
 
 ## MODE D'EMPLOI
 
-**1. Imprimer ce document** sur papier A4 standard (4 pages)
-
-**2. Découper par rangée** :
-   - Page 1 = Rangée 1 (découper 1 bande avec 3 cases)
-   - Page 2 = Rangée 2 (découper 2 bandes avec 4+3 cases)
-   - Page 3 = Rangée 3 (découper 1 bande avec 1 case)
-   - Page 4 = Sous-tableau (découper 2 bandes avec 4+2 cases)
-
-**3. Coller directement sur le tableau** :
-   - Scotch double face ou pâte adhésive
-   - Bande de papier à la hauteur de chaque rangée
-   - Ou garder comme référence avec schéma unifilaire
-
-**4. Alternative : Repérage au scotch de peintre**
-   - Recopier les références à la main sur scotch blanc
-   - Coller sur les fils/gaines à l'entrée du tableau
-   - Utiliser ce document comme guide
-
-**5. Pour maintenance**
-   - Plastifier le tableau synthétique
-   - Coller sur la porte du tableau avec le schéma unifilaire
-   - Garder une copie en local
+1. Imprimer ce document sur papier A4.
+2. Découper par rangée et coller sur la porte ou à proximité immédiate des rangées.
+3. Utiliser en complément du schéma unifilaire.
+4. Alternative : recopier au scotch de peintre pour repérage des câbles.
 
 ---
 
 **Installation** : Garage, hauteur 110-150 cm  
 **Norme** : NF C 15-100  
-**Mise à jour** : 4 février 2026
+**Mise à jour** : 17 février 2026
