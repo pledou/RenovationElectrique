@@ -1,7 +1,7 @@
 # Plan d'Organisation Interne du Tableau Électrique
 
 ## Date
-4 février 2026
+17 février 2026
 
 ## Référence
 Basé sur [proposition_tableau_electrique.md](proposition_tableau_electrique.md)
@@ -11,8 +11,8 @@ Basé sur [proposition_tableau_electrique.md](proposition_tableau_electrique.md)
 ## Configuration Générale
 
 **Tableau** : Coffret 3 rangées × 13 modules (39 modules disponibles)
-- **21 modules utilisés**
-- **18 modules libres** (pour extensions futures)
+- **24 modules utilisés**
+- **15 modules libres** (pour extensions futures)
 
 **Localisation** : Garage, hauteur 110-150 cm (entrée haute ~150 cm)
 
@@ -24,13 +24,13 @@ Basé sur [proposition_tableau_electrique.md](proposition_tableau_electrique.md)
 ╔═══════════════════════════════════════════════════════════════╗
 ║               TABLEAU ÉLECTRIQUE PRINCIPAL - GARAGE           ║
 ║                    3 rangées × 13 modules                     ║
-╠═══════════════════════════════════════════════════════════════╣
-║ RANGÉE 1 │ Type A │ P1 │ P2 │ P4 │ LIBRE (8 modules)         ║
-║          │  40A   │32A │20A │20A │                            ║
-╠═══════════════════════════════════════════════════════════════╣
-║ RANGÉE 2 │ Type AC│Chd │L1 │L2 │P3 │Ond│Mes│sc │Mic│LIBRE(2)║
-║          │  40A   │20A │16A│16A│20A│20A│(2)│20A│20A│         ║
-╠═══════════════════════════════════════════════════════════════╣
+╠════════════════════════════════════════════════════════════════╣
+║ RANGÉE 1 │ Type A │ P1 │P2 │P3 │P4 │Ond│Mic│VMI│LIBRE (4 mod)║
+║          │  40A   │32A │20A│20A│20A│20A│20A│2A │             ║
+╠════════════════════════════════════════════════════════════════╣
+║ RANGÉE 2 │ Type AC│Chd │L1 │L2 │L3 │L4 │Mes│P5 │P6 │P7 │LIB(1)║
+║          │  40A   │20A │16A│16A│16A│16A│(2)│16A│10A│10A│      ║
+╠════════════════════════════════════════════════════════════════╣
 ║ RANGÉE 3 │ Type A │ ECS │ LIBRE (10 modules)                 ║
 ║          │  40A   │ 20A │                                     ║
 ╚═══════════════════════════════════════════════════════════════╝
@@ -39,43 +39,49 @@ Basé sur [proposition_tableau_electrique.md](proposition_tableau_electrique.md)
 **Légende** :
 - Chd = Chaudière + domotique + routeur ECS
 - L1/L2 = Éclairages
-- P1-P4 = Prises
+- L3/L4 = Éclairages étage
+- P1-P7 = Prises (RdC + étage)
 - Ond = Onduleur solaire
 - Mes = Équipement mesure (2 modules)
-- sc = Sous-compteur étage
+- VMI = Ventilation étage (2A)
 - Mic = Microonduleurs jardin
 - ECS = Chauffe-eau
 
 ---
 
-## RANGÉE 1 - Circuits Prioritaires (30mA Type A)
+## RANGÉE 1 - Circuits Prioritaires + Production (30mA Type A)
 
 ### Schéma Détaillé
 
 ```
-┌──────────────────────────────────────────────────────────────┐
-│ Module │  1-2  │  3  │  4  │  5  │ 6 │ 7 │ 8 │ 9 │10 │11-13  │
-├────────┼───────┼─────┼─────┼─────┼───┼───┼───┼───┼───┼───────┤
-│ Type   │ DIFF  │ DJ  │ DJ  │ DJ  │   │   │   │   │   │ LIBRE │
-│        │ 40A   │ 32A │ 20A │ 20A │   │   │   │   │   │       │
-├────────┼───────┼─────┼─────┼─────┼───┼───┼───┼───┼───┼───────┤
-│Circuit │Type A │ P1  │ P2  │ P4  │   │   │   │   │   │       │
-│        │ ▓▓▓▓  │Plaqu│Buan│Cuis │   │   │   │   │   │       │
-└────────┴───────┴─────┴─────┴─────┴───┴───┴───┴───┴───┴───────┘
+┌───────────────────────────────────────────────────────────────┐
+│ Module │  1-2  │  3  │  4  │  5  │  6  │  7  │  8  │  9  │10-13│
+├────────┼───────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+│ Type   │ DIFF  │ DJ  │ DJ  │ DJ  │ DJ  │ DJ  │ DJ  │ DJ  │LIBRE│
+│        │ 40A   │ 32A │ 20A │ 20A │ 20A │ 20A │ 20A │ 2A  │     │
+├────────┼───────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+│Circuit │Type A │ P1  │ P2  │ P3  │ P4  │ Ond │ Mic │ VMI │     │
+│        │ ▓▓▓▓  │Plaqu│Buan │Séj/ │Cuis │solar│ond. │Vent │     │
+│        │       │     │     │Four │     │     │jard │étage│     │
+└────────┴───────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘
          └──── Peigne d'alimentation horizontale ────────────────┘
 ```
 
 ### Détail des connexions
 
-| Module | Équipement                | Type            | Circuit                   | Section | Longueur | Notes                                 |
-| ------ | ------------------------- | --------------- | ------------------------- | ------- | -------- | ------------------------------------- |
-| 1-2    | Interrupteur différentiel | 40A 30mA Type A | -                         | -       | -        | Obligatoire pour plaque et lave-linge |
-| 3      | Disjoncteur               | 32A             | **P1 - Plaque cuisson**   | 6 mm²   | 5m       | **Changer 10A→32A**                   |
-| 4      | Disjoncteur               | 20A             | **P2 - Buanderie/Garage** | 2.5 mm² | 12m      | Lave-linge, sèche-linge               |
-| 5      | Disjoncteur               | 20A             | **P4 - Prises cuisine**   | 2.5 mm² | 10m      | 9 prises                              |
-| 6-13   | -                         | -               | **LIBRE**                 | -       | -        | 8 emplacements disponibles            |
+| Module | Équipement                | Type            | Circuit                         | Section | Longueur | Notes                                 |
+| ------ | ------------------------- | --------------- | ------------------------------- | ------- | -------- | ------------------------------------- |
+| 1-2    | Interrupteur différentiel | 40A 30mA Type A | -                               | -       | -        | Obligatoire pour plaque et lave-linge |
+| 3      | Disjoncteur               | 32A             | **P1 - Plaque cuisson**         | 6 mm²   | 5m       | **Changer 10A→32A**                   |
+| 4      | Disjoncteur               | 20A             | **P2 - Buanderie/Garage**       | 2.5 mm² | 12m      | Lave-linge, sèche-linge               |
+| 5      | Disjoncteur               | 20A             | **P3 - Séjour/Bureau/Four**     | 2.5 mm² | 15m      | 5 prises + four                       |
+| 6      | Disjoncteur               | 20A             | **P4 - Prises cuisine**         | 2.5 mm² | 10m      | 9 prises                              |
+| 7      | Disjoncteur               | 20A             | **Onduleur solaire AC-coupling**| 2.5 mm² | -        | **NOUVEAU CIRCUIT**                   |
+| 8      | Disjoncteur               | 20A             | **Microonduleurs jardin**       | 2.5 mm² | 30m      | **NOUVEAU CIRCUIT**                   |
+| 9      | Disjoncteur               | 2A              | **VMI étage**                   | 1.5 mm² | 10m      | Circuit ventilation dédié             |
+| 10-13  | -                         | -               | **LIBRE**                       | -       | -        | 4 emplacements disponibles            |
 
-**Charge maximale théorique** : 32A + 20A + 20A = 72A  
+**Charge maximale théorique** : 32A + 20A + 20A + 20A + 20A + 20A + 2A = 134A  
 **Différentiel** : 40A adapté avec coefficient de diversité
 
 ### Câblage
@@ -88,45 +94,50 @@ Basé sur [proposition_tableau_electrique.md](proposition_tableau_electrique.md)
 **Repérage des câbles** :
 - **P1** : Rouge (étiquette "Plaque cuisson")
 - **P2** : Orange (étiquette "Buanderie/Garage")
+- **P3** : Violet (étiquette "Séjour/Bureau/Four")
 - **P4** : Bleu (étiquette "Cuisine prises")
+- **Onduleur** : Rouge/Noir rayé (étiquette "Onduleur Solaire")
+- **Microonduleurs** : Bleu/Blanc rayé (étiquette "Microonduleurs Jardin")
+- **VMI** : Gris (étiquette "Ventilation Étage")
 
 ---
 
-## RANGÉE 2 - Circuits Généraux (30mA Type AC)
+## RANGÉE 2 - Éclairages + Circuits Généraux (30mA Type AC)
 
 ### Schéma Détaillé
 
 ```
-┌──────────────────────────────────────────────────────────────┐
-│ Module │  1-2  │  3  │  4  │  5  │  6  │  7  │ 8-9 │ 10  │ 11  │12-13│
-├────────┼───────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-│ Type   │ DIFF  │ DJ  │ DJ  │ DJ  │ DJ  │ DJ  │Equip│ DJ  │ DJ  │LIBRE│
-│        │ 40A   │ 20A │ 16A │ 16A │ 20A │ 20A │Mesu │ 20A │ 20A │     │
-├────────┼───────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-│Circuit │Type AC│Chaud│ L1  │ L2  │ P3  │Ondul│ (2) │sc_et│Micro│     │
-│        │ ▓▓▓▓  │+Rou │Ecl1 │Ecl2 │Séj/ │solar│modul│ étag│ond. │     │
-│        │       │ ECS │     │     │Four │     │  es │  e  │jard │     │
-└────────┴───────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘
+┌────────────────────────────────────────────────────────────────┐
+│ Module │  1-2  │  3  │  4  │  5  │  6  │  7  │ 8-9 │ 10  │ 11  │ 12  │ 13 │
+├────────┼───────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼────┤
+│ Type   │ DIFF  │ DJ  │ DJ  │ DJ  │ DJ  │ DJ  │Equip│ DJ  │ DJ  │ DJ  │LIB │
+│        │ 40A   │ 20A │ 16A │ 16A │ 16A │ 16A │Mesu │ 16A │ 10A │ 10A │    │
+├────────┼───────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼────┤
+│Circuit │Type AC│Chaud│ L1  │ L2  │ L3  │ L4  │ (2) │ P5  │ P6  │ P7  │    │
+│        │ ▓▓▓▓  │+Rou │Ecl1 │Ecl2 │Ecl  │Ecl  │modul│Pris │Pris │Pris │    │
+│        │       │ ECS │     │     │étage│ SdB │  es │étage│chbr3│palie│    │
+└────────┴───────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴────┘
          └──── Peigne d'alimentation horizontale ────────────────┘
 ```
 
 ### Détail des connexions
 
-| Module | Équipement                | Type             | Circuit                          | Section | Longueur | Notes                      |
-| ------ | ------------------------- | ---------------- | -------------------------------- | ------- | -------- | -------------------------- |
-| 1-2    | Interrupteur différentiel | 40A 30mA Type AC | -                                | -       | -        | Circuits standards         |
-| 3      | Disjoncteur               | 20A              | **Chaudière + routeur ECS**      | 2.5 mm² | 12m      | ESP + routeur solaire      |
-| 4      | Disjoncteur               | 16A              | **L1 - Éclairage 1**             | 1.5 mm² | 15m      | Salon, garage, buanderie   |
-| 5      | Disjoncteur               | 16A              | **L2 - Éclairage 2**             | 1.5 mm² | 10m      | Cuisine, entrée, WC        |
-| 6      | Disjoncteur               | 20A              | **P3 - Séjour/Bureau/Four**      | 2.5 mm² | 15m      | 5 prises + four            |
-| 7      | Disjoncteur               | 20A              | **Onduleur solaire AC-coupling** | 2.5 mm² | -        | **NOUVEAU CIRCUIT**        |
-| 8-9    | Équipement DIN            | -                | **Monitoring onduleur**          | -       | -        | 2 modules DIN              |
-| 10     | Disjoncteur               | 20A              | **st_etage - Sous-tableau**      | 6 mm²   | 25m      | Alimentation étage         |
-| 11     | Disjoncteur               | 20A              | **Microonduleurs jardin**        | 2.5 mm² | 30m      | **NOUVEAU CIRCUIT**        |
-| 12-13  | -                         | -                | **LIBRE**                        | -       | -        | 2 emplacements disponibles |
+| Module | Équipement                | Type             | Circuit                         | Section | Longueur | Notes                      |
+| ------ | ------------------------- | ---------------- | ------------------------------- | ------- | -------- | -------------------------- |
+| 1-2    | Interrupteur différentiel | 40A 30mA Type AC | -                               | -       | -        | Circuits standards         |
+| 3      | Disjoncteur               | 20A              | **Chaudière + routeur ECS**     | 2.5 mm² | 12m      | ESP + routeur solaire      |
+| 4      | Disjoncteur               | 16A              | **L1 - Éclairage 1**            | 1.5 mm² | 15m      | Salon, garage, buanderie   |
+| 5      | Disjoncteur               | 16A              | **L2 - Éclairage 2**            | 1.5 mm² | 10m      | Cuisine, entrée, WC        |
+| 6      | Disjoncteur               | 16A              | **L3 - Éclairage étage**        | 1.5 mm² | 10m      | Circuit étage direct       |
+| 7      | Disjoncteur               | 16A              | **L4 - Éclairage salle de bains**| 1.5 mm² | 10m     | Circuit étage direct       |
+| 8-9    | Équipement DIN            | -                | **Monitoring onduleur**         | -       | -        | 2 modules DIN              |
+| 10     | Disjoncteur               | 16A              | **P5 - Prises étage**           | 2.5 mm² | 10m      | Circuit étage direct       |
+| 11     | Disjoncteur               | 10A              | **P6 - Prises chambre 3**       | 2.5 mm² | 10m      | Circuit étage direct       |
+| 12     | Disjoncteur               | 10A              | **P7 - Prise palier**           | 2.5 mm² | 10m      | Circuit étage direct       |
+| 13     | -                         | -                | **LIBRE**                       | -       | -        | 1 emplacement disponible   |
 
-**Charge maximale théorique** : 20A + 16A + 16A + 20A + 20A + 20A + 20A = 132A  
-**Différentiel** : 40A adapté (diversité d'usage, onduleurs en injection)
+**Charge maximale théorique** : 20A + 16A + 16A + 16A + 16A + 16A + 10A + 10A = 120A  
+**Différentiel** : 40A adapté (diversité d'usage)
 
 ### Câblage
 
@@ -134,38 +145,39 @@ Basé sur [proposition_tableau_electrique.md](proposition_tableau_electrique.md)
 - **Chaudière** : Noir (étiquette "Chaudière+Routeur ECS")
 - **L1** : Jaune (étiquette "Éclairage 1 - Salon/Garage")
 - **L2** : Vert (étiquette "Éclairage 2 - Cuisine/Entrée")
-- **P3** : Violet (étiquette "Séjour/Bureau/Four")
-- **Onduleur** : Rouge/Noir rayé (étiquette "Onduleur Solaire")
-- **st_etage** : Gris (étiquette "Alimentation Étage")
-- **Microonduleurs** : Bleu/Blanc rayé (étiquette "Microonduleurs Jardin")
+- **L3** : Orange (étiquette "Éclairage Étage")
+- **L4** : Marron (étiquette "Éclairage Salle de Bains")
+- **P5** : Bleu clair (étiquette "Prises Étage")
+- **P6** : Rose (étiquette "Prises Chambre 3")
+- **P7** : Vert clair (étiquette "Prise Palier")
 
 ---
 
-## RANGÉE 3 - ECS et Extensions (30mA Type A)
+## RANGÉE 3 - ECS Isolé (30mA Type A)
 
 ### Schéma Détaillé
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│ Module │  1-2  │  3  │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 10 │ 11-13    │
-├────────┼───────┼─────┼───┼───┼───┼───┼───┼───┼────┼──────────┤
-│ Type   │ DIFF  │ DJ  │   │   │   │   │   │   │    │  LIBRE   │
-│        │ 40A   │ 20A │   │   │   │   │   │   │    │          │
-├────────┼───────┼─────┼───┼───┼───┼───┼───┼───┼────┼──────────┤
-│Circuit │Type A │ ECS │   │   │   │   │   │   │    │          │
-│        │ ▓▓▓▓  │Chauf│   │   │   │   │   │   │    │          │
-│        │       │fe-ea│   │   │   │   │   │   │    │          │
-└────────┴───────┴─────┴───┴───┴───┴───┴───┴───┴────┴──────────┘
+│ Module │  1-2  │  3  │ 4-13                                   │
+├────────┼───────┼─────┼────────────────────────────────────────┤
+│ Type   │ DIFF  │ DJ  │          LIBRE                         │
+│        │ 40A   │ 20A │                                        │
+├────────┼───────┼─────┼────────────────────────────────────────┤
+│Circuit │Type A │ ECS │                                        │
+│        │ ▓▓▓▓  │Chauf│                                        │
+│        │       │fe-ea│                                        │
+└────────┴───────┴─────┴────────────────────────────────────────┘
          └──── Peigne d'alimentation horizontale ──────────────┘
 ```
 
 ### Détail des connexions
 
-| Module | Équipement                | Type            | Circuit               | Section | Longueur | Notes                        |
-| ------ | ------------------------- | --------------- | --------------------- | ------- | -------- | ---------------------------- |
-| 1-2    | Interrupteur différentiel | 40A 30mA Type A | -                     | -       | -        | Obligatoire pour chauffe-eau |
-| 3      | Disjoncteur               | 20A             | **ECS - Chauffe-eau** | 2.5 mm² | 5m       | Circuit dédié isolé          |
-| 4-13   | -                         | -               | **LIBRE**             | -       | -        | 10 emplacements disponibles  |
+| Module | Équipement                | Type            | Circuit                   | Section | Longueur | Notes                        |
+| ------ | ------------------------- | --------------- | ------------------------- | ------- | -------- | ---------------------------- |
+| 1-2    | Interrupteur différentiel | 40A 30mA Type A | -                         | -       | -        | Obligatoire pour chauffe-eau |
+| 3      | Disjoncteur               | 20A             | **ECS - Chauffe-eau**     | 2.5 mm² | 5m       | Circuit dédié isolé          |
+| 4-13   | -                         | -               | **LIBRE**                 | -       | -        | 10 emplacements disponibles  |
 
 **Charge maximale théorique** : 20A  
 **Différentiel** : 40A (large marge pour extensions)
@@ -324,7 +336,12 @@ ARRIVÉE EDF (haut du tableau)
 | L2        | Éclairage 2             | 16A     | 1.5 mm² | Cuisine/Entrée/WC      |
 | P3        | Séjour/Bureau/Four      | 20A     | 2.5 mm² | Séjour/Bureau          |
 | Onduleur  | Onduleur solaire        | 20A     | 2.5 mm² | Garage (équip.)        |
-| st_etage  | Alimentation étage      | 20A     | 6 mm²   | Sous-tableau étage     |
+| VMI       | Ventilation étage       | 2A      | 1.5 mm² | Étage                  |
+| L3        | Éclairage étage         | 16A     | 1.5 mm² | Étage                  |
+| L4        | Éclairage salle de bains| 16A     | 1.5 mm² | Étage                  |
+| P5        | Prises étage            | 16A     | 2.5 mm² | Étage                  |
+| P6        | Prises chambre 3        | 10A     | 2.5 mm² | Étage                  |
+| P7        | Prise palier            | 10A     | 2.5 mm² | Étage                  |
 | Microond. | Microonduleurs jardin   | 20A     | 2.5 mm² | Jardin (panneaux)      |
 | ECS       | Chauffe-eau             | 20A     | 2.5 mm² | Buanderie              |
 
@@ -369,7 +386,7 @@ ARRIVÉE EDF (haut du tableau)
 - Extensions futures
 
 **Passages latéraux** :
-- Alimentation sous-tableau étage (vers plafond)
+- Réserves/extensions futures
 
 ---
 
@@ -443,9 +460,9 @@ ARRIVÉE EDF (haut du tableau)
 
 ### ⚠️ Évolutions Futures
 
-1. **Modules libres** : 18 emplacements disponibles
-   - Rangée 1 : 8 modules (circuits prioritaires Type A)
-   - Rangée 2 : 3 modules (circuits généraux Type AC)
+1. **Modules libres** : 15 emplacements disponibles
+   - Rangée 1 : 4 modules (circuits prioritaires Type A)
+   - Rangée 2 : 1 module (circuits généraux Type AC)
    - Rangée 3 : 10 modules (circuits Type A ou extensions ECS)
 
 2. **Extensions possibles** :
@@ -492,6 +509,6 @@ ARRIVÉE EDF (haut du tableau)
 ---
 
 **Auteur** : GitHub Copilot  
-**Date** : 4 février 2026  
+**Date** : 17 février 2026  
 **Version** : 1.0  
 **Statut** : ✅ Complet (infos manquantes = relevés sur place uniquement)

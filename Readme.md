@@ -2,14 +2,14 @@
 
 ## État d'avancement du projet
 
-**Dernière mise à jour** : 4 février 2026
+**Dernière mise à jour** : 17 février 2026
 
 | Phase | État | Détails |
 |-------|------|---------|
 | 📋 Inventaire installation | ✅ Complété | `data/installation.yaml` - 14 circuits identifiés |
 | 📐 Plans et schémas | ✅ Complétés | Plans RdC/Étage + schéma unifilaire |
 | 🔍 Analyse défauts | ✅ Complétée | Fuites, sous-dimensionnements, problèmes terre |
-| 📊 Dimensionnement tableau | ✅ Complété | Tableau 3×13 modules, 21 utilisés, 18 libres |
+| 📊 Dimensionnement tableau | ✅ Complété | Tableau 3×13 modules, 24 utilisés, 15 libres |
 | 📍 Emplacement tableau | ✅ Décidé | Garage, hauteur 110-150 cm |
 | 📏 Métré câbles | ✅ Complété | ~40m de câbles nécessaires, devis établi |
 | 🛠️ Achat matériel | ⏳ À réaliser | Liste complète disponible |
@@ -94,7 +94,7 @@ Identification des courants de fuite, sous-dimensionnements, défauts d'isolemen
 
 **✅ RÉALISÉ** - Voir [proposition_tableau_electrique.md](doc/proposition_tableau_electrique.md)
 
-Tableau 3 rangées × 13 modules (21 utilisés, 18 libres). Architecture avec 3 interrupteurs différentiels (2× Type A, 1× Type AC) et répartition des circuits optimisée pour minimiser les modifications. Les circuits étage sont conservés, le tableau étage est remplacé par un coffret 13 modules (ajout différentiel 30mA obligatoire NF C 15-100).
+Tableau 3 rangées × 13 modules (24 utilisés, 15 libres). Architecture avec 3 interrupteurs différentiels (2× Type A, 1× Type AC) et répartition des circuits optimisée pour minimiser les modifications. Les circuits étage sont conservés et intégrés directement au tableau principal (suppression du sous-tableau étage).
 
 **Schéma unifilaire** : [schema_unifilaire_tableau-Schéma-Unifilaire.svg](doc/schema_unifilaire_tableau-Schéma-Unifilaire.svg) ([Édition](doc/schema_unifilaire_tableau.drawio))
 
@@ -108,12 +108,12 @@ Solution retenue : **garage**, hauteur 110-150 cm (conforme NF C 15-100, évite 
 
 **✅ RÉALISÉ** - Voir [metré_rallonges_cables.md](doc/metré_rallonges_cables.md)
 
-Liste complète du matériel nécessaire (~40m de câbles multiconducteurs, protections différentielles, disjoncteurs) avec métrés détaillés et devis.
+Liste complète du matériel nécessaire avec scénario tableau principal unique et métrés détaillés (liaisons étage directes de 10 m).
 
 ### Démarche
 
 1. **Préparation** : Matériel, plan de coupure minimisée, consignation
-2. **Installation rallonges** : 9 circuits à rallonger (3m par circuit)
+2. **Installation rallonges** : circuits RdC + 6 circuits étage en liaison directe (10m)
 3. **Coupure progressive** : Bascule des circuits non critiques
 4. **Raccordement** : Connexion et étiquetage
 5. **Tests et validation** : Isolement, mise sous tension progressive, validation fonctionnelle

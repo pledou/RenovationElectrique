@@ -112,9 +112,8 @@ Selon `doc/plan_organisation_tableau.md` :
 - Les 6 circuits étage deviennent des départs directs au tableau principal (**+6 modules**).
 
 ### Bilan modules
-- Variation nette : **+5 modules**.
-- Nouvel utilisé estimé : **26 modules**.
-- Modules restants estimés : **13 modules libres**.
+- Nouvel utilisé estimé : **24 modules**.
+- Modules restants estimés : **15 modules libres**.
 
 ## Conclusion capacité
 - Le tableau principal reste **suffisamment dimensionné**.
