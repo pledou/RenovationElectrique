@@ -48,12 +48,25 @@ On constate des courants de fuite importants sur le neutre de certains circuits.
 - Schéma unifilaire:
 	- [Schéma unifilaire du tableau](doc/schema_unifilaire_tableau-Schéma-Unifilaire.svg) ([Édition](doc/schema_unifilaire_tableau.drawio))
 - Documents principaux:
-	- [doc/proposition_tableau_electrique.md](doc/proposition_tableau_electrique.md) : **✅ RÉALISÉ** - proposition détaillée du nouveau tableau (architecture 3 rangées, dimensionnement, protections)
-	- [doc/plan_implantation_tableau.md](doc/plan_implantation_tableau.md) : **✅ RÉALISÉ** - étude comparative des emplacements possibles (garage retenu)
-	- [doc/plan_organisation_tableau.md](doc/plan_organisation_tableau.md) : **✅ RÉALISÉ** - organisation interne du tableau (disposition modules, câblage, étiquetage)
+	- [doc/proposition_tableau_electrique.md](doc/proposition_tableau_electrique.md) : **✅ RÉALISÉ** - **référentiel technique maître** (architecture, conformité, dimensionnement, coûts)
+	- [doc/plan_implantation_tableau.md](doc/plan_implantation_tableau.md) : **✅ RÉALISÉ** - **mode opératoire d'implantation** (positionnement physique, cheminement, checklist)
+	- [doc/plan_organisation_tableau.md](doc/plan_organisation_tableau.md) : **✅ RÉALISÉ** - **mode opératoire d'organisation interne** (répartition, procédure, contrôles)
 	- [doc/etiquettes_tableau.md](doc/etiquettes_tableau.md) : **✅ RÉALISÉ** - étiquettes A4 imprimables pour repérage des circuits et fils
 	- [doc/metré_rallonges_cables.md](doc/metré_rallonges_cables.md) : **✅ RÉALISÉ** - calcul des longueurs de câbles nécessaires et devis matériel
 	- [doc/checklist_validation.md](doc/checklist_validation.md) : checklist de validation post-remplacement
+
+## Gouvernance documentaire
+
+### Règles de référence
+
+1. **Source maître unique** : [doc/proposition_tableau_electrique.md](doc/proposition_tableau_electrique.md)
+   - Toute décision technique (NF C 15-100, calibres, sections, logique énergétique, coûts) est maintenue ici.
+2. **Documents opératoires** :
+   - [doc/plan_implantation_tableau.md](doc/plan_implantation_tableau.md) pour l'implantation physique terrain.
+   - [doc/plan_organisation_tableau.md](doc/plan_organisation_tableau.md) pour l'exécution chantier et l'organisation interne.
+3. **Règle d'arbitrage** : en cas d'écart entre documents, la proposition technique fait foi.
+4. **Anti-duplication** : ne pas recopier de tableaux de dimensionnement/coûts dans les modes opératoires ; utiliser un renvoi vers la proposition.
+5. **Mise à jour coordonnée** : toute modification d'architecture dans la proposition doit entraîner une vérification des deux plans opératoires et de [doc/checklist_validation.md](doc/checklist_validation.md).
 
 ### Photos
 - [Tableau buanderie (fermé)](doc/tableau_buanderie.jpg)

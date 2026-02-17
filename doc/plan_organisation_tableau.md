@@ -1,514 +1,178 @@
-# Plan d'Organisation Interne du Tableau Électrique
+# Plan d'Organisation Interne du Tableau Électrique (Mode Opératoire)
 
 ## Date
 17 février 2026
 
-## Référence
-Basé sur [proposition_tableau_electrique.md](proposition_tableau_electrique.md)
+## Objectif du document
+Ce document est le **mode opératoire chantier**.
+
+Il ne porte pas la justification normative, le chiffrage détaillé ni les arbitrages d'architecture. Ces éléments sont maintenus dans le document maître :
+- [proposition_tableau_electrique.md](proposition_tableau_electrique.md)
 
 ---
 
-## Configuration Générale
+## Rôle de ce document vs document maître
 
-**Tableau** : Coffret 3 rangées × 13 modules (39 modules disponibles)
-- **24 modules utilisés**
-- **15 modules libres** (pour extensions futures)
+- **Document maître** : [proposition_tableau_electrique.md](proposition_tableau_electrique.md)
+  - Référentiel technique unique (NF C 15-100, calibres, sections, logique énergétique, coûts, délais)
+- **Présent document** : exécution terrain
+  - Implantation du coffret
+  - Ordre de montage/raccordement
+  - Repérage, tests, relevés, contrôle final
 
-**Localisation** : Garage, hauteur 110-150 cm (entrée haute ~150 cm)
-
----
-
-## Vue d'Ensemble des Rangées
-
-```
-╔═══════════════════════════════════════════════════════════════╗
-║               TABLEAU ÉLECTRIQUE PRINCIPAL - GARAGE           ║
-║                    3 rangées × 13 modules                     ║
-╠════════════════════════════════════════════════════════════════╣
-║ RANGÉE 1 │ Type A │ P1 │P2 │P3 │P4 │Ond│Mic│VMI│LIBRE (4 mod)║
-║          │  40A   │32A │20A│20A│20A│20A│20A│2A │             ║
-╠════════════════════════════════════════════════════════════════╣
-║ RANGÉE 2 │ Type AC│Chd │L1 │L2 │L3 │L4 │Mes│P5 │P6 │P7 │LIB(1)║
-║          │  40A   │20A │16A│16A│16A│16A│(2)│16A│10A│10A│      ║
-╠════════════════════════════════════════════════════════════════╣
-║ RANGÉE 3 │ Type A │ ECS │ LIBRE (10 modules)                 ║
-║          │  40A   │ 20A │                                     ║
-╚═══════════════════════════════════════════════════════════════╝
-```
-
-**Légende** :
-- Chd = Chaudière + domotique + routeur ECS
-- L1/L2 = Éclairages
-- L3/L4 = Éclairages étage
-- P1-P7 = Prises (RdC + étage)
-- Ond = Onduleur solaire
-- Mes = Équipement mesure (2 modules)
-- VMI = Ventilation étage (2A)
-- Mic = Microonduleurs jardin
-- ECS = Chauffe-eau
+> En cas d'écart, **la proposition technique fait foi**.
 
 ---
 
-## RANGÉE 1 - Circuits Prioritaires + Production (30mA Type A)
+## Configuration retenue (rappel synthétique)
 
-### Schéma Détaillé
+- Tableau principal : **3 rangées × 13 modules**
+- Modules utilisés : **24**
+- Modules libres : **15**
+- Sous-tableau étage : **supprimé**
+- Circuits étage intégrés : **VMI, P5, L3, L4, P6, P7**
 
-```
-┌───────────────────────────────────────────────────────────────┐
-│ Module │  1-2  │  3  │  4  │  5  │  6  │  7  │  8  │  9  │10-13│
-├────────┼───────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-│ Type   │ DIFF  │ DJ  │ DJ  │ DJ  │ DJ  │ DJ  │ DJ  │ DJ  │LIBRE│
-│        │ 40A   │ 32A │ 20A │ 20A │ 20A │ 20A │ 20A │ 2A  │     │
-├────────┼───────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-│Circuit │Type A │ P1  │ P2  │ P3  │ P4  │ Ond │ Mic │ VMI │     │
-│        │ ▓▓▓▓  │Plaqu│Buan │Séj/ │Cuis │solar│ond. │Vent │     │
-│        │       │     │     │Four │     │     │jard │étage│     │
-└────────┴───────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘
-         └──── Peigne d'alimentation horizontale ────────────────┘
-```
-
-### Détail des connexions
-
-| Module | Équipement                | Type            | Circuit                         | Section | Longueur | Notes                                 |
-| ------ | ------------------------- | --------------- | ------------------------------- | ------- | -------- | ------------------------------------- |
-| 1-2    | Interrupteur différentiel | 40A 30mA Type A | -                               | -       | -        | Obligatoire pour plaque et lave-linge |
-| 3      | Disjoncteur               | 32A             | **P1 - Plaque cuisson**         | 6 mm²   | 5m       | **Changer 10A→32A**                   |
-| 4      | Disjoncteur               | 20A             | **P2 - Buanderie/Garage**       | 2.5 mm² | 12m      | Lave-linge, sèche-linge               |
-| 5      | Disjoncteur               | 20A             | **P3 - Séjour/Bureau/Four**     | 2.5 mm² | 15m      | 5 prises + four                       |
-| 6      | Disjoncteur               | 20A             | **P4 - Prises cuisine**         | 2.5 mm² | 10m      | 9 prises                              |
-| 7      | Disjoncteur               | 20A             | **Onduleur solaire AC-coupling**| 2.5 mm² | -        | **NOUVEAU CIRCUIT**                   |
-| 8      | Disjoncteur               | 20A             | **Microonduleurs jardin**       | 2.5 mm² | 30m      | **NOUVEAU CIRCUIT**                   |
-| 9      | Disjoncteur               | 2A              | **VMI étage**                   | 1.5 mm² | 10m      | Circuit ventilation dédié             |
-| 10-13  | -                         | -               | **LIBRE**                       | -       | -        | 4 emplacements disponibles            |
-
-**Charge maximale théorique** : 32A + 20A + 20A + 20A + 20A + 20A + 2A = 134A  
-**Différentiel** : 40A adapté avec coefficient de diversité
-
-### Câblage
-
-**Arrivée alimentation** :
-- Phase : Peigne horizontal depuis différentiel
-- Neutre : Bornier de neutre (en haut)
-- Terre : Bornier de terre (en bas)
-
-**Repérage des câbles** :
-- **P1** : Rouge (étiquette "Plaque cuisson")
-- **P2** : Orange (étiquette "Buanderie/Garage")
-- **P3** : Violet (étiquette "Séjour/Bureau/Four")
-- **P4** : Bleu (étiquette "Cuisine prises")
-- **Onduleur** : Rouge/Noir rayé (étiquette "Onduleur Solaire")
-- **Microonduleurs** : Bleu/Blanc rayé (étiquette "Microonduleurs Jardin")
-- **VMI** : Gris (étiquette "Ventilation Étage")
+Référence détaillée (affectations exactes par module, calibres, sections) :
+- [proposition_tableau_electrique.md](proposition_tableau_electrique.md)
 
 ---
 
-## RANGÉE 2 - Éclairages + Circuits Généraux (30mA Type AC)
+## Affectation opérationnelle par rangée
 
-### Schéma Détaillé
+### Rangée 1 (Type A)
+- ID 40A 30mA Type A (modules 1-2)
+- P1, P2, P3, P4, Onduleur, Microonduleurs, VMI
+- Réserve : 4 modules
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│ Module │  1-2  │  3  │  4  │  5  │  6  │  7  │ 8-9 │ 10  │ 11  │ 12  │ 13 │
-├────────┼───────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼────┤
-│ Type   │ DIFF  │ DJ  │ DJ  │ DJ  │ DJ  │ DJ  │Equip│ DJ  │ DJ  │ DJ  │LIB │
-│        │ 40A   │ 20A │ 16A │ 16A │ 16A │ 16A │Mesu │ 16A │ 10A │ 10A │    │
-├────────┼───────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼────┤
-│Circuit │Type AC│Chaud│ L1  │ L2  │ L3  │ L4  │ (2) │ P5  │ P6  │ P7  │    │
-│        │ ▓▓▓▓  │+Rou │Ecl1 │Ecl2 │Ecl  │Ecl  │modul│Pris │Pris │Pris │    │
-│        │       │ ECS │     │     │étage│ SdB │  es │étage│chbr3│palie│    │
-└────────┴───────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴────┘
-         └──── Peigne d'alimentation horizontale ────────────────┘
-```
+### Rangée 2 (Type AC)
+- ID 40A 30mA Type AC (modules 1-2)
+- Chaudière + routeur ECS, L1, L2, L3, L4, mesure onduleur (2 modules), P5, P6, P7
+- Réserve : 1 module
 
-### Détail des connexions
-
-| Module | Équipement                | Type             | Circuit                         | Section | Longueur | Notes                      |
-| ------ | ------------------------- | ---------------- | ------------------------------- | ------- | -------- | -------------------------- |
-| 1-2    | Interrupteur différentiel | 40A 30mA Type AC | -                               | -       | -        | Circuits standards         |
-| 3      | Disjoncteur               | 20A              | **Chaudière + routeur ECS**     | 2.5 mm² | 12m      | ESP + routeur solaire      |
-| 4      | Disjoncteur               | 16A              | **L1 - Éclairage 1**            | 1.5 mm² | 15m      | Salon, garage, buanderie   |
-| 5      | Disjoncteur               | 16A              | **L2 - Éclairage 2**            | 1.5 mm² | 10m      | Cuisine, entrée, WC        |
-| 6      | Disjoncteur               | 16A              | **L3 - Éclairage étage**        | 1.5 mm² | 10m      | Circuit étage direct       |
-| 7      | Disjoncteur               | 16A              | **L4 - Éclairage salle de bains**| 1.5 mm² | 10m     | Circuit étage direct       |
-| 8-9    | Équipement DIN            | -                | **Monitoring onduleur**         | -       | -        | 2 modules DIN              |
-| 10     | Disjoncteur               | 16A              | **P5 - Prises étage**           | 2.5 mm² | 10m      | Circuit étage direct       |
-| 11     | Disjoncteur               | 10A              | **P6 - Prises chambre 3**       | 2.5 mm² | 10m      | Circuit étage direct       |
-| 12     | Disjoncteur               | 10A              | **P7 - Prise palier**           | 2.5 mm² | 10m      | Circuit étage direct       |
-| 13     | -                         | -                | **LIBRE**                       | -       | -        | 1 emplacement disponible   |
-
-**Charge maximale théorique** : 20A + 16A + 16A + 16A + 16A + 16A + 10A + 10A = 120A  
-**Différentiel** : 40A adapté (diversité d'usage)
-
-### Câblage
-
-**Repérage des câbles** :
-- **Chaudière** : Noir (étiquette "Chaudière+Routeur ECS")
-- **L1** : Jaune (étiquette "Éclairage 1 - Salon/Garage")
-- **L2** : Vert (étiquette "Éclairage 2 - Cuisine/Entrée")
-- **L3** : Orange (étiquette "Éclairage Étage")
-- **L4** : Marron (étiquette "Éclairage Salle de Bains")
-- **P5** : Bleu clair (étiquette "Prises Étage")
-- **P6** : Rose (étiquette "Prises Chambre 3")
-- **P7** : Vert clair (étiquette "Prise Palier")
+### Rangée 3 (Type A)
+- ID 40A 30mA Type A (modules 1-2)
+- ECS (chauffe-eau)
+- Réserve : 10 modules
 
 ---
 
-## RANGÉE 3 - ECS Isolé (30mA Type A)
+## Implantation physique (garage)
 
-### Schéma Détaillé
-
-```
-┌──────────────────────────────────────────────────────────────┐
-│ Module │  1-2  │  3  │ 4-13                                   │
-├────────┼───────┼─────┼────────────────────────────────────────┤
-│ Type   │ DIFF  │ DJ  │          LIBRE                         │
-│        │ 40A   │ 20A │                                        │
-├────────┼───────┼─────┼────────────────────────────────────────┤
-│Circuit │Type A │ ECS │                                        │
-│        │ ▓▓▓▓  │Chauf│                                        │
-│        │       │fe-ea│                                        │
-└────────┴───────┴─────┴────────────────────────────────────────┘
-         └──── Peigne d'alimentation horizontale ──────────────┘
-```
-
-### Détail des connexions
-
-| Module | Équipement                | Type            | Circuit                   | Section | Longueur | Notes                        |
-| ------ | ------------------------- | --------------- | ------------------------- | ------- | -------- | ---------------------------- |
-| 1-2    | Interrupteur différentiel | 40A 30mA Type A | -                         | -       | -        | Obligatoire pour chauffe-eau |
-| 3      | Disjoncteur               | 20A             | **ECS - Chauffe-eau**     | 2.5 mm² | 5m       | Circuit dédié isolé          |
-| 4-13   | -                         | -               | **LIBRE**                 | -       | -        | 10 emplacements disponibles  |
-
-**Charge maximale théorique** : 20A  
-**Différentiel** : 40A (large marge pour extensions)
-
-### Câblage
-
-**Repérage des câbles** :
-- **ECS** : Marron (étiquette "Chauffe-eau")
-
-**Raison de l'isolation** :
-- Permet mesure précise consommation hors ECS (Pince 2 sur Rangées 1+2)
-- Facilite le routage solaire intelligent (surplus → ECS uniquement)
+- Bas du coffret : **110–120 cm**
+- Centre organes de manœuvre : **130–140 cm**
+- Haut du coffret : **150–160 cm**
+- Fixation : 4 points, support adapté au mur, niveau/aplomb vérifiés
 
 ---
 
-## Placement des Pinces Ampèremétriques
+## Placement des pinces ampèremétriques
 
-### Pince 1 : Mesure Globale (Routeur ECS)
+### Pince 1 (mesure globale)
+- Position : arrivée principale **après disjoncteur EDF** et avant répartition des rangées
+- Usage : pilotage flux global (import/injection)
 
-```
-┌─────────────────────┐
-│  DISJONCTEUR EDF    │ ← Coupure générale
-└──────────┬──────────┘
-           │
-      ╔════╪════╗
-      ║  PINCE 1 ║ ← Mesure flux global (réseau/injection)
-      ╚════╪════╝
-           │
-    ┌──────┴──────┐
-    │ Différentiels│
-    │ Rang 1+2+3  │
-    └─────────────┘
-```
+### Pince 2 (mesure hors ECS)
+- Position : alimentation des **rangées 1 + 2 uniquement**
+- Usage : mesure consommation maison hors ECS pour la régulation batterie/onduleur
 
-**Fonction** : Mesure production/consommation globale
-- Routeur ECS n'active ECS que si surplus sur cette mesure
-- Évite que la batterie alimente l'ECS
-
-### Pince 2 : Mesure Hors ECS (Onduleur)
-
-```
-┌─────────────────────┐
-│ Alimentation        │
-│ Rangées 1+2 UNIQUEMT│
-└──────────┬──────────┘
-           │
-      ╔════╪════╗
-      ║  PINCE 2 ║ ← Mesure consommation hors ECS
-      ╚════╪════╝
-           │
-    ┌──────┴──────┐
-    │   Rangées   │
-    │    1 + 2    │
-    └─────────────┘
-
-    (Rangée 3 = ECS isolé)
-```
-
-**Fonction** : Mesure consommation maison (hors ECS)
-- Onduleur décharge batterie si importation réseau détectée
-- Optimise charge/décharge batterie selon consommation réelle
+Référence logique énergétique complète :
+- [proposition_tableau_electrique.md](proposition_tableau_electrique.md)
 
 ---
 
-## Interconnexions et Câblage Interne
+## Procédure de réalisation
 
-### Peignes d'Alimentation
+### Étape 1 — Préparation (hors tension non requise)
+1. Poser le nouveau coffret à côté de l'existant
+2. Monter différentiels, peignes, borniers, obturateurs
+3. Préparer les disjoncteurs (récupérés + neufs)
+4. Préparer l'étiquetage des conducteurs
 
-**Peignes horizontaux** :
-- 3× Peignes 13 modules (1 par rangée)
-- Connexion Phase L depuis chaque différentiel
-- Permet distribution sur tous les disjoncteurs de la rangée
+### Étape 2 — Bascule tableau principal (hors tension obligatoire)
+1. Coupure générale + VAT
+2. Bascule **circuit par circuit**
+3. Vérification fonctionnelle après chaque bascule
+4. Circuits prioritaires traités en dernier (chaudière, froid)
 
-**Peigne vertical** :
-- Liaison entre les 3 interrupteurs différentiels
-- Connexion depuis l'arrivée principale (après disjoncteur EDF)
-- Phase L uniquement (neutre et terre sur borniers)
+### Étape 3 — Intégration des circuits étage
+1. Déposer le sous-tableau étage
+2. Tirer les 6 liaisons directes vers le tableau principal
+3. Ajuster le passage combles (parpaing) et protéger mécaniquement
+4. Raccorder sur les départs dédiés
 
-### Borniers
-
-**Borniers de terre** :
-- 3× Borniers 13 connexions (1 par rangée, en bas du tableau)
-- Connexion à la barrette de terre principale
-- Tous les circuits se raccordent ici
-
-**Borniers de neutre** :
-- 3× Borniers 13 connexions (1 par rangée, en haut)
-- Connexion depuis la sortie de chaque différentiel
-- Séparation obligatoire par rangée (après différentiel)
-
-### Câblage Principal
-
-```
-ARRIVÉE EDF (haut du tableau)
-    │
-    ├─ Phase (rouge) → Peigne vertical → Différentiels
-    ├─ Neutre (bleu) → Répartition par différentiel → Borniers neutre
-    └─ Terre (vert/jaune) → Borniers de terre (barrette principale)
-```
+### Étape 4 — Validation
+1. Test bouton TEST de chaque différentiel
+2. Contrôle isolement / continuité terre
+3. Vérification déclenchements et réarmements
+4. Mise à jour repérage + schéma sur porte
 
 ---
 
-## Étiquetage et Repérage
+## Checklist chantier (compacte)
 
-### Méthode d'Étiquetage
+### Avant intervention
+- [ ] Matériel complet (coffret, ID, DJ, peignes, borniers, consommables)
+- [ ] Outils et EPI disponibles
+- [ ] Plan de repérage imprimé
 
-**Solution retenue** : Scotch de peintre marqué au crayon bic
-- Scotch de peintre blanc (masking tape) pour le repérage des fils et gaines
-- Écriture au crayon bic (indélébile, résistant)
-- Collé directement sur les **câbles/fils et gaines** à l'entrée du tableau et le long du parcours
-- Permet identification rapide du circuit lors de la maintenance
+### Pendant intervention
+- [ ] Coupure générale + VAT validées
+- [ ] Repérage de chaque conducteur avant déconnexion
+- [ ] Serrage au couple constructeur
+- [ ] Séparation stricte des neutres par différentiel
 
-**Avantages** :
-- Économique et repositionnable
-- Résistant aux manipulations répétées
-- Visible le long du parcours des câbles
-- Facile à mettre à jour en cas de modification
-
-**Document de repérage** : [etiquettes_tableau.md](etiquettes_tableau.md)
-- Fichier A4 imprimable avec toutes les étiquettes par rangée
-- Format compact prêt à découper et coller
-- Tableau synthétique récapitulatif pour la porte du tableau
-- Peut servir de modèle pour le marquage au scotch de peintre
-
-**Utilisation** :
-- Imprimer et découper par rangée
-- Ou utiliser comme référence pour marquer le scotch au crayon bic
-- Plastifier le tableau synthétique et coller sur la porte avec le schéma unifilaire
-
-### Étiquettes Recommandées
-
-**Méthode d'étiquetage** : Scotch de peintre marqué au crayon bic
-- Scotch de peintre blanc (masking tape)
-- Écriture au crayon bic (indélébile, résistant)
-- Collé sur le disjoncteur ou à côté
-
-**Sur chaque disjoncteur** :
-```
-┌─────────────────────┐
-│   P1                │ ← Identifiant circuit
-│ PLAQUE CUISSON      │ ← Nom explicite
-│   32A - 6mm²        │ ← Calibre et section
-│   Cuisine           │ ← Localisation
-└─────────────────────┘
-```
-
-**Format proposé pour tous les circuits** :
-
-| ID        | Nom                     | Calibre | Section | Localisation           |
-| --------- | ----------------------- | ------- | ------- | ---------------------- |
-| P1        | Plaque cuisson          | 32A     | 6 mm²   | Cuisine                |
-| P2        | Prises Buanderie/Garage | 20A     | 2.5 mm² | Buanderie + Garage     |
-| P4        | Prises cuisine          | 20A     | 2.5 mm² | Cuisine (3 prises)     |
-| Chaudière | Chaudière + Routeur     | 20A     | 2.5 mm² | Buanderie              |
-| L1        | Éclairage 1             | 16A     | 1.5 mm² | Salon/Garage/Buanderie |
-| L2        | Éclairage 2             | 16A     | 1.5 mm² | Cuisine/Entrée/WC      |
-| P3        | Séjour/Bureau/Four      | 20A     | 2.5 mm² | Séjour/Bureau          |
-| Onduleur  | Onduleur solaire        | 20A     | 2.5 mm² | Garage (équip.)        |
-| VMI       | Ventilation étage       | 2A      | 1.5 mm² | Étage                  |
-| L3        | Éclairage étage         | 16A     | 1.5 mm² | Étage                  |
-| L4        | Éclairage salle de bains| 16A     | 1.5 mm² | Étage                  |
-| P5        | Prises étage            | 16A     | 2.5 mm² | Étage                  |
-| P6        | Prises chambre 3        | 10A     | 2.5 mm² | Étage                  |
-| P7        | Prise palier            | 10A     | 2.5 mm² | Étage                  |
-| Microond. | Microonduleurs jardin   | 20A     | 2.5 mm² | Jardin (panneaux)      |
-| ECS       | Chauffe-eau             | 20A     | 2.5 mm² | Buanderie              |
-
-### Schéma Unifilaire
-
-**À coller sur la porte du tableau** :
-- Schéma complet de l'installation
-- Référence : [schema_unifilaire_tableau.drawio](schema_unifilaire_tableau.drawio)
-- Format plastifié A4 ou A3
+### Après intervention
+- [ ] Tests différentiels OK
+- [ ] Fonctionnement de tous les circuits OK
+- [ ] Mesures d'isolement consignées
+- [ ] Étiquetage final en place
+- [ ] Schéma unifilaire posé sur porte
 
 ---
 
-## Installation Physique
+## Repérage et étiquetage
 
-### Dimensions du Tableau
+Méthode retenue : scotch de peintre + marquage lisible au crayon bic.
 
-**Coffret 3 rangées 13 modules** :
-- Largeur : ~270 mm (13 modules × 18 mm + marges)
-- Hauteur : ~540 mm (3 rangées × 150 mm + espace peignes)
-- Profondeur : ~110 mm (avec porte)
-
-### Positionnement Garage
-
-**Hauteur recommandée** :
-- Bas du tableau : **110-120 cm** du sol
-- Centre disjoncteurs : **130-140 cm** (ergonomie optimale)
-- Haut du tableau : **150-160 cm**
-
-**Fixation** :
-- 4 points de fixation (coins du coffret)
-- Chevilles métal M8 ou M10 pour parpaing
-- Niveau et aplomb vérifiés
-
-### Entrées/Sorties de Câbles
-
-**Entrées hautes** (depuis plafond) :
-- Arrivée principale EDF (Phase/Neutre/Terre)
-- Circuits depuis ancien tableau (via goulotte)
-
-**Sorties basses** (optionnel) :
-- Nouveau circuit onduleur solaire
-- Extensions futures
-
-**Passages latéraux** :
-- Réserves/extensions futures
+Références de repérage :
+- [etiquettes_tableau.md](etiquettes_tableau.md)
+- [schema_unifilaire_tableau.drawio](schema_unifilaire_tableau.drawio)
 
 ---
 
-## Checklist d'Installation
+## Points de vigilance sécurité et conformité
 
-### Avant Montage
+- Coupure générale et VAT systématiques
+- Respect des sections et calibres définis dans la proposition
+- Neutres séparés par différentiel
+- Contrôle des défauts existants non traités par ce lot (prises sans terre, hors conduit, croisements L1/L2/L3)
 
-- [ ] Tableau livré et vérifié (état, dimensions)
-- [ ] Tous les disjoncteurs disponibles (récupérés + neufs)
-- [ ] Différentiels neufs (2× Type A, 1× Type AC)
-- [ ] Peignes horizontaux et vertical
-- [ ] Borniers de terre et neutre (3 de chaque)
-- [ ] Scotch de peintre et crayon bic (pour étiquetage)
-- [ ] Câbles de rallonge préparés (avec repérage)
-- [ ] Outils (tournevis, pince à dénuder, testeur)
-
-### Montage du Tableau (J-1)
-
-- [ ] Fixation du coffret au mur (niveau vérifié)
-- [ ] Installation des 3 différentiels (modules 1-2 de chaque rangée)
-- [ ] Installation du peigne vertical (liaison différentiels)
-- [ ] Installation des peignes horizontaux (3 rangées)
-- [ ] Installation des borniers de terre (bas)
-- [ ] Installation des borniers de neutre (haut)
-- [ ] Installation de tous les disjoncteurs récupérés
-- [ ] Installation des nouveaux disjoncteurs (32A, 20A onduleur)
-- [ ] Installation des obturateurs sur modules libres
-- [ ] Câblage interne (peignes ↔ différentiels ↔ borniers)
-
-### Raccordement des Circuits (Jour J)
-
-- [ ] Coupure générale EDF
-- [ ] Identification et étiquetage de tous les câbles anciens
-- [ ] Raccordement circuit par circuit (test avant passage au suivant)
-- [ ] Création circuit onduleur (nouveau câblage)
-- [ ] Installation équipement mesure (2 modules DIN)
-- [ ] Raccordement arrivée principale (Phase/Neutre/Terre)
-- [ ] Installation des pinces ampèremétriques (Pince 1 et 2)
-- [ ] Serrage de toutes les connexions (couple recommandé)
-- [ ] Fermeture porte tableau
-
-### Tests et Validation
-
-- [ ] Test bouton TEST sur chaque différentiel → doit déclencher
-- [ ] Réarmement différentiels
-- [ ] Mise sous tension progressive (circuit par circuit)
-- [ ] Test de fonctionnement de chaque circuit
-- [ ] Mesure courants de fuite (comparaison avec ancien)
-- [ ] Mesure résistance d'isolement (> 0,5 MΩ)
-- [ ] Vérification des étiquettes et du schéma unifilaire
-- [ ] Rangement de l'ancien tableau (conservation des pièces)
+Référence complète des non-conformités à traiter ultérieurement :
+- [proposition_tableau_electrique.md](proposition_tableau_electrique.md)
 
 ---
 
-## Points de Vigilance
+## Relevés à compléter sur site
 
-### ⚠️ Sécurité
-
-1. **Coupure générale obligatoire** avant toute intervention
-2. **Vérification absence de tension** (VAT) avant raccordement
-3. **Port des EPI** (gants isolants, lunettes)
-4. **Travail en binôme recommandé**
-
-### ⚠️ Conformité
-
-1. **Serrage des connexions** : couple recommandé par fabricant
-2. **Sections de câbles respectées** : 1.5 / 2.5 / 6 mm²
-3. **Couleurs normalisées** : Phase (rouge/noir), Neutre (bleu), Terre (vert/jaune)
-4. **Séparation des neutres** : 1 bornier par différentiel (obligatoire)
-5. **Test différentiels** : bouton TEST doit déclencher immédiatement
-
-### ⚠️ Évolutions Futures
-
-1. **Modules libres** : 15 emplacements disponibles
-   - Rangée 1 : 4 modules (circuits prioritaires Type A)
-   - Rangée 2 : 1 module (circuits généraux Type AC)
-   - Rangée 3 : 10 modules (circuits Type A ou extensions ECS)
-
-2. **Extensions possibles** :
-   - Borne de recharge VE (Type A, 32A dédié)
-   - PAC future (Type A, circuit dédié)
-   - Circuits extérieurs (éclairage jardin, piscine)
-   - Domotique supplémentaire
+- [ ] Couleurs réelles des conducteurs
+- [ ] Mesures d'isolement par circuit
+- [ ] Mesures de fuite avant/après
+- [ ] Photos avant / pendant / après
+- [ ] Position finale validée des pinces 1 et 2
 
 ---
 
-## Documents Complémentaires
+## Documents liés
 
-- [proposition_tableau_electrique.md](proposition_tableau_electrique.md) - Proposition technique complète
-- [plan_implantation_tableau.md](plan_implantation_tableau.md) - Emplacement physique (garage)
-- [schema_unifilaire_tableau.drawio](schema_unifilaire_tableau.drawio) - Schéma unifilaire
-- [metré_rallonges_cables.md](metré_rallonges_cables.md) - Longueurs de câbles
-- [checklist_validation.md](checklist_validation.md) - Tests post-installation
-
----
-
-## Informations Manquantes (à compléter sur place)
-
-### Avant Installation
-
-- [ ] **Couleurs réelles des câbles existants** (peuvent différer du standard)
-- [ ] **Numérotation des boîtes de dérivation** (pour traçabilité)
-- [ ] **État physique des câbles** (vérification isolation lors du raccordement)
-- [ ] **Mesure exacte des courants de fuite actuels** (comparaison avant/après)
-
-### Pendant Installation
-
-- [ ] **Photos avant/pendant/après** (documentation + Consuel)
-- [ ] **Longueurs réelles des rallonges** (ajustement si nécessaire)
-- [ ] **Emplacements précis des pinces ampèremétriques** (accessibilité vérifiée)
-- [ ] **Positions exactes des boîtes de dérivation** (si ajout nécessaire)
-
-### Après Installation
-
-- [ ] **Mesures d'isolement par circuit** (valeurs en MΩ)
-- [ ] **Courants de fuite mesurés** (comparaison avant/après)
-- [ ] **Tests de déclenchement différentiels** (temps de réaction)
-- [ ] **Consommations relevées** (validation pinces ampèremétriques)
+- [proposition_tableau_electrique.md](proposition_tableau_electrique.md) (référentiel technique)
+- [plan_implantation_tableau.md](plan_implantation_tableau.md)
+- [schema_unifilaire_tableau.drawio](schema_unifilaire_tableau.drawio)
+- [metré_rallonges_cables.md](metré_rallonges_cables.md)
+- [checklist_validation.md](checklist_validation.md)
 
 ---
 
 **Auteur** : GitHub Copilot  
 **Date** : 17 février 2026  
-**Version** : 1.0  
-**Statut** : ✅ Complet (infos manquantes = relevés sur place uniquement)
+**Version** : 2.0  
+**Statut** : ✅ Version opératoire alignée sur la proposition technique

@@ -6,6 +6,16 @@
 ## Principe général
 Cette proposition vise à **minimiser les modifications sur les circuits existants** tout en assurant la conformité aux normes NF C 15-100 et en résolvant les problèmes de courants de fuite identifiés.
 
+## Rôle du document
+Ce document est le **référentiel technique maître** du projet.
+
+- Il fixe les choix d'architecture, les calibres/sections, la logique énergétique, les coûts et le phasage.
+- Les documents opératoires sont :
+   - [plan_implantation_tableau.md](plan_implantation_tableau.md) (implantation physique terrain)
+   - [plan_organisation_tableau.md](plan_organisation_tableau.md) (organisation interne et procédure chantier)
+
+> En cas d'écart entre documents, la présente proposition fait foi.
+
 ---
 
 ## Dimensionnement du Tableau
@@ -295,26 +305,26 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 
 ## Procédure de Remplacement Recommandée
 
-### Phase 1 : Préparation (J-1)
+### Étape 1 — Préparation (J-1)
 1. Installation du nouveau tableau à côté de l'ancien
 2. Câblage du nouveau tableau (peignes, différentiels)
 3. **Démontage et récupération des disjoncteurs C20 et C16 de l'ancien tableau**
 4. Installation des disjoncteurs récupérés dans le nouveau tableau
 5. Préparation des câbles de raccordement
 
-### Phase 2 : Bascule Progressive (Jour J)
+### Étape 2 — Bascule Progressive (Jour J)
 1. **Coupure minimale** : Basculer circuit par circuit
 2. Circuits prioritaires en dernier (chaudière, réfrigérateur)
 3. Test de chaque circuit avant passage au suivant
 4. **Durée estimée** : 3-4 heures (pas de nouveau câblage)
 
-### Phase 3 : Validation
+### Étape 3 — Validation
 1. Test des différentiels (bouton TEST)
 2. Mesure de l'isolement par circuit
 3. Vérification des courants de fuite
 4. Documentation et remise du schéma unifilaire
 
-### Phase 4 : Intégration directe des circuits étage
+### Étape 4 — Intégration directe des circuits étage
 
 1. **Dépose du sous-tableau existant** (récupération des appareils réutilisables)
 2. **Tirage des liaisons directes** des 6 circuits étage vers le tableau principal (base 10 m)
@@ -380,22 +390,22 @@ Surplus Batterie Pleine → ECS (priorité 3) ← Routage si surplus Pince 1
 
 ### Tableau principal
 
-**Phase 1 : Préparation** :
+**Étape 1 : Préparation** :
 - Installation coffret et câblage interne (peignes, différentiels) : **3-4 heures**
 - Démontage et récupération disjoncteurs ancien tableau : **1 heure**
 - Préparation câbles de raccordement : **1-2 heures**
-- **Total Phase 1 : 5-7 heures**
+- **Total Étape 1 : 5-7 heures**
 
-**Phase 2 : Bascule et raccordement** :
+**Étape 2 : Bascule et raccordement** :
 - Bascule progressive circuit par circuit : **3-4 heures**
 - Création circuit onduleur solaire : **1-2 heures**
 - Installation équipement mesure AC-coupling : **1 heure**
-- **Total Phase 2 : 5-7 heures**
+- **Total Étape 2 : 5-7 heures**
 
-**Phase 3 : Tests et validation** :
+**Étape 3 : Tests et validation** :
 - Tests différentiels et isolement : **1-2 heures**
 - Documentation et étiquetage : **1 heure**
-- **Total Phase 3 : 2-3 heures**
+- **Total Étape 3 : 2-3 heures**
 
 **Total tableau principal : 12-17 heures** (sur 2-3 jours avec pauses)
 
@@ -491,7 +501,13 @@ Les défauts identifiés sur les câblages et prises pourront être traités ult
 - [x] Schéma unifilaire détaillé (réalisé : [schema_unifilaire_tableau.drawio](schema_unifilaire_tableau.drawio))
 - [x] Plan d'implantation du nouveau tableau (réalisé : [plan_implantation_tableau.md](plan_implantation_tableau.md) + [plan_organisation_tableau.md](plan_organisation_tableau.md))
 - [ ] Fiche de repérage des circuits existants (couleurs, boîtes de dérivation)
-- [ ] Checklist de validation (voir `doc/checklist_validation.md`)
+- [ ] Checklist de validation (voir [checklist_validation.md](checklist_validation.md))
+
+## Documents opératoires liés
+
+- [plan_implantation_tableau.md](plan_implantation_tableau.md)
+- [plan_organisation_tableau.md](plan_organisation_tableau.md)
+- [checklist_validation.md](checklist_validation.md)
 
 ---
 
