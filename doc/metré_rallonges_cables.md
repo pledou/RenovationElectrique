@@ -70,9 +70,9 @@ Base validée : **10,0 m par circuit**.
 | ------- | ---------------- | ------------------- | ------------- | ---------- |
 | 3G1,5   | 36 m             | **50 m**            | 1,00 €/m      | 50 €       |
 | 3G2,5   | 45 m             | **55 m**            | 1,80 €/m      | 99 €       |
-| 3G6     | 3 m              | **10 m**            | 4,50 €/m      | 45 €       |
-| 3G10    | 3 m              | **10 m**            | 4,00 €/m      | 40 €       |
-|         |                  |                     |               | **234 €**  |
+| 3G6     | 3 m              | **3 m**             | 4,50 €/m      | 13,5 €     |
+| 3G10    | 3 m              | **5 m**            | 4,00 €/m      | 20 €       |
+|         |                  |                     |               | **182,5 €**|
 
 > Note : le 3G10 conserve une marge confortable pour raccordement/ajustements.
 
@@ -93,11 +93,19 @@ Sous-total accessoires : **115-185 €**.
 
 ## Budget câblage consolidé (scénario sans sous-tableau)
 
-- Câbles : **~234 €**
+- Câbles : **~182,5 €**
 - Accessoires raccordement : **~115-185 €**
-- **Total câblage estimé : 349-419 €**
+- **Total câblage estimé : 297,5-367,5 €**
 
 Ce budget remplace l'ancien scénario incluant le remplacement d'un coffret divisionnaire étage.
+
+---
+
+## Document associé
+
+La liste de course complète (globale projet) a été déplacée dans :
+
+- `doc/liste_course_globale.md`
 
 ---
 
