@@ -2,7 +2,7 @@
 
 ## État d'avancement du projet
 
-**Dernière mise à jour** : 17 février 2026
+**Dernière mise à jour** : 9 mars 2026
 
 | Phase | État | Détails |
 |-------|------|---------|
@@ -11,10 +11,22 @@
 | 🔍 Analyse défauts | ✅ Complétée | Fuites, sous-dimensionnements, problèmes terre |
 | 📊 Dimensionnement tableau | ✅ Complété | Tableau 3×13 modules, 24 utilisés, 15 libres |
 | 📍 Emplacement tableau | ✅ Décidé | Garage, hauteur 110-150 cm |
-| 📏 Métré câbles | ✅ Complété | ~40m de câbles nécessaires, devis établi |
-| 🛠️ Achat matériel | ⏳ À réaliser | Liste complète disponible |
-| 🔧 Installation | ⏳ À réaliser | Procédure documentée |
+| 📏 Métré câbles | ✅ Complété | Métré initial ~40m, ajusté sur chantier |
+| 🛠️ Achat matériel | 🚧 En cours | Câbles 3G1,5 et 3G2,5 achetés ; goulottes et coffret tableau achetés |
+| 🔧 Installation | 🚧 En cours | P5/P6 recâblés en prises sécurisées + 3G2,5mm² (55m tirés), raccordement en attente d’amenée au nouveau tableau |
 | ✔️ Tests et validation | ⏳ À réaliser | Checklist préparée |
+
+### Journal de chantier
+
+**09/03/2026**
+- Reprise du câblage des circuits **P5** et **P6** avec nouvelles prises sécurisées.
+- Tirage réalisé en **3G2,5 mm²** jusqu'au nouveau tableau.
+- Longueur totale de câble utilisée : **55 m**.
+- Achat de **50 m de 3G1,5 mm²**.
+- **Nouveau tableau fixé au mur**.
+- **Goulottes fixées au mur**.
+- Conducteurs **phase/neutre 2,5 mm²** récupérés pour réemploi prévu sur la liaison ancien tableau bas → nouveau tableau bas.
+- **P5 et P6 non reliés** à ce stade : amenée d'électricité au nouveau tableau non encore réalisée.
 
 ---
 
