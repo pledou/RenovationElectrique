@@ -11,19 +11,19 @@
 RANGÉE 1 - DIFF TYPE A 40A/30mA
 (1 case = 1 module DIN)
 ┌──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┐
-│  P1  │  P2  │  P3  │  P4  │ OND  │ MIC  │ VMI  │      │      │      │      │
+│ BAT  │ SOL  │  P1  │  P2  │  P3  │  P4  │ VMI  │      │      │      │      │
 └──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┘
 
 RANGÉE 2 - DIFF TYPE AC 40A/30mA
 (1 case = 1 module DIN)
 ┌──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┐
-│ CHD  │  L1  │  L2  │  L3  │  L4  │ MES1 │ MES2 │  P5  │  P6  │  P7  │      │
+│ CHD  │ SERV │  P5  │  P6  │  P7  │  L1  │  L2  │  L3  │  L4  │      │      │
 └──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┘
 
 RANGÉE 3 - DIFF TYPE A 40A/30mA (ECS ISOLÉ)
 (1 case = 1 module DIN)
 ┌──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┐
-│ ECS  │      │      │      │      │      │      │      │      │      │      │
+│ ECS  │      │      │      │      │      │      │      │      │ MES1 │ MES2 │
 └──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┘
 ```
 
@@ -33,34 +33,35 @@ RANGÉE 3 - DIFF TYPE A 40A/30mA (ECS ISOLÉ)
 
 ### LÉGENDE ABRÉGÉE
 
-| Code | Désignation |
-|:--|:--|
-| P1 | Plaque cuisson 32A/6mm2 - Cuisine |
-| P2 | Prises buanderie/garage 20A/2.5mm2 |
-| P3 | Prises séjour/bureau/four 20A/2.5mm2 |
-| P4 | Prises cuisine 20A/2.5mm2 |
-| OND | Onduleur solaire 20A - Garage |
-| MIC | Micro-onduleur jardin 20A/2.5mm2 |
-| VMI | Ventilation VMI 2A/1.5mm2 |
-| CHD | Chaudière + routeur 20A/2.5mm2 |
-| L1 | Éclairage 1 16A/1.5mm2 |
-| L2 | Éclairage 2 16A/1.5mm2 |
-| L3 | Éclairage étage 16A/1.5mm2 |
-| L4 | Éclairage SdB 16A/1.5mm2 |
-| MES1/MES2 | Monitoring (2 modules) |
-| P5 | Prises étage 16A/2.5mm2 |
-| P6 | Prises chambre 3 10A/2.5mm2 |
-| P7 | Prise palier 10A/2.5mm2 |
-| ECS | Chauffe-eau 20A/2.5mm2 |
-| Cases vides | Modules libres (réserve) |
+| Code        | Désignation                                              |
+| :---------- | :------------------------------------------------------- |
+| P1          | Plaque cuisson 32A/6mm2 - Cuisine                        |
+| P2          | Prises buanderie/garage 20A/2.5mm2                       |
+| P3          | Prises séjour/bureau/four 20A/2.5mm2                     |
+| P4          | Prises cuisine 20A/2.5mm2                                |
+| BAT         | Onduleur batterie 20A/6mm2 (AC-coupling) - Garage        |
+| SOL         | Micro-onduleurs solaires jardin 20A/2.5mm2               |
+| VMI         | Ventilation VMI 10A/1.5mm2 (éléments chauffants)         |
+| CHD         | Chaudière 10A/2.5mm2                                     |
+| L1          | Éclairage 1 16A/1.5mm2                                   |
+| L2          | Éclairage 2 16A/1.5mm2                                   |
+| L3          | Éclairage étage 16A/1.5mm2                               |
+| L4          | Éclairage SdB 16A/1.5mm2                                 |
+| SERV        | Services 2A/1.5mm2 - Routeur sol. + MES + Arduino chaud. |
+| MES1/MES2   | Monitoring onduleur (2 modules) - Rangée 3               |
+| P5          | Prises étage 16A/2.5mm2                                  |
+| P6          | Prises chambre 3 10A/2.5mm2                              |
+| P7          | Prise palier 10A/2.5mm2                                  |
+| ECS         | Chauffe-eau 20A/2.5mm2                                   |
+| Cases vides | Modules libres (réserve)                                 |
 
 ---
 
 ## PINCES AMPÈREMÉTRIQUES
 
-| **PINCE** | **MESURE** | **Positionnement** |
-|:---|:---|:---|
-| **PINCE 1** | Mesure globale (EDF) | Arrivée principale |
+| **PINCE**   | **MESURE**            | **Positionnement**     |
+| :---------- | :-------------------- | :--------------------- |
+| **PINCE 1** | Mesure globale (EDF)  | Arrivée principale     |
 | **PINCE 2** | Consommation hors ECS | Onduleur (rangées 1+2) |
 
 ---
