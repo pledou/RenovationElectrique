@@ -2,8 +2,12 @@
 projet: RenovationElectrique
 adresse: "(à compléter)"
 tableau:
-  emplacement: "Entrée - placard"
-  modules_estimes: 24
+  emplacement: "Garage"
+  modules_estimes: 33
+repartition_tableau:
+  rangee_1: [BAT, SOL, VMI, P1, P2, P3, P4, FOUR]
+  rangee_2: [CHD, SERV, P5, P6, P7, L1, L2, L3, L4]
+  rangee_3: [ECS, MES1, MES2]
 protections_tete_tableau:
   - id: EDF_500mA
     type: differentiel
@@ -30,7 +34,8 @@ circuits:
     equipements:
       - nom: Chaudière
   - id: Monitoring
-    nom: Monitoring et pilotage
+    nom: Services (monitoring et pilotage)
+    code_tableau: SERV
     section_mm2: 1.5
     disjoncteur_A: 2
     longueur_m: 3
@@ -66,10 +71,10 @@ circuits:
       - nom: Entrée (détecteur de mouvement) + alimentation caméra
       - nom: WC RdC
   - id: P1
-    nom: Prises cuisine
+    nom: Prise dediee cuisine
     fonction: Prises
-    section_mm2: 6
-    disjoncteur_A: 10
+    section_mm2: 4
+    disjoncteur_A: 16
     longueur_m: 5
     equipements:
       - nom: Lave-vaisselle (actuellement) / Future plaque de cuisson électrique
@@ -86,7 +91,7 @@ circuits:
       - nom: Garage porte de garage motorisée
       - nom: Garage Four micro-ondes
   - id: P3
-    nom: Prises Séjour/Bureau/Four
+    nom: Prises Sejour/Bureau
     fonction: Prises
     section_mm2: 2.5 # TODO: vérifier
     disjoncteur_A: 20
@@ -101,10 +106,16 @@ circuits:
           "prise 2 poles sans obturateur, sans terre"
       - nom: Bureau Nord Est
       - nom: Bureau Sud Est
-      - nom: Four
-        defaut: "A vérifier si doit être sur circuit dédié"
       - nom: Séjour Sud Est
         defaut: prise 2 poles sans obturateur, sans terre
+  - id: FOUR
+    nom: Four ligne dediee
+    fonction: Prises
+    section_mm2: 6
+    disjoncteur_A: 20
+    longueur_m: 8 # TODO: verifier
+    equipements:
+      - nom: Four
   - id: P4
     nom: Prises Cuisine
     fonction: Prises
@@ -122,43 +133,32 @@ circuits:
       - nom: Cuisine prise au dessus du four 
       - nom: Séjour Nord Est + Volet Roulant
         defaut: "B8.3 e Au moins un conducteur isolé n'est pas placé sur toute sa longueur dans un conduit, une goulotte ou une plinthe ou une huisserie, en matière isolante ou métallique, jusqu'à sa pénétration dans le matériel électrique qu'il alimente"
-
-  - id: st_etage
-    nom: Alimentation sous-tableau étage + Prise Extérieure
-    fonction: Alimentation sous-tableau + Prise Extérieure
-    section_mm2: 6 # TODO: vérifier
-    disjoncteur_A: 20
+  - id: L3
+    nom: Eclairage étage
+    fonction: Eclairage
+    section_mm2: 1.5 # TODO: vérifier
+    disjoncteur_A: 10
     longueur_m: 25 # TODO: vérifier
+    est_sous_compteur: true
+    sous_compteur_pour: "étage"
     equipements:
-      - nom: Prise Extérieure pour panneaux solaires (cablé en 2.5mm²)
-      - nom: Alimentation sous-tableau étage
-        circuits:
-          - id: L3
-            nom: Eclairage étage
-            fonction: Eclairage
-            section_mm2: 1.5 # TODO: vérifier
-            disjoncteur_A: 16
-            longueur_m: 25 # TODO: vérifier
-            est_sous_compteur: true
-            sous_compteur_pour: "étage"
-            equipements:
-              - nom: Palier étage (2 points zigbee)
-                defaut: "neutre ou phase sur L1"
-              - nom: Chambre 1
-              - nom: Chambre 2
-              - nom: Chambre 3
-          - id: L4
-            nom: Eclairage salle de bains
-            fonction: Eclairage
-            section_mm2: 1.5 # TODO: vérifier
-            disjoncteur_A: 16
-            longueur_m: 15 # TODO: vérifier
-            est_sous_compteur: true
-            sous_compteur_pour: "étage"
-            equipements:
-              - nom: Salle de bains (zigbee)
-              - nom: Chambre 4 (zigbee)
-              - nom: Applique chambre 4 (au nord ouest)
+      - nom: Palier étage (2 points zigbee)
+        defaut: "neutre ou phase sur L1"
+      - nom: Chambre 1
+      - nom: Chambre 2
+      - nom: Chambre 3
+  - id: L4
+    nom: Eclairage salle de bains et chambre 4
+    fonction: Eclairage
+    section_mm2: 1.5 # TODO: vérifier
+    disjoncteur_A: 10
+    longueur_m: 15 # TODO: vérifier
+    est_sous_compteur: true
+    sous_compteur_pour: "étage"
+    equipements:
+      - nom: Salle de bains (zigbee)
+      - nom: Chambre 4 (zigbee)
+      - nom: Applique chambre 4 (au nord ouest)
   - id: sanitaire
     nom: Alimentation Chauffe-eau
     fonction: ECS
@@ -171,12 +171,28 @@ circuits:
     nom: Alimentation VMI
     fonction: VMI
     section_mm2: 1.5
-    disjoncteur_A: 16
+    disjoncteur_A: 10
     longueur_m: 18
     est_sous_compteur: true
     sous_compteur_pour: "étage"
     equipements:
       - nom: VMI (ventilation mécanique)
+  - id: BAT
+    nom: Onduleur batterie (AC-coupling)
+    fonction: Production/stockage
+    section_mm2: 6
+    disjoncteur_A: 20
+    longueur_m: 3
+    equipements:
+      - nom: Onduleur batterie
+  - id: SOL
+    nom: Micro-onduleurs solaires jardin
+    fonction: Production solaire
+    section_mm2: 2.5
+    disjoncteur_A: 20
+    longueur_m: 7
+    equipements:
+      - nom: Micro-onduleurs solaires
   - id: P5
     nom: Prises étage
     fonction: Prises
@@ -195,8 +211,8 @@ circuits:
     nom: Prises chambre 3
     fonction: Prises
     section_mm2: 2.5
-    disjoncteur_A: 10
-    longueur_m: 10 # TODO: vérifier
+    disjoncteur_A: 16
+    longueur_m: 15
     est_sous_compteur: true
     sous_compteur_pour: "étage"
     equipements:
@@ -206,8 +222,8 @@ circuits:
     nom: Prise Palier et équipements réseau
     fonction: Prises
     section_mm2: 2.5
-    disjoncteur_A: 10
-    longueur_m: 10 # TODO: vérifier
+    disjoncteur_A: 16
+    longueur_m: 15
     est_sous_compteur: true
     sous_compteur_pour: "étage"
     equipements:
