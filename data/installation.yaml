@@ -15,16 +15,33 @@ protections_tete_tableau:
     role: Coupure générale EDF
     emplacement: tête de tableau
     remarque: "Interrupteur différentiel 500mA en amont (fournisseur)"
-  - id: DIFF_30mA
+  - id: DIFF_R1_30mA
+    type: differentiel A
+    sensibilite_mA: 30
+    calibre_A: 40
+    nombre_de_poles: 2
+    role: Protection rangée 1
+    emplacement: rangée 1
+    remarque: "Interrupteur différentiel 40A 30mA Type A"
+  - id: DIFF_R2_30mA
     type: differentiel AC
     sensibilite_mA: 30
-    nombre_de_poles: 4
-    role: Protection circuits domestiques
-    emplacement: juste en aval du 500mA
-    remarque: "Un ou plusieurs différentiels 30mA pour séparer les circuits"
+    calibre_A: 40
+    nombre_de_poles: 2
+    role: Protection rangée 2
+    emplacement: rangée 2
+    remarque: "Interrupteur différentiel 40A 30mA Type AC"
+  - id: DIFF_R3_30mA
+    type: differentiel A
+    sensibilite_mA: 30
+    calibre_A: 40
+    nombre_de_poles: 2
+    role: Protection rangée 3
+    emplacement: rangée 3
+    remarque: "Interrupteur différentiel 40A 30mA Type A"
 
 circuits:
-  - id: Chaudiere
+  - id: CHD
     nom: Chaudière Gaz
     fonction: Chauffage
     section_mm2: 2.5
@@ -33,7 +50,7 @@ circuits:
     notes: ""
     equipements:
       - nom: Chaudière
-  - id: Monitoring
+  - id: SERV
     nom: Services (monitoring et pilotage)
     code_tableau: SERV
     section_mm2: 1.5
@@ -139,7 +156,6 @@ circuits:
     section_mm2: 1.5 # TODO: vérifier
     disjoncteur_A: 10
     longueur_m: 25 # TODO: vérifier
-    est_sous_compteur: true
     sous_compteur_pour: "étage"
     equipements:
       - nom: Palier étage (2 points zigbee)
@@ -153,13 +169,12 @@ circuits:
     section_mm2: 1.5 # TODO: vérifier
     disjoncteur_A: 10
     longueur_m: 15 # TODO: vérifier
-    est_sous_compteur: true
     sous_compteur_pour: "étage"
     equipements:
       - nom: Salle de bains (zigbee)
       - nom: Chambre 4 (zigbee)
       - nom: Applique chambre 4 (au nord ouest)
-  - id: sanitaire
+  - id: ECS
     nom: Alimentation Chauffe-eau
     fonction: ECS
     section_mm2: 2.5
@@ -173,7 +188,6 @@ circuits:
     section_mm2: 1.5
     disjoncteur_A: 10
     longueur_m: 18
-    est_sous_compteur: true
     sous_compteur_pour: "étage"
     equipements:
       - nom: VMI (ventilation mécanique)
@@ -199,7 +213,6 @@ circuits:
     section_mm2: 2.5
     disjoncteur_A: 16
     longueur_m: 30 # TODO: vérifier
-    est_sous_compteur: true
     sous_compteur_pour: "étage"
     equipements:
       - nom: Chambre 1 Nord Ouest
@@ -213,7 +226,6 @@ circuits:
     section_mm2: 2.5
     disjoncteur_A: 16
     longueur_m: 15
-    est_sous_compteur: true
     sous_compteur_pour: "étage"
     equipements:
       - nom: Chambre 3 Nord Est
@@ -224,10 +236,10 @@ circuits:
     section_mm2: 2.5
     disjoncteur_A: 16
     longueur_m: 15
-    est_sous_compteur: true
     sous_compteur_pour: "étage"
     equipements:
       - nom: Palier étage, devant salle de bains
+      - nom: Prise Salle de bains (au dessus des WC)
       - nom: Applique murale chambre 4 (éclairage au dessus ancien lavabeau et prise de courant) au sud ouest
       - nom: Double prise pour équipements réseau dans le garage
 plans:
