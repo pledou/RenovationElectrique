@@ -44,7 +44,7 @@ circuits:
   - id: CHD
     nom: Chaudière Gaz
     fonction: Chauffage
-    section_mm2: 2.5
+    section_mm2: 2,5
     disjoncteur_A: 10
     longueur_m: 3
     notes: ""
@@ -53,7 +53,7 @@ circuits:
   - id: SERV
     nom: Services (monitoring et pilotage)
     code_tableau: SERV
-    section_mm2: 1.5
+    section_mm2: 1,5
     disjoncteur_A: 2
     longueur_m: 3
     equipements:
@@ -63,24 +63,23 @@ circuits:
   - id: L1
     nom: Eclairage 1
     fonction: Eclairage
-    section_mm2: 1.5 # TODO: vérifier
+    section_mm2: 1,5
     disjoncteur_A: 10
     longueur_m: 15 # TODO: vérifier
     equipements:
       - nom: Salon Est
+        defaut: "fils de terre vert-jaune utlisés pour la phase après interupteur"
       - nom: Salon Ouest (zigbee)
       - nom: Palier étage 2 points (zigbee)
-        defaut: "neutre ou phase sur L3"
+        defaut: "en cours de correction. Alimenter correctement en phase le va et vient en bas de l'escalier"
       - nom: Garage
-        defaut: "neutre ou phase sur L2"
       - nom: Buanderie
-        defaut: "neutre ou phase sur L2"
       - nom: Palier RdC 2 points zigbee, et 1 sous l'escalier
         defaut: "neutre ou phase sur L2"
   - id: L2
     nom: Eclairage 2
     fonction: Eclairage
-    section_mm2: 1.5 # TODO: vérifier
+    section_mm2: 1,5 # TODO: vérifier
     disjoncteur_A: 10
     longueur_m: 10 # TODO: vérifier
     equipements:
@@ -98,9 +97,8 @@ circuits:
   - id: P2
     nom: Prises Buanderie et Garage
     fonction: Prises
-    section_mm2: 2.5
+    section_mm2: 2,5
     disjoncteur_A: 20
-    longueur_m: 12 # TODO: vérifier
     equipements:
       - nom: Buanderie lave-linge
       - nom: Buanderie sèche-linge
@@ -110,7 +108,7 @@ circuits:
   - id: P3
     nom: Prises Sejour/Bureau
     fonction: Prises
-    section_mm2: 2.5 # TODO: vérifier
+    section_mm2: 2,5 # TODO: vérifier
     disjoncteur_A: 20
     longueur_m: 15 # TODO: vérifier
     equipements:
@@ -149,14 +147,15 @@ circuits:
       - nom: Cuisine prise sous evier actuellement plaque gaz
       - nom: Cuisine prise au dessus du four 
       - nom: Séjour Nord Est + Volet Roulant
-        defaut: "B8.3 e Au moins un conducteur isolé n'est pas placé sur toute sa longueur dans un conduit, une goulotte ou une plinthe ou une huisserie, en matière isolante ou métallique, jusqu'à sa pénétration dans le matériel électrique qu'il alimente"
+        defaut: | 
+          "B8.3 e Au moins un conducteur isolé n'est pas placé sur toute sa longueur dans un conduit, une goulotte ou une plinthe ou une huisserie, en matière isolante ou métallique, jusqu'à sa pénétration dans le matériel électrique qu'il alimente"
+          "prise 2 poles sans obturateur, sans terre"
   - id: L3
     nom: Eclairage étage
     fonction: Eclairage
     section_mm2: 1.5 # TODO: vérifier
     disjoncteur_A: 10
     longueur_m: 25 # TODO: vérifier
-    sous_compteur_pour: "étage"
     equipements:
       - nom: Palier étage (2 points zigbee)
         defaut: "neutre ou phase sur L1"
@@ -169,7 +168,6 @@ circuits:
     section_mm2: 1.5 # TODO: vérifier
     disjoncteur_A: 10
     longueur_m: 15 # TODO: vérifier
-    sous_compteur_pour: "étage"
     equipements:
       - nom: Salle de bains (zigbee)
       - nom: Chambre 4 (zigbee)
@@ -188,7 +186,6 @@ circuits:
     section_mm2: 1.5
     disjoncteur_A: 10
     longueur_m: 18
-    sous_compteur_pour: "étage"
     equipements:
       - nom: VMI (ventilation mécanique)
   - id: BAT
@@ -213,7 +210,6 @@ circuits:
     section_mm2: 2.5
     disjoncteur_A: 16
     longueur_m: 30 # TODO: vérifier
-    sous_compteur_pour: "étage"
     equipements:
       - nom: Chambre 1 Nord Ouest
       - nom: Chambre 1 Sud Ouest
@@ -226,7 +222,6 @@ circuits:
     section_mm2: 2.5
     disjoncteur_A: 16
     longueur_m: 15
-    sous_compteur_pour: "étage"
     equipements:
       - nom: Chambre 3 Nord Est
       - nom: Chambre 3 Sud Est
@@ -236,7 +231,6 @@ circuits:
     section_mm2: 2.5
     disjoncteur_A: 16
     longueur_m: 15
-    sous_compteur_pour: "étage"
     equipements:
       - nom: Palier étage, devant salle de bains
       - nom: Prise Salle de bains (au dessus des WC)
