@@ -85,6 +85,7 @@ On constate des courants de fuite importants sur le neutre de certains circuits.
 - [Tableau buanderie (ouvert)](doc/tableau_buanderie_ouvert.jpg)
 - [Sous-tableau étage (fermé)](doc/tableau_etage.jpg)
 - [Sous-tableau étage (ouvert)](doc/tableau_etage_ouvert.jpg)
+- [Nouveau tableau (installé)](doc/tableau_nouveau.jpg)
 
 ## Structure recommandée du README
 
@@ -107,7 +108,7 @@ Inventaire complet des 14 circuits (8 au RdC, 6 à l'étage) avec équipements, 
 
 **Plans** : [RdC](doc/plans_etage/Rdc-Page-1.svg) ([Édition](doc/plans_etage/Rdc.drawio)) | [RdC Élec](doc/plans_etage/Rdc_elec-Rdc-Elec.svg) ([Édition](doc/plans_etage/Rdc_elec.drawio)) | [Étage](doc/plans_etage/Etage-Page-1.svg) ([Édition](doc/plans_etage/Etage.drawio)) | [Étage Élec](doc/plans_etage/Etage_elec-Etage-Elec.svg) ([Édition](doc/plans_etage/Etage_elec.drawio))
 
-**Photos** : [Tableau buanderie](doc/tableau_buanderie.jpg) | [Tableau buanderie ouvert](doc/tableau_buanderie_ouvert.jpg) | [Tableau étage](doc/tableau_etage.jpg) | [Tableau étage ouvert](doc/tableau_etage_ouvert.jpg)
+**Photos** : [Tableau buanderie](doc/tableau_buanderie.jpg) | [Tableau buanderie ouvert](doc/tableau_buanderie_ouvert.jpg) | [Tableau étage](doc/tableau_etage.jpg) | [Tableau étage ouvert](doc/tableau_etage_ouvert.jpg) | [Nouveau tableau](doc/tableau_nouveau.jpg)
 
 ## Analyse et points de vigilance
 

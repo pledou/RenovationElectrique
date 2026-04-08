@@ -82,22 +82,23 @@ Le raccordement des circuits est traité dans :
 ## Checklist implantation
 
 ### Avant pose
-- [ ] Position finale tracée et validée
-- [ ] Support mural vérifié
-- [ ] Matériel de fixation disponible
-- [ ] Parcours goulotte validé
+- [x] Position finale tracée et validée
+- [x] Support mural vérifié
+- [x] Matériel de fixation disponible
+- [x] Parcours goulotte validé
 
 ### Pendant pose
-- [ ] Goulottes fixées sans discontinuité
-- [ ] Coffret posé à la bonne hauteur
-- [ ] Passage des conducteurs possible sans contrainte excessive
-- [ ] Dégagement frontal conservé
+- [x] Goulottes fixées sans discontinuité
+- [x] Coffret posé à la bonne hauteur
+- [x] Passage des conducteurs possible sans contrainte excessive
+- [x] Dégagement frontal conservé
 
 ### Après pose
-- [ ] Coffret stable et de niveau
-- [ ] Cheminement câbles protégé sur tout le parcours
-- [ ] Repérage terrain mis à jour
-- [ ] Photos avant/après archivées
+- [x] Coffret stable et de niveau
+- [x] Cheminement câbles protégé sur tout le parcours
+- [x] Repérage terrain mis à jour
+- [x] Photos avant/après archivées - [Tableau buanderie](tableau_buanderie.jpg)
+ — [Nouveau tableau (installé)](tableau_nouveau.jpg)
 
 ---
 
@@ -120,6 +121,6 @@ Le raccordement des circuits est traité dans :
 ---
 
 **Auteur** : GitHub Copilot  
-**Date** : 17 février 2026  
-**Version** : 2.0  
+**Date** : 08 avril 2026  
+**Version** : 2.1  
 **Statut** : ✅ Version implantation harmonisée (mode opératoire)
