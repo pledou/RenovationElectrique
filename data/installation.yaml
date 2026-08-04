@@ -178,6 +178,7 @@ circuits:
             equipements:
               - nom: Salle de bains (zigbee)
               - nom: Chambre 4 (zigbee)
+              - nom: Chambre 4 applique alcove
           - id: P6
             nom: Prises chambre 3
             fonction: Prises
